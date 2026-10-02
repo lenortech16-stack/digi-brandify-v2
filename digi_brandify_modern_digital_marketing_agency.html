@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGI Brandify | Premier Digital Marketing & Software Agency</title>
+    <link rel="icon" type="image/png" href="assets/logo_icon.png">
+    <!-- Local Instant-Load DM Sans Font (Zero network latency, no font flicker/swap) -->
+    <link rel="stylesheet" href="assets/dmsans_inline.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        // Website ALWAYS 1st opens in Light Mode; users can then toggle as desired
+        (function() {
+            try {
+                // Clear any lingering localStorage dark override from previous testing
+                if (localStorage.getItem('digibrandify_theme') === 'dark' && !sessionStorage.getItem('digibrandify_theme')) {
+                    localStorage.removeItem('digibrandify_theme');
+                }
+                const sessionTheme = sessionStorage.getItem('digibrandify_theme');
+                if (sessionTheme === 'dark') {
+                    document.documentElement.classList.remove('light');
+                } else {
+                    document.documentElement.classList.add('light');
+                }
+            } catch(e) {
+                document.documentElement.classList.add('light');
+            }
+        })();
+
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            yellow: '#f7c103',
+                            gold: '#dfac02',
+                            dark: '#08090C',
+                            card: '#12141C',
+                            border: 'rgba(247, 193, 3, 0.18)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        display: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body, button, input, select, textarea, p, span, a, h1, h2, h3, h4, h5, h6, label {
+            font-family: 'DM Sans', sans-serif;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        body {
+            background-color: #07080B;
+            color: #F3F4F6;
+            font-family: 'DM Sans', sans-serif !important;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-display, .font-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        /* Explicit FontAwesome 6 icon family restoration */
+        .fa, .fas, .fa-solid, .far, .fa-regular {
+            font-family: "Font Awesome 6 Free" !important;
+        }
+        .fa::before, .fas::before, .fa-solid::before, .far::before, .fa-regular::before, [class*="fa-"]::before {
+            font-family: "Font Awesome 6 Free" !important;
+        }
+        .fab, .fa-brands, .fab::before, .fa-brands::before {
+            font-family: "Font Awesome 6 Brands" !important;
+        }
+
+        /* Glassmorphism Classes (Dark Default) */
+        .glass-panel {
+            background: rgba(18, 20, 28, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(247, 193, 3, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-panel-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-panel-hover:hover {
+            background: rgba(26, 29, 41, 0.75);
+            border-color: rgba(247, 193, 3, 0.45);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px -10px rgba(247, 193, 3, 0.2);
+        }
+
+        .glass-nav {
+            background: rgba(7, 8, 11, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-button {
+            background: linear-gradient(135deg, #f7c103 0%, #dfac02 100%);
+            color: #07080B;
+            font-weight: 700;
+            box-shadow: 0 0 20px rgba(247, 193, 3, 0.35);
+            transition: all 0.3s ease;
+        }
+        .glass-button:hover {
+            box-shadow: 0 0 30px rgba(247, 193, 3, 0.55);
+            transform: scale(1.02);
+        }
+
+        .glow-yellow {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(247, 193, 3, 0.13) 0%, rgba(0,0,0,0) 70%);
+            pointer-events: none;
+            z-index: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #07080B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #232733;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f7c103;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* -------------------------------------------------------------
+           LIGHT THEME DEFINITIVE SYSTEM (html.light)
+        ------------------------------------------------------------- */
+        html.light {
+            color-scheme: light;
+        }
+
+        html.light body {
+            background-color: #FFFFFF !important;
+            color: #1E293B !important;
+        }
+
+        /* Light Mode Glassmorphism & Cards */
+        html.light .glass-panel {
+            background: #FFFFFF !important;
+            border: 1px solid #E2E8F0 !important;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 1px 3px 0 rgba(0, 0, 0, 0.03) !important;
+        }
+
+        html.light .glass-panel-hover:hover {
+            background: #FFFFFF !important;
+            border-color: rgba(247, 193, 3, 0.6) !important;
+            box-shadow: 0 20px 35px -10px rgba(247, 193, 3, 0.22), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+            transform: translateY(-4px);
+        }
+
+        /* Light Mode Navigation */
+        html.light .glass-nav {
+            background: rgba(255, 255, 255, 0.90) !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04) !important;
+        }
+
+        html.light nav a {
+            color: #334155 !important;
+        }
+        html.light nav a:hover {
+            color: #f7c103 !important;
+        }
+
+        /* Light Mode Brand Name & Tagline */
+        html.light .brand-text-name {
+            color: #0F172A !important;
+        }
+        html.light .brand-tagline {
+            color: #64748B !important;
+        }
+
+        /* Light Mode Typography Inversions */
+        html.light h1,
+        html.light h2,
+        html.light h3,
+        html.light h4,
+        html.light h5,
+        html.light h6,
+        html.light .text-white {
+            color: #0F172A !important;
+        }
+
+        html.light p,
+        html.light .text-gray-300,
+        html.light .text-gray-400 {
+            color: #475569 !important;
+        }
+
+        html.light .text-gray-500 {
+            color: #64748B !important;
+        }
+
+        /* Hero Highlight Text in Light Mode (Pure Brand Yellow #f7c103) */
+        html.light h1 span.bg-clip-text {
+            color: #f7c103 !important;
+            -webkit-text-fill-color: #f7c103 !important;
+            background: none !important;
+            background-image: none !important;
+        }
+
+        /* Buttons & Badges in Light Mode */
+        html.light .glass-button {
+            background: linear-gradient(135deg, #f7c103 0%, #dfac02 100%) !important;
+            color: #07080B !important;
+            box-shadow: 0 4px 15px rgba(247, 193, 3, 0.35) !important;
+        }
+        html.light .glass-button:hover {
+            box-shadow: 0 6px 22px rgba(247, 193, 3, 0.5) !important;
+        }
+        html.light .glass-button span,
+        html.light .glass-button i {
+            color: #07080B !important;
+        }
+
+        html.light .bg-brand-yellow\/10 {
+            background-color: rgba(247, 193, 3, 0.12) !important;
+        }
+        html.light .border-brand-yellow\/20,
+        html.light .border-brand-yellow\/30,
+        html.light .border-brand-yellow\/40 {
+            border-color: rgba(247, 193, 3, 0.5) !important;
+        }
+
+        /* Brand Yellow Highlights & Icons in Both Modes */
+        html.light .text-brand-yellow,
+        html.light h1 .text-brand-yellow,
+        html.light h2 .text-brand-yellow,
+        html.light h3 .text-brand-yellow,
+        html.light h4 .text-brand-yellow,
+        html.light p .text-brand-yellow,
+        html.light span.text-brand-yellow,
+        html.light i.text-brand-yellow,
+        html.light div.text-brand-yellow,
+        html.light a.text-brand-yellow,
+        html.light button.text-brand-yellow,
+        html.light button.text-brand-yellow i,
+        html.light button.text-brand-yellow span {
+            color: #f7c103 !important;
+        }
+        html.light .text-brand-dark {
+            color: #07080B !important;
+        }
+
+        /* Service Cards in Light Mode */
+        html.light .service-card {
+            background: #FFFFFF !important;
+            border-color: #E2E8F0 !important;
+        }
+        html.light .service-card ul {
+            border-color: #E2E8F0 !important;
+        }
+        html.light .service-card li {
+            color: #334155 !important;
+        }
+        html.light .service-card button:not(.glass-button) {
+            background: #F8FAFC !important;
+            border: 1px solid #CBD5E1 !important;
+            color: #0F172A !important;
+        }
+        html.light .service-card button:not(.glass-button):hover {
+            background: #f7c103 !important;
+            border-color: #f7c103 !important;
+            color: #07080B !important;
+        }
+        html.light .service-card[data-cat="all"] {
+            background: linear-gradient(180deg, rgba(247, 193, 3, 0.12) 0%, #FFFFFF 100%) !important;
+            border-color: rgba(247, 193, 3, 0.45) !important;
+        }
+
+        /* Portfolio Popup Modal in Light Mode */
+        html.light #portfolio-modal .glass-panel {
+            background: #FFFFFF !important;
+            border-color: #E2E8F0 !important;
+        }
+        html.light #portfolio-modal .border-t {
+            border-color: #E2E8F0 !important;
+        }
+        html.light #portfolio-modal #pm-tagline {
+            background-color: rgba(247, 193, 3, 0.08) !important;
+            color: #855800 !important;
+        }
+        html.light #portfolio-modal #pm-stats .glass-panel {
+            background-color: #F8FAFC !important;
+            border-color: #E2E8F0 !important;
+        }
+
+        /* Category Filter Tabs in Light Mode */
+        html.light .svc-tab:not(.active) {
+            background: #F1F5F9 !important;
+            color: #475569 !important;
+            border: 1px solid #E2E8F0 !important;
+        }
+        html.light .svc-tab:not(.active):hover {
+            background: #E2E8F0 !important;
+            color: #0F172A !important;
+        }
+        html.light .svc-tab.active {
+            background: #f7c103 !important;
+            color: #07080B !important;
+            border-color: #f7c103 !important;
+        }
+
+        /* Form Inputs & Textarea in Light Mode */
+        html.light input,
+        html.light select,
+        html.light textarea {
+            background-color: #F8FAFC !important;
+            border-color: #CBD5E1 !important;
+            color: #0F172A !important;
+        }
+        html.light input::placeholder,
+        html.light textarea::placeholder {
+            color: #94A3B8 !important;
+        }
+        html.light input:focus,
+        html.light select:focus,
+        html.light textarea:focus {
+            background-color: #FFFFFF !important;
+            border-color: #f7c103 !important;
+            box-shadow: 0 0 0 3px rgba(247, 193, 3, 0.18) !important;
+        }
+        html.light label {
+            color: #334155 !important;
+        }
+
+        /* Modal in Light Mode */
+        html.light #calc-modal {
+            background-color: rgba(15, 23, 42, 0.5) !important;
+        }
+        html.light #calc-modal .glass-panel {
+            background: #FFFFFF !important;
+            border-color: #E2E8F0 !important;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+        }
+        html.light #calc-modal select {
+            background-color: #F8FAFC !important;
+            border-color: #CBD5E1 !important;
+            color: #0F172A !important;
+        }
+        html.light #calc-modal button[onclick="closeCalcModal()"] {
+            color: #64748B !important;
+        }
+        html.light #calc-modal button[onclick="closeCalcModal()"]:hover {
+            color: #0F172A !important;
+        }
+        html.light .speed-btn:not(.active) {
+            background: #F1F5F9 !important;
+            color: #475569 !important;
+            border-color: #E2E8F0 !important;
+        }
+        html.light .speed-btn.active {
+            background: #f7c103 !important;
+            color: #07080B !important;
+            border-color: #f7c103 !important;
+        }
+        html.light .toast-notification {
+            background: #FFFFFF !important;
+            border: 1px solid #f7c103 !important;
+            color: #0F172A !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        /* Footer in Light Mode */
+        html.light footer {
+            background-color: #F8FAFC !important;
+            border-top: 1px solid #E2E8F0 !important;
+            color: #64748B !important;
+        }
+        html.light footer a {
+            color: #64748B !important;
+        }
+        html.light footer a:hover {
+            color: #f7c103 !important;
+        }
+        html.light footer .bg-white\/5 {
+            background-color: #E2E8F0 !important;
+            color: #334155 !important;
+            border: 1px solid #CBD5E1 !important;
+        }
+        html.light footer .bg-white\/5:hover {
+            background-color: #f7c103 !important;
+            color: #07080B !important;
+        }
+
+        /* Mobile Bottom Nav in Light Mode */
+        html.light nav.fixed.bottom-0 {
+            background: rgba(255, 255, 255, 0.95) !important;
+            border-top: 1px solid #E2E8F0 !important;
+            box-shadow: 0 -4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+        }
+        html.light .mobile-nav-btn {
+            color: #64748B !important;
+        }
+        html.light .mobile-nav-btn.text-brand-yellow,
+        html.light .mobile-nav-btn:hover {
+            color: #f7c103 !important;
+        }
+
+        /* General Borders in Light Mode */
+        html.light .border-gray-800,
+        html.light .border-gray-800\/80,
+        html.light .border-gray-700,
+        html.light .border-white\/5,
+        html.light .border-white\/10 {
+            border-color: #E2E8F0 !important;
+        }
+
+        html.light .border-brand-dark {
+            border-color: #FFFFFF !important;
+        }
+
+        /* Glow effects in Light Mode */
+        html.light .glow-yellow {
+            background: radial-gradient(circle, rgba(247, 193, 3, 0.08) 0%, rgba(255, 255, 255, 0) 70%) !important;
+        }
+
+        /* Scrollbar in Light Mode */
+        html.light ::-webkit-scrollbar-track {
+            background: #F8FAFC !important;
+        }
+        html.light ::-webkit-scrollbar-thumb {
+            background: #CBD5E1 !important;
+        }
+        html.light ::-webkit-scrollbar-thumb:hover {
+            background: #f7c103 !important;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen pb-20 md:pb-0">
+
+    <div class="glow-yellow top-10 left-1/4 -translate-x-1/2"></div>
+    <div class="glow-yellow top-[40%] right-10"></div>
+    <div class="glow-yellow bottom-10 left-10"></div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3.5 group">
+                <img src="assets/logo_icon.png" alt="DIGI Brandify Logo" class="w-10 h-10 rounded-full object-contain group-hover:scale-105 transition-transform duration-300">
+                <div class="flex flex-col">
+                    <span class="font-display text-xl font-extrabold tracking-wider leading-none"><span class="text-[#f7c103]">DIGI</span><span class="brand-text-name text-white">BRANDIFY</span></span>
+                    <span class="brand-tagline text-[10px] text-gray-400 tracking-widest uppercase mt-1 font-semibold">Scale Without Limits</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
+                <a href="#home" class="hover:text-brand-yellow transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-yellow hover:after:w-full after:transition-all">Home</a>
+                <a href="#about" class="hover:text-brand-yellow transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-yellow hover:after:w-full after:transition-all">About</a>
+                <a href="#services" class="hover:text-brand-yellow transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-yellow hover:after:w-full after:transition-all">Services</a>
+                <a href="#portfolio" class="hover:text-brand-yellow transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-yellow hover:after:w-full after:transition-all">Portfolio</a>
+                <a href="#reviews" class="hover:text-brand-yellow transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-yellow hover:after:w-full after:transition-all">Reviews</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="hidden md:flex items-center gap-3">
+                <!-- Theme Toggle Button (Desktop) -->
+                <button id="theme-toggle-desktop" onclick="toggleTheme()" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-brand-yellow hover:scale-105 active:scale-95 transition-all border border-brand-yellow/30" title="Switch Theme (Light / Dark)" aria-label="Toggle theme">
+                    <i id="theme-icon-desktop" class="fa-solid fa-sun text-sm"></i>
+                </button>
+                <button onclick="openCalcModal()" class="px-4 py-2.5 rounded-xl border border-brand-yellow/30 text-brand-yellow hover:bg-brand-yellow/10 text-sm font-semibold transition-all">
+                    <i class="fa-solid fa-calculator mr-2"></i> Quote Estimator
+                </button>
+                <a href="#contact" class="glass-button px-6 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2">
+                    <span>Contact Us</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Actions -->
+            <div class="md:hidden flex items-center gap-2">
+                <!-- Theme Toggle Button (Mobile) -->
+                <button id="theme-toggle-mobile" onclick="toggleTheme()" class="w-10 h-10 rounded-xl glass-panel border border-brand-yellow/30 text-brand-yellow flex items-center justify-center transition-all" title="Switch Theme (Light / Dark)" aria-label="Toggle theme">
+                    <i id="theme-icon-mobile" class="fa-solid fa-sun text-sm"></i>
+                </button>
+                <button onclick="openCalcModal()" class="w-10 h-10 rounded-xl bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow flex items-center justify-center">
+                    <i class="fa-solid fa-calculator"></i>
+                </button>
+            </div>
+    </header>
+
+    <section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-xs sm:text-sm font-medium text-brand-yellow border-brand-yellow/30">
+                        <span class="w-2 h-2 rounded-full bg-brand-yellow animate-ping"></span>
+                        <span>#1 Digital Growth & App Development Partner</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-white leading-tight">
+                        Transform Your Brand Into A <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow via-yellow-200 to-amber-500">Digital Empire</span>
+                    </h1>
+
+                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Explode your Instagram & YouTube reach, engineer high-converting web apps, custom software, and cross-platform mobile apps with DIGI Brandify.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#services" class="w-full sm:w-auto glass-button px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-3">
+                            <span>Explore Services</span>
+                            <i class="fa-solid fa-arrow-down-long"></i>
+                        </a>
+                        <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-white hover:text-brand-yellow text-base font-semibold text-center transition-all">
+                            View Case Studies
+                        </a>
+                    </div>
+
+                    <!-- Client Avatars Trust Badge -->
+                    <div class="pt-6 flex items-center justify-center lg:justify-start gap-4 text-xs text-gray-400">
+                        <div class="flex -space-x-3">
+                            <img class="w-9 h-9 rounded-full border-2 border-brand-dark" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Client">
+                            <img class="w-9 h-9 rounded-full border-2 border-brand-dark" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Client">
+                            <img class="w-9 h-9 rounded-full border-2 border-brand-dark" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Client">
+                        </div>
+                        <div>
+                            <div class="flex text-brand-yellow text-xs">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="font-medium text-white">4.9/5 Rating</span> from 450+ Growth Projects
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual - Relaxed Founder Character -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none flex flex-col justify-center items-center">
+                        <div class="relative w-full flex flex-col items-center animate-float">
+                            <!-- Ambient Yellow Glow -->
+                            <div class="absolute w-72 h-72 rounded-full bg-brand-yellow/20 blur-3xl pointer-events-none -z-10"></div>
+                            
+                            <!-- Top status badge -->
+                            <div class="absolute -top-3 right-2 sm:right-4 z-20 glass-panel px-3.5 py-1.5 rounded-full border border-brand-yellow/40 flex items-center gap-2 shadow-xl">
+                                <span class="relative flex h-2.5 w-2.5">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                                </span>
+                                <span class="text-xs font-bold text-brand-yellow">100% Hands-Free Growth</span>
+                            </div>
+
+                            <!-- 3D Character PNG -->
+                            <img src="assets/hero_character.png" alt="Relax while DIGI Brandify scales your brand" class="w-full max-h-[460px] sm:max-h-[500px] lg:max-h-[520px] object-contain drop-shadow-2xl">
+
+                            <!-- Bottom glass tag -->
+                            <div class="glass-panel px-5 py-2.5 rounded-2xl border border-brand-yellow/30 flex items-center gap-3 shadow-2xl -mt-2 z-20">
+                                <div class="w-8 h-8 rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center text-sm font-bold shadow-md">
+                                    <i class="fa-solid fa-couch"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white">Sit Back & Relax</p>
+                                    <p class="text-[11px] text-gray-400">We Handle Your Complete Scaling</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Stats Bar Grid -->
+            <div class="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="glass-panel p-6 rounded-2xl text-center border-brand-yellow/20">
+                    <div class="text-3xl sm:text-4xl font-display font-bold text-brand-yellow mb-1">500+</div>
+                    <p class="text-xs sm:text-sm text-gray-400">Brands Scaled</p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl text-center border-brand-yellow/20">
+                    <div class="text-3xl sm:text-4xl font-display font-bold text-brand-yellow mb-1">10M+</div>
+                    <p class="text-xs sm:text-sm text-gray-400">Views Delivered</p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl text-center border-brand-yellow/20">
+                    <div class="text-3xl sm:text-4xl font-display font-bold text-brand-yellow mb-1">120+</div>
+                    <p class="text-xs sm:text-sm text-gray-400">Software & Apps Built</p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl text-center border-brand-yellow/20">
+                    <div class="text-3xl sm:text-4xl font-display font-bold text-brand-yellow mb-1">99.8%</div>
+                    <p class="text-xs sm:text-sm text-gray-400">Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-panel rounded-3xl p-8 sm:p-12 relative overflow-hidden border-brand-yellow/20">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <div class="inline-block px-3 py-1 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs font-bold uppercase tracking-wider">
+                            About DIGI Brandify
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white leading-snug">
+                            We Don't Just Execute Marketing. We Build <span class="text-brand-yellow">Digital Dominance.</span>
+                        </h2>
+                        <p class="text-gray-300 leading-relaxed text-sm sm:text-base font-light">
+                            At DIGI Brandify, we bridge the gap between creative social media growth and enterprise-grade software engineering. Whether you need explosive viral reach on Instagram and YouTube or dedicated billing systems, custom mobile apps, and high-ranking websites, our end-to-end agency handles it with precision.
+                        </p>
+                        
+                        <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-brand-yellow/10 text-brand-yellow flex items-center justify-center shrink-0 mt-1">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Data Driven Growth</h4>
+                                    <p class="text-xs text-gray-400">Algorithmic targeting for guaranteed engagement.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-brand-yellow/10 text-brand-yellow flex items-center justify-center shrink-0 mt-1">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Safe & Secure Systems</h4>
+                                    <p class="text-xs text-gray-400">SSL, encrypted code, and safe ID handling.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Highlight Highlights Cards Grid -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="glass-panel p-5 rounded-2xl border-white/5 space-y-2">
+                            <i class="fa-solid fa-bullseye text-2xl text-brand-yellow"></i>
+                            <h3 class="font-bold text-white text-base">Targeted Reach</h3>
+                            <p class="text-xs text-gray-400">Hyper-focused organic and boosted growth strategies.</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-2xl border-white/5 space-y-2">
+                            <i class="fa-solid fa-laptop-code text-2xl text-brand-yellow"></i>
+                            <h3 class="font-bold text-white text-base">Custom Tech Stack</h3>
+                            <p class="text-xs text-gray-400">Modern code bases designed for extreme speed and scale.</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-2xl border-white/5 space-y-2">
+                            <i class="fa-solid fa-headset text-2xl text-brand-yellow"></i>
+                            <h3 class="font-bold text-white text-base">24/7 Priority Support</h3>
+                            <p class="text-xs text-gray-400">Dedicated account managers for seamless service.</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-2xl border-white/5 space-y-2">
+                            <i class="fa-solid fa-bolt text-2xl text-brand-yellow"></i>
+                            <h3 class="font-bold text-white text-base">Rapid Deployment</h3>
+                            <p class="text-xs text-gray-400">Quick turnarounds on growth and development pipelines.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                <div class="inline-block px-3 py-1 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs font-bold uppercase tracking-wider">
+                    Our Specialized Capabilities
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-display font-bold text-white">Full-Spectrum Digital Solutions</h2>
+                <p class="text-gray-400 text-sm sm:text-base">Filter through our primary growth and technical offerings tailored for creators, startups, and enterprise brands.</p>
+            </div>
+
+            <!-- Service Category Filter Tabs -->
+            <div class="flex items-center justify-center gap-2 sm:gap-3 flex-wrap mb-12">
+                <button onclick="filterServices('all')" class="svc-tab active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-panel border-brand-yellow bg-brand-yellow text-brand-dark" data-category="all">
+                    All Services
+                </button>
+                <button onclick="filterServices('instagram')" class="svc-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-panel text-gray-300 hover:text-white" data-category="instagram">
+                    <i class="fa-brands fa-instagram text-pink-500 mr-1"></i> Instagram
+                </button>
+                <button onclick="filterServices('youtube')" class="svc-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-panel text-gray-300 hover:text-white" data-category="youtube">
+                    <i class="fa-brands fa-youtube text-red-500 mr-1"></i> YouTube
+                </button>
+                <button onclick="filterServices('website')" class="svc-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-panel text-gray-300 hover:text-white" data-category="website">
+                    <i class="fa-solid fa-globe text-blue-400 mr-1"></i> Website Creation
+                </button>
+                <button onclick="filterServices('software')" class="svc-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-panel text-gray-300 hover:text-white" data-category="software">
+                    <i class="fa-solid fa-cubes text-emerald-400 mr-1"></i> Software Build
+                </button>
+                <button onclick="filterServices('mobile')" class="svc-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-panel text-gray-300 hover:text-white" data-category="mobile">
+                    <i class="fa-solid fa-mobile-screen text-amber-400 mr-1"></i> Mobile Apps
+                </button>
+            </div>
+
+            <!-- Services Grid Cards -->
+            <div id="services-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Instagram Card -->
+                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl space-y-4" data-cat="instagram">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white text-2xl shadow-lg">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-pink-400 font-bold uppercase tracking-wider">Social Growth</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Instagram Growth & Branding</h3>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Skyrocket your handle authority with targeted follower acquisition, high reel views, authentic engagement, and creative branding.
+                    </p>
+                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Followers Increase</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Views & Reel Virality Increase</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Authentic Comments & Engagement</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Complete Account / ID Handling</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> High-Converting Brand Posters</li>
+                    </ul>
+                    <button onclick="openCalcModal('Instagram Growth')" class="w-full mt-4 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10">Get Started</button>
+                </div>
+
+                <!-- YouTube Card -->
+                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl space-y-4" data-cat="youtube">
+                    <div class="w-12 h-12 rounded-2xl bg-red-600 flex items-center justify-center text-white text-2xl shadow-lg">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-red-400 font-bold uppercase tracking-wider">Video Acceleration</span>
+                        <h3 class="text-xl font-bold text-white mt-1">YouTube Channel Mastery</h3>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Fast-track your monetization requirements with real watch-time, subscriber growth, and targeted comment strategy.
+                    </p>
+                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Subscribers Expansion</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> High Retention Views</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Niche Targeted Comments</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> YouTube Monetization Help & Setup</li>
+                    </ul>
+                    <button onclick="openCalcModal('YouTube Growth')" class="w-full mt-4 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10">Get Started</button>
+                </div>
+
+                <!-- Web Creation Card -->
+                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl space-y-4" data-cat="website">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center text-white text-2xl shadow-lg">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-blue-400 font-bold uppercase tracking-wider">Web Development</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Website Creation & SEO</h3>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        High-performance responsive websites optimized for conversions and search engine ranking algorithms (SEO & AEO).
+                    </p>
+                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> E-Commerce Website Design</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Static & Dynamic Website Creation</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Premium Portfolio Websites</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Payment Gateway Integration</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Advanced SEO & AEO Optimization</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> SSL Certificate Setup Included</li>
+                    </ul>
+                    <button onclick="openCalcModal('Website Creation')" class="w-full mt-4 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10">Get Started</button>
+                </div>
+
+                <!-- Software Engineering Card -->
+                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl space-y-4" data-cat="software">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-600 flex items-center justify-center text-white text-2xl shadow-lg">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-emerald-400 font-bold uppercase tracking-wider">Software Engineering</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Custom Software Build</h3>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Tailor-made internal enterprise tools to automate billing, inventory, hotel bookings, and customer relations.
+                    </p>
+                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Customized Software Build</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> POS & Billing Software</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Attendance Management Systems</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Inventory Management</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Restaurant & Hotel Systems</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Customer Management (CRM)</li>
+                    </ul>
+                    <button onclick="openCalcModal('Software Build')" class="w-full mt-4 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10">Get Started</button>
+                </div>
+
+                <!-- Mobile App Card -->
+                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl space-y-4" data-cat="mobile">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500 flex items-center justify-center text-brand-dark text-2xl font-bold shadow-lg">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">App Development</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Mobile App Systems</h3>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Intuitive, native performance cross-platform mobile apps published straight to Google Play Store & Apple App Store.
+                    </p>
+                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Android & iOS Mobile Applications</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Play Store & App Store Deployment</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Push Notifications & Analytics</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> App Store Optimization (ASO)</li>
+                    </ul>
+                    <button onclick="openCalcModal('Mobile App Build')" class="w-full mt-4 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10">Get Started</button>
+                </div>
+
+                <!-- Custom Combo Growth Pack -->
+                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl space-y-4 border-brand-yellow/40 bg-gradient-to-b from-brand-yellow/10 to-transparent" data-cat="all">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-yellow flex items-center justify-center text-brand-dark text-2xl font-bold shadow-lg">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-brand-yellow font-bold uppercase tracking-wider">Full Package</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Complete Digital Brand Transformation</h3>
+                    </div>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Combine Social Growth, Web E-Commerce, Software CRM, and Mobile App launch for total market domination.
+                    </p>
+                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-yellow"></i> Priority 1-on-1 Strategy Team</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-yellow"></i> Custom Discounted Bundle Pricing</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-yellow"></i> Weekly Progress & Growth Reports</li>
+                    </ul>
+                    <button onclick="openCalcModal('Complete Digital Bundle')" class="w-full mt-4 glass-button py-2.5 rounded-xl text-xs font-bold">Request Custom Quote</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <div class="inline-block px-3 py-1 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs font-bold uppercase tracking-wider mb-3">
+                        Featured Projects
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-display font-bold text-white">Our Success Stories</h2>
+                </div>
+                <p class="text-gray-400 text-sm max-w-md mt-4 md:mt-0">
+                    A glimpse of mobile apps, web solutions, and social media reach campaigns crafted by the DIGI Brandify team.
+                </p>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Project Item 1 -->
+                <div onclick="openPortfolioModal(0)" class="glass-panel rounded-3xl overflow-hidden glass-panel-hover group cursor-pointer transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="aspect-[16/9] w-full overflow-hidden relative">
+                        <img src="assets/portfolio/portfolio_digital_marketing.png" alt="DIGI Brandify - Omnichannel Digital Marketing" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3.5 right-3.5 bg-brand-dark/85 backdrop-blur-md px-3 py-1 rounded-full text-[10px] text-brand-yellow font-bold border border-brand-yellow/30 shadow-md">Digital Marketing</span>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-dark/80 text-brand-yellow text-xs font-bold px-3.5 py-1.5 rounded-full border border-brand-yellow/40 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                                <i class="fa-solid fa-expand text-[10px]"></i> View Details
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand-yellow transition-colors">Omnichannel Audience & Marketing</h3>
+                        <p class="text-xs text-gray-400">Targeted multi-channel campaigns across Instagram, Meta, YouTube & Google for maximum reach and audience attraction.</p>
+                        <div class="pt-2 flex items-center justify-between text-xs text-brand-yellow font-semibold">
+                            <span>+350% Targeted Reach</span>
+                            <span class="flex items-center gap-1 text-[11px] group-hover:translate-x-1 transition-transform">
+                                Full Case Study <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Item 2 -->
+                <div onclick="openPortfolioModal(1)" class="glass-panel rounded-3xl overflow-hidden glass-panel-hover group cursor-pointer transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="aspect-[16/9] w-full overflow-hidden relative">
+                        <img src="assets/portfolio/portfolio_mobile_app.png" alt="DIGI Brandify - Mobile App Development" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3.5 right-3.5 bg-brand-dark/85 backdrop-blur-md px-3 py-1 rounded-full text-[10px] text-brand-yellow font-bold border border-brand-yellow/30 shadow-md">Mobile App Development</span>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-dark/80 text-brand-yellow text-xs font-bold px-3.5 py-1.5 rounded-full border border-brand-yellow/40 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                                <i class="fa-solid fa-expand text-[10px]"></i> View Details
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand-yellow transition-colors">Custom Mobile Apps (Android & iOS)</h3>
+                        <p class="text-xs text-gray-400">Turn vision into reality with high-performance, secure and scalable mobile apps built for seamless user experience.</p>
+                        <div class="pt-2 flex items-center justify-between text-xs text-brand-yellow font-semibold">
+                            <span>Android & iOS Ready</span>
+                            <span class="flex items-center gap-1 text-[11px] group-hover:translate-x-1 transition-transform">
+                                Full Case Study <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Item 3 -->
+                <div onclick="openPortfolioModal(2)" class="glass-panel rounded-3xl overflow-hidden glass-panel-hover group cursor-pointer transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="aspect-[16/9] w-full overflow-hidden relative">
+                        <img src="assets/portfolio/portfolio_website_development.png" alt="DIGI Brandify - Website Development" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3.5 right-3.5 bg-brand-dark/85 backdrop-blur-md px-3 py-1 rounded-full text-[10px] text-brand-yellow font-bold border border-brand-yellow/30 shadow-md">Website Development</span>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-dark/80 text-brand-yellow text-xs font-bold px-3.5 py-1.5 rounded-full border border-brand-yellow/40 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                                <i class="fa-solid fa-expand text-[10px]"></i> View Details
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand-yellow transition-colors">Modern Websites & Web Platforms</h3>
+                        <p class="text-xs text-gray-400">Fast, responsive, and SEO-optimized dynamic websites and e-commerce stores designed to turn visitors into loyal customers.</p>
+                        <div class="pt-2 flex items-center justify-between text-xs text-brand-yellow font-semibold">
+                            <span>99/100 Performance & SEO</span>
+                            <span class="flex items-center gap-1 text-[11px] group-hover:translate-x-1 transition-transform">
+                                Full Case Study <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View More Button -->
+            <div class="mt-12 text-center">
+                <button onclick="handleViewMorePortfolio()" class="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-2xl glass-panel border border-brand-yellow/40 text-brand-yellow hover:bg-brand-yellow hover:text-brand-dark font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-brand-yellow/20 cursor-pointer group">
+                    <span>View More</span>
+                    <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <div class="inline-block px-3 py-1 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs font-bold uppercase tracking-wider">
+                    Client Testimonials
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-display font-bold text-white">What Clients Say About DIGI Brandify</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="glass-panel p-6 rounded-3xl space-y-4 border-brand-yellow/20">
+                    <div class="flex text-brand-yellow gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-gray-300 italic leading-relaxed">
+                        "DIGI Brandify helped our YouTube channel cross the watch time milestone within weeks! Plus their Instagram posters gave our identity a huge makeover."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-gray-800">
+                        <div class="w-10 h-10 rounded-full bg-brand-yellow text-brand-dark flex items-center justify-center font-bold">RK</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Rahul Kapoor</h4>
+                            <p class="text-[11px] text-gray-400">Creator & Tech Vlogger</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="glass-panel p-6 rounded-3xl space-y-4 border-brand-yellow/20">
+                    <div class="flex text-brand-yellow gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-gray-300 italic leading-relaxed">
+                        "Our restaurant billing software and mobile app were built ahead of schedule. Payment gateway integration was flawless. Highly recommended!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-gray-800">
+                        <div class="w-10 h-10 rounded-full bg-brand-yellow text-brand-dark flex items-center justify-center font-bold">SM</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Sarah Mehta</h4>
+                            <p class="text-[11px] text-gray-400">Owner, Fusion Dine</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="glass-panel p-6 rounded-3xl space-y-4 border-brand-yellow/20">
+                    <div class="flex text-brand-yellow gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-gray-300 italic leading-relaxed">
+                        "E-Commerce website creation with SEO & AEO gave us immediate Google page 1 placement. Followers and sales started rolling in within 15 days."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-gray-800">
+                        <div class="w-10 h-10 rounded-full bg-brand-yellow text-brand-dark flex items-center justify-center font-bold">AV</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Alex Verma</h4>
+                            <p class="text-[11px] text-gray-400">Founder, Trendify Store</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-panel rounded-3xl p-8 sm:p-12 border-brand-yellow/30">
+                <div class="grid lg:grid-cols-12 gap-12">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="inline-block px-3 py-1 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs font-bold uppercase tracking-wider">
+                            Get In Touch
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">Ready To Scale Your Brand?</h2>
+                        <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                            Send us a message or request a quick callback. Our growth strategists will analyze your account or technical project within 2 hours.
+                        </p>
+
+                        <div class="space-y-4 pt-4">
+                            <a href="mailto:digibrandify01@gmail.com" class="flex items-center gap-4 p-4 rounded-2xl glass-panel glass-panel-hover transition-all">
+                                <div class="w-10 h-10 rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center text-lg font-bold">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400">Email Direct</p>
+                                    <p class="text-sm font-bold text-white">digibrandify01@gmail.com</p>
+                                </div>
+                            </a>
+
+                            <a href="https://wa.me/918056107314" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl glass-panel glass-panel-hover transition-all">
+                                <div class="w-10 h-10 rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center text-lg font-bold">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400">Phone / WhatsApp</p>
+                                    <p class="text-sm font-bold text-white">+91 80561 07314</p>
+                                </div>
+                            </a>
+
+                            <div class="flex items-center gap-4 p-4 rounded-2xl glass-panel">
+                                <div class="w-10 h-10 rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center text-lg font-bold">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400">Response Time</p>
+                                    <p class="text-sm font-bold text-white">Under 2 Hours Guaranteed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Panel -->
+                    <div class="lg:col-span-7">
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Your Name</label>
+                                    <input type="text" id="contact-name" required placeholder="John Doe" class="w-full bg-brand-dark/80 border border-gray-800 focus:border-brand-yellow rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Email Address</label>
+                                    <input type="email" id="contact-email" required placeholder="john@example.com" class="w-full bg-brand-dark/80 border border-gray-800 focus:border-brand-yellow rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none transition-all">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Primary Interest Service</label>
+                                    <select id="contact-service" required class="w-full bg-brand-dark/80 border border-gray-800 focus:border-brand-yellow rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-all">
+                                        <option value="">Select Service...</option>
+                                        <option value="Instagram Growth & Posters">Instagram Growth & Posters</option>
+                                        <option value="YouTube Subscribers & Monetization">YouTube Subscribers & Monetization</option>
+                                        <option value="E-Commerce / Static Website & SEO">E-Commerce / Static Website & SEO</option>
+                                        <option value="Custom Billing & Management Software">Custom Billing & Management Software</option>
+                                        <option value="Android & iOS App Development">Android & iOS App Development</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Phone / WhatsApp</label>
+                                    <input type="tel" id="contact-phone" placeholder="+91 98765 43210" class="w-full bg-brand-dark/80 border border-gray-800 focus:border-brand-yellow rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none transition-all">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1">Project Details / Goals</label>
+                                <textarea id="contact-details" rows="4" required placeholder="Describe your growth goals or software specifications..." class="w-full bg-brand-dark/80 border border-gray-800 focus:border-brand-yellow rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none transition-all"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full glass-button py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2.5 transition-all">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>Submit & Chat on WhatsApp</span>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark/90 border-t border-gray-800/80 pt-16 pb-28 md:pb-12 text-gray-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+                <div class="col-span-2 space-y-4">
+                    <a href="#home" class="flex items-center gap-3 group">
+                        <img src="assets/logo_icon.png" alt="DIGI Brandify Logo" class="w-9 h-9 rounded-full object-contain group-hover:scale-105 transition-transform duration-300">
+                        <div class="flex flex-col">
+                            <span class="font-display text-lg font-extrabold tracking-wider leading-none"><span class="text-[#f7c103]">DIGI</span><span class="brand-text-name text-white">BRANDIFY</span></span>
+                            <span class="brand-tagline text-[9px] text-gray-400 tracking-widest uppercase mt-1 font-semibold">Scale Without Limits</span>
+                        </div>
+                    </a>
+                    <p class="max-w-xs text-gray-400 leading-relaxed">
+                        Your trusted partner for viral social media expansion, web engineering, custom software systems, and mobile applications.
+                    </p>
+                    <div class="space-y-2 text-xs text-gray-400">
+                        <a href="mailto:digibrandify01@gmail.com" class="flex items-center gap-2 hover:text-brand-yellow transition-colors">
+                            <i class="fa-solid fa-envelope text-brand-yellow text-sm"></i>
+                            <span>digibrandify01@gmail.com</span>
+                        </a>
+                        <a href="https://wa.me/918056107314" target="_blank" class="flex items-center gap-2 hover:text-brand-yellow transition-colors">
+                            <i class="fa-brands fa-whatsapp text-brand-yellow text-sm"></i>
+                            <span>+91 80561 07314</span>
+                        </a>
+                    </div>
+                    <div class="flex gap-3 text-sm pt-2">
+                        <a href="https://instagram.com/digibrandify" target="_blank" title="Instagram" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="mailto:digibrandify01@gmail.com" title="Email" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-all"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://wa.me/918056107314" target="_blank" title="WhatsApp" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-3 text-sm">Social Growth</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="hover:text-brand-yellow">Instagram Followers</a></li>
+                        <li><a href="#services" class="hover:text-brand-yellow">Reels & Views Boost</a></li>
+                        <li><a href="#services" class="hover:text-brand-yellow">YouTube Watchtime</a></li>
+                        <li><a href="#services" class="hover:text-brand-yellow">Monetization Help</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-3 text-sm">Web & Apps</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="hover:text-brand-yellow">E-Commerce Web</a></li>
+                        <li><a href="#services" class="hover:text-brand-yellow">SEO & AEO Setup</a></li>
+                        <li><a href="#services" class="hover:text-brand-yellow">Android & iOS Apps</a></li>
+                        <li><a href="#services" class="hover:text-brand-yellow">Playstore Launch</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-3 text-sm">Software</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="hover:text-brand-yellow">Billing Systems</a></li>
+                        <li><a href="#services" class="hover:text-brand-yellow">Attendance Management</a></li>
+                        <li><a href="#services" class="hover:text-brand-yellow">Inventory Software</a></li>
+                        <li><a href="#services" class="hover:text-brand-yellow">Hotel & CRM Systems</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800/80 pt-6 flex flex-col sm:flex-row items-center justify-between text-gray-500 text-[11px]">
+                <p>&copy; 2026 DIGI Brandify. All rights reserved.</p>
+                <div class="flex gap-4 mt-2 sm:mt-0">
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                    <a href="#" class="hover:underline">Terms of Service</a>
+                    <a href="#" class="hover:underline">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 glass-nav border-t border-brand-yellow/20 px-4 py-2">
+        <div class="flex items-center justify-around">
+            <a href="#home" class="mobile-nav-btn flex flex-col items-center gap-1 text-brand-yellow">
+                <i class="fa-solid fa-house text-lg"></i>
+                <span class="text-[10px] font-medium">Home</span>
+            </a>
+            <a href="#services" class="mobile-nav-btn flex flex-col items-center gap-1 text-gray-400 hover:text-brand-yellow">
+                <i class="fa-solid fa-layer-group text-lg"></i>
+                <span class="text-[10px] font-medium">Services</span>
+            </a>
+            <a href="#portfolio" class="mobile-nav-btn flex flex-col items-center gap-1 text-gray-400 hover:text-brand-yellow">
+                <i class="fa-solid fa-briefcase text-lg"></i>
+                <span class="text-[10px] font-medium">Works</span>
+            </a>
+            <a href="#reviews" class="mobile-nav-btn flex flex-col items-center gap-1 text-gray-400 hover:text-brand-yellow">
+                <i class="fa-solid fa-star text-lg"></i>
+                <span class="text-[10px] font-medium">Reviews</span>
+            </a>
+            <a href="#contact" class="mobile-nav-btn flex flex-col items-center gap-1 text-gray-400 hover:text-brand-yellow">
+                <i class="fa-solid fa-paper-plane text-lg"></i>
+                <span class="text-[10px] font-medium">Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <div id="calc-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden transition-opacity">
+        <div class="glass-panel w-full max-w-lg rounded-3xl p-6 sm:p-8 space-y-6 border-brand-yellow/40 relative">
+            <button onclick="closeCalcModal()" class="absolute top-4 right-4 z-30 w-9 h-9 rounded-full bg-brand-yellow text-brand-dark hover:bg-yellow-400 hover:scale-110 flex items-center justify-center border border-brand-yellow/60 transition-all cursor-pointer shadow-md" aria-label="Close modal">
+                <i class="fa-solid fa-xmark text-base font-bold text-brand-dark"></i>
+            </button>
+
+            <div class="space-y-1">
+                <span class="text-xs text-brand-yellow font-bold uppercase tracking-wider">Instant Quote Estimator</span>
+                <h3 class="text-2xl font-bold text-white">Customize Your Package</h3>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs text-gray-300 font-semibold mb-2">Select Primary Service</label>
+                    <select id="modal-service-select" onchange="calculateEstimate()" class="w-full bg-brand-dark border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-yellow">
+                        <option value="12000">Instagram Growth & Branding (₹12,000 - ₹32,000)</option>
+                        <option value="16000">YouTube Subscribers & Monetization (₹16,000 - ₹48,000)</option>
+                        <option value="28000">Website Creation & SEO Setup (₹28,000 - ₹75,000)</option>
+                        <option value="40000">Custom Software Build (₹40,000 - ₹1,20,000)</option>
+                        <option value="50000">Mobile App (Android & iOS) (₹50,000 - ₹1,60,000)</option>
+                        <option value="80000">Full Digital Empire Growth Pack (₹80,000+)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs text-gray-300 font-semibold mb-2">Project Speed / Priority Level</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button type="button" onclick="setSpeed(1, this)" class="speed-btn active bg-brand-yellow text-brand-dark px-3 py-2 rounded-xl text-xs font-bold border border-brand-yellow">Standard</button>
+                        <button type="button" onclick="setSpeed(1.25, this)" class="speed-btn glass-panel text-gray-300 px-3 py-2 rounded-xl text-xs font-bold hover:text-white">Fast-Track</button>
+                        <button type="button" onclick="setSpeed(1.5, this)" class="speed-btn glass-panel text-gray-300 px-3 py-2 rounded-xl text-xs font-bold hover:text-white">VIP Priority</button>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-4 rounded-2xl flex items-center justify-between border-brand-yellow/30 bg-brand-yellow/5">
+                    <div>
+                        <p class="text-xs text-gray-400">Estimated Investment</p>
+                        <p id="estimated-price" class="text-2xl font-bold text-brand-yellow">₹12,000</p>
+                    </div>
+                    <span class="text-[10px] text-gray-400">Includes 24/7 Dedicated Support</span>
+                </div>
+            </div>
+
+            <button onclick="confirmEstimate()" class="w-full glass-button py-3.5 rounded-xl text-sm font-bold">Book Growth Consultation</button>
+        </div>
+    </div>
+
+    <!-- Portfolio Details Popup Modal -->
+    <div id="portfolio-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md hidden transition-opacity duration-300" onclick="handlePortfolioBackdropClick(event)">
+        <div class="glass-panel w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-3xl border border-brand-yellow/40 shadow-2xl relative p-0" onclick="event.stopPropagation()">
+            <!-- Close Button (Yellow Circle with Black X) -->
+            <button onclick="closePortfolioModal()" class="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-brand-yellow text-brand-dark hover:bg-yellow-400 hover:scale-110 flex items-center justify-center border border-brand-yellow/60 transition-all cursor-pointer shadow-xl shadow-brand-yellow/20" aria-label="Close modal">
+                <i class="fa-solid fa-xmark text-lg font-bold text-brand-dark"></i>
+            </button>
+
+            <!-- Banner Image & Category Tag -->
+            <div class="relative aspect-[16/9] w-full overflow-hidden rounded-t-3xl bg-brand-dark/40">
+                <img id="pm-banner" src="" alt="Project Case Study" class="w-full h-full object-cover">
+                <span id="pm-category" class="absolute top-4 left-4 z-20 px-3.5 py-1.5 rounded-full bg-brand-dark/85 backdrop-blur-md text-xs font-bold text-brand-yellow border border-brand-yellow/30 shadow-md"></span>
+            </div>
+
+            <!-- Content Container -->
+            <div class="p-6 sm:p-8 space-y-6">
+                <!-- Title & Strong Impact Quote -->
+                <div class="space-y-3">
+                    <h3 id="pm-title" class="text-2xl sm:text-3xl font-display font-bold text-white leading-tight"></h3>
+                    <div id="pm-tagline" class="italic text-xs sm:text-sm text-brand-yellow border-l-2 border-brand-yellow pl-4 py-2 font-medium bg-brand-yellow/5 rounded-r-xl leading-relaxed"></div>
+                </div>
+
+                <!-- 3 Key Metric Badges -->
+                <div id="pm-stats" class="grid grid-cols-3 gap-2.5 sm:gap-4">
+                    <!-- Populated dynamically -->
+                </div>
+
+                <!-- Strategic Overview -->
+                <div class="space-y-2">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-circle-info text-brand-yellow"></i>
+                        Strategic Overview & Execution
+                    </h4>
+                    <p id="pm-description" class="text-xs sm:text-sm text-gray-300 leading-relaxed"></p>
+                </div>
+
+                <!-- Key Deliverables & Highlights -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-bullseye text-brand-yellow"></i>
+                        Key Deliverables & Growth Impact
+                    </h4>
+                    <ul id="pm-bullets" class="space-y-2.5 text-xs sm:text-sm text-gray-300">
+                        <!-- Populated dynamically -->
+                    </ul>
+                </div>
+
+                <!-- Footer CTAs -->
+                <div class="pt-5 border-t border-gray-800/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <button id="pm-cta" onclick="handlePortfolioCTA()" class="w-full sm:w-auto px-8 py-3.5 rounded-xl glass-button text-xs sm:text-sm font-bold flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:shadow-brand-yellow/20">
+                        <span>Get Started with This Service</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                    <button onclick="closePortfolioModal()" class="w-full sm:w-auto px-6 py-3 rounded-xl glass-panel text-gray-300 hover:text-white text-xs font-bold text-center border border-white/10 hover:border-brand-yellow/30 transition-all cursor-pointer">
+                        Close Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let speedMultiplier = 1;
+
+        // Service Filter Tabs Functionality
+        function filterServices(category) {
+            const tabs = document.querySelectorAll('.svc-tab');
+            const cards = document.querySelectorAll('.service-card');
+
+            tabs.forEach(tab => {
+                if (tab.dataset.category === category) {
+                    tab.classList.add('bg-brand-yellow', 'text-brand-dark', 'border-brand-yellow');
+                    tab.classList.remove('text-gray-300');
+                } else {
+                    tab.classList.remove('bg-brand-yellow', 'text-brand-dark', 'border-brand-yellow');
+                    tab.classList.add('text-gray-300');
+                }
+            });
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.cat === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Functionality
+        function openCalcModal(serviceName = null) {
+            document.getElementById('calc-modal').classList.remove('hidden');
+            if (serviceName) {
+                const select = document.getElementById('modal-service-select');
+                const target = serviceName.toLowerCase();
+                for (let i = 0; i < select.options.length; i++) {
+                    const optText = select.options[i].text.toLowerCase();
+                    if (optText.includes(target) || 
+                       (target.includes('youtube') && optText.includes('youtube')) || 
+                       (target.includes('mobile') && optText.includes('mobile')) || 
+                       (target.includes('bundle') && optText.includes('empire'))) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+            calculateEstimate();
+        }
+
+        function closeCalcModal() {
+            document.getElementById('calc-modal').classList.add('hidden');
+        }
+
+        function setSpeed(multiplier, btn) {
+            speedMultiplier = multiplier;
+            document.querySelectorAll('.speed-btn').forEach(b => {
+                b.classList.remove('bg-brand-yellow', 'text-brand-dark', 'border-brand-yellow');
+                b.classList.add('glass-panel', 'text-gray-300');
+            });
+            btn.classList.add('bg-brand-yellow', 'text-brand-dark', 'border-brand-yellow');
+            btn.classList.remove('glass-panel', 'text-gray-300');
+            calculateEstimate();
+        }
+
+        function calculateEstimate() {
+            const basePrice = parseInt(document.getElementById('modal-service-select').value);
+            const total = Math.round(basePrice * speedMultiplier);
+            document.getElementById('estimated-price').innerText = `₹${total.toLocaleString('en-IN')}`;
+        }
+
+        function confirmEstimate() {
+            closeCalcModal();
+            const modalSelect = document.getElementById('modal-service-select');
+            const chosenText = modalSelect.options[modalSelect.selectedIndex].text;
+            const currentEstimate = document.getElementById('estimated-price').innerText;
+            const contactSelect = document.getElementById('contact-service');
+            if (contactSelect) {
+                for (let i = 0; i < contactSelect.options.length; i++) {
+                    const optText = contactSelect.options[i].text.toLowerCase();
+                    if (chosenText.toLowerCase().includes(optText.split(' ')[0])) {
+                        contactSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+            const detailsArea = document.getElementById('contact-details');
+            if (detailsArea) {
+                detailsArea.value = `Selected Package: ${chosenText} | Estimated Investment: ${currentEstimate}`;
+            }
+            const contactSec = document.getElementById('contact');
+            contactSec.scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                showToast('Quote configuration loaded! Fill out details below.');
+            }, 500);
+        }
+
+        // Form Submit Handler -> Sends directly to WhatsApp (+91 80561 07314)
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const serviceSelect = document.getElementById('contact-service');
+            const service = serviceSelect.options[serviceSelect.selectedIndex].text;
+            const phone = document.getElementById('contact-phone').value.trim();
+            const details = document.getElementById('contact-details').value.trim();
+
+            showToast('Opening WhatsApp with your inquiry details...');
+
+            const message = 
+`*NEW CLIENT INQUIRY - DIGI BRANDIFY*
+━━━━━━━━━━━━━━━━━━━━━
+👤 *Name:* ${name}
+📧 *Email:* ${email}
+📱 *Phone / WhatsApp:* ${phone || 'Not provided'}
+🚀 *Service Requested:* ${service}
+
+📝 *Project Details / Goals:*
+${details}
+━━━━━━━━━━━━━━━━━━━━━
+Sent via DIGI Brandify Official Website`;
+
+            const waNumber = '918056107314';
+            const encodedMsg = encodeURIComponent(message);
+            const waUrl = `https://api.whatsapp.com/send?phone=${waNumber}&text=${encodedMsg}`;
+
+            // Open WhatsApp immediately without popup blocker suppression
+            const win = window.open(waUrl, '_blank');
+            if (!win || win.closed || typeof win.closed === 'undefined') {
+                window.location.href = waUrl;
+            }
+
+            event.target.reset();
+        }
+
+        // Custom Glass Toast Notification
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast-notification fixed top-24 right-4 z-50 glass-panel px-6 py-4 rounded-2xl border-brand-yellow text-white font-semibold text-xs flex items-center gap-3 shadow-2xl animate-bounce';
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-brand-yellow text-base"></i> ${message}`;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.remove();
+            }, 3500);
+        }
+
+        // Portfolio Showcase & Modal Logic
+        function handleViewMorePortfolio() {
+            showToast('🚀 More Case Studies & Client Projects Coming Soon!');
+        }
+
+        const portfolioProjects = [
+            {
+                category: "Digital Marketing & Audience Growth",
+                banner: "assets/portfolio/portfolio_digital_marketing.png",
+                title: "Omnichannel Audience Attraction & High-Converting Marketing",
+                tagline: "“We don’t just manage social media. We engineer magnetic attraction for high-intent buyers.”",
+                serviceKey: "Instagram Growth & Branding",
+                stats: [
+                    { value: "+350%", label: "Targeted Reach" },
+                    { value: "4.8x", label: "Average ROAS" },
+                    { value: "100%", label: "Hands-Free Execution" }
+                ],
+                description: "In today's digital landscape, generic posting gets lost in the noise. DIGI Brandify builds omnichannel growth architectures that turn passive scrollers into passionate brand advocates. By combining viral creative direction, algorithmic audience profiling, and laser-targeted ad placements across Instagram, Meta, YouTube, and Google, we ensure your brand commands authority and delivers exponential ROI.",
+                bullets: [
+                    { bold: "Multi-Channel Paid Ads:", text: "Hyper-targeted ad campaigns on Meta & Google Ads optimized for maximum conversions and lowest cost per lead." },
+                    { bold: "Viral Reel & Video Strategy:", text: "Dynamic, high-retention video content, hooks, and creative scripts that spark algorithmic reach." },
+                    { bold: "Conversion Lead Funnels:", text: "Custom automated lead capture funnels designed to turn audience interest into immediate paying inquiries." },
+                    { bold: "Brand Voice & Visual Identity:", text: "High-end aesthetic creatives, typography, and cohesive visual language that outshines competitors." },
+                    { bold: "Transparent ROI Analytics:", text: "Comprehensive weekly KPI performance reports and real-time conversion monitoring." }
+                ]
+            },
+            {
+                category: "Mobile App Development & Engineering",
+                banner: "assets/portfolio/portfolio_mobile_app.png",
+                title: "Custom Mobile Applications (Android & iOS)",
+                tagline: "“Your vision, engineered into fluid mobile performance, high security, and seamless user delight.”",
+                serviceKey: "Mobile App (Android & iOS)",
+                stats: [
+                    { value: "< 1.2s", label: "App Launch Speed" },
+                    { value: "99.9%", label: "Crash-Free Stability" },
+                    { value: "Dual Store", label: "Google Play & App Store" }
+                ],
+                description: "From initial UI/UX blueprints to full-scale deployment on Google Play and Apple App Store, DIGI Brandify builds world-class mobile applications. We combine cross-platform engineering with native fluidity, ensuring silky-smooth 60fps animations, intuitive gesture navigation, and robust cloud microservices built to scale effortlessly to millions of concurrent users.",
+                bullets: [
+                    { bold: "Cross-Platform Native Efficiency:", text: "Engineered using modern frameworks (Flutter & React Native) for flawless dual-store deployment with zero compromise." },
+                    { bold: "Pixel-Perfect UI/UX Architecture:", text: "User-centered interfaces featuring micro-interactions, dark/light theme responsiveness, and intuitive navigation." },
+                    { bold: "Real-Time Cloud Backend:", text: "Ultra-fast database synchronization, real-time push notifications, and enterprise cloud architecture." },
+                    { bold: "Seamless Payment Integration:", text: "Integrated UPI, Razorpay, Stripe, and in-app purchase capabilities with biometric security." },
+                    { bold: "Complete Store Publishing:", text: "Hands-free management of Apple & Google store approval, compliance guidelines, and ongoing updates." }
+                ]
+            },
+            {
+                category: "Website Development & Web Platforms",
+                banner: "assets/portfolio/portfolio_website_development.png",
+                title: "Modern Websites & High-Converting Web Platforms",
+                tagline: "“Websites that don’t just look breathtaking—they convert every single visitor into revenue.”",
+                serviceKey: "Website Creation & SEO Setup",
+                stats: [
+                    { value: "99/100", label: "Google PageSpeed" },
+                    { value: "0.4s", label: "First Contentful Paint" },
+                    { value: "+240%", label: "Organic Traffic Growth" }
+                ],
+                description: "Your website is the heart of your digital empire. At DIGI Brandify, we develop bespoke, blazing-fast dynamic websites and e-commerce platforms with an obsessive focus on conversion psychology, speed, and modern aesthetics. Engineered with clean semantic markup, headless architecture, and enterprise-grade SEO frameworks, your web presence will outrank competitors and captivate prospective clients from the very first second.",
+                bullets: [
+                    { bold: "Hyper-Responsive Interactive Design:", text: "Fluid responsiveness across mobile, tablet, laptop, and 4K desktop screens with silky transitions." },
+                    { bold: "Built-In SEO Domination:", text: "Schema structured data, dynamic OpenGraph previews, and Core Web Vitals tuned for Google front-page rankings." },
+                    { bold: "Dynamic Conversion Triggers:", text: "Instant quote calculators, automated WhatsApp booking integrations, and interactive client touchpoints." },
+                    { bold: "Global CDN Speed:", text: "Sub-second global load times powered by edge caching, optimized modern image formats, and SSL security." },
+                    { bold: "Effortless Content Management:", text: "User-friendly admin dashboard allowing seamless content and product updates without writing code." }
+                ]
+            }
+        ];
+
+        let currentActiveServiceKey = '';
+
+        function openPortfolioModal(index) {
+            const project = portfolioProjects[index];
+            if (!project) return;
+
+            currentActiveServiceKey = project.serviceKey;
+
+            const bannerEl = document.getElementById('pm-banner');
+            const catEl = document.getElementById('pm-category');
+            const titleEl = document.getElementById('pm-title');
+            const taglineEl = document.getElementById('pm-tagline');
+            const descEl = document.getElementById('pm-description');
+            const statsEl = document.getElementById('pm-stats');
+            const bulletsEl = document.getElementById('pm-bullets');
+
+            if (bannerEl) { bannerEl.src = project.banner; bannerEl.alt = project.title; }
+            if (catEl) catEl.innerText = project.category;
+            if (titleEl) titleEl.innerText = project.title;
+            if (taglineEl) taglineEl.innerText = project.tagline;
+            if (descEl) descEl.innerText = project.description;
+
+            if (statsEl) {
+                statsEl.innerHTML = project.stats.map(s => `
+                    <div class="glass-panel p-3 sm:p-4 rounded-2xl text-center border-brand-yellow/30 bg-brand-yellow/5">
+                        <div class="text-xl sm:text-2xl font-display font-bold text-brand-yellow">${s.value}</div>
+                        <div class="text-[10px] sm:text-xs text-gray-400 font-medium">${s.label}</div>
+                    </div>
+                `).join('');
+            }
+
+            if (bulletsEl) {
+                bulletsEl.innerHTML = project.bullets.map(b => `
+                    <li class="flex items-start gap-2.5">
+                        <i class="fa-solid fa-circle-check text-brand-yellow text-sm mt-0.5 shrink-0"></i>
+                        <span><strong class="text-white font-semibold">${b.bold}</strong> ${b.text}</span>
+                    </li>
+                `).join('');
+            }
+
+            const modal = document.getElementById('portfolio-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closePortfolioModal() {
+            const modal = document.getElementById('portfolio-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function handlePortfolioBackdropClick(event) {
+            if (event.target === document.getElementById('portfolio-modal')) {
+                closePortfolioModal();
+            }
+        }
+
+        function handlePortfolioCTA() {
+            closePortfolioModal();
+            if (currentActiveServiceKey) {
+                openCalcModal(currentActiveServiceKey);
+            } else {
+                const contact = document.getElementById('contact');
+                if (contact) contact.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Close modals on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closePortfolioModal();
+                closeCalcModal();
+            }
+        });
+
+        // Theme Switcher Logic
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isLight = html.classList.toggle('light');
+            try {
+                sessionStorage.setItem('digibrandify_theme', isLight ? 'light' : 'dark');
+            } catch(e) {}
+            updateThemeIcons(isLight);
+            showToast(isLight ? 'Switched to Light Theme' : 'Switched to Dark Theme');
+        }
+
+        function updateThemeIcons(isLight) {
+            const dIcon = document.getElementById('theme-icon-desktop');
+            const mIcon = document.getElementById('theme-icon-mobile');
+            if (dIcon) dIcon.className = isLight ? 'fa-solid fa-moon text-sm' : 'fa-solid fa-sun text-sm';
+            if (mIcon) mIcon.className = isLight ? 'fa-solid fa-moon text-sm' : 'fa-solid fa-sun text-sm';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const isLight = document.documentElement.classList.contains('light');
+            updateThemeIcons(isLight);
+        });
+    </script>
+</body>
+</html>
