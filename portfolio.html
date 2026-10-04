@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio & Creative Showcase | Digibrandify</title>
+    <link rel="icon" type="image/png" href="assets/logo_icon.png">
+    <!-- Local Instant-Load DM Sans Font -->
+    <link rel="stylesheet" href="assets/dmsans_inline.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        // Synchronized Theme Init
+        (function() {
+            try {
+                const sessionTheme = sessionStorage.getItem('digibrandify_theme') || localStorage.getItem('digibrandify_theme');
+                if (sessionTheme === 'dark') {
+                    document.documentElement.classList.remove('light');
+                } else {
+                    document.documentElement.classList.add('light');
+                }
+            } catch(e) {
+                document.documentElement.classList.add('light');
+            }
+        })();
+
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            yellow: '#f7c103',
+                            gold: '#dfac02',
+                            dark: '#08090C',
+                            card: '#12141C',
+                            border: 'rgba(247, 193, 3, 0.18)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        display: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body, button, input, select, textarea, p, span, a, h1, h2, h3, h4, h5, h6, label {
+            font-family: 'DM Sans', sans-serif;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        body {
+            background-color: #07080B;
+            color: #F3F4F6;
+            font-family: 'DM Sans', sans-serif !important;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-display, .font-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        .fa, .fas, .fa-solid, .far, .fa-regular {
+            font-family: "Font Awesome 6 Free" !important;
+        }
+        .fa::before, .fas::before, .fa-solid::before, .far::before, .fa-regular::before, [class*="fa-"]::before {
+            font-family: "Font Awesome 6 Free" !important;
+        }
+        .fab, .fa-brands, .fab::before, .fa-brands::before {
+            font-family: "Font Awesome 6 Brands" !important;
+        }
+
+        /* Glassmorphism Styles (Dark Theme Default) */
+        .glass-panel {
+            background: rgba(18, 20, 28, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(247, 193, 3, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-panel-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-panel-hover:hover {
+            background: rgba(26, 29, 41, 0.85);
+            border-color: rgba(247, 193, 3, 0.55);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px -10px rgba(247, 193, 3, 0.25);
+        }
+
+        .glass-nav {
+            background: rgba(7, 8, 11, 0.82);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-button {
+            background: linear-gradient(135deg, #f7c103 0%, #dfac02 100%);
+            color: #07080B;
+            font-weight: 700;
+            box-shadow: 0 0 20px rgba(247, 193, 3, 0.35);
+            transition: all 0.3s ease;
+        }
+        .glass-button:hover {
+            box-shadow: 0 0 30px rgba(247, 193, 3, 0.55);
+            transform: scale(1.02);
+        }
+
+        .glow-yellow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(247, 193, 3, 0.12) 0%, rgba(0,0,0,0) 70%);
+            pointer-events: none;
+            z-index: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Filter Tab Buttons */
+        .filter-btn {
+            transition: all 0.25s ease;
+        }
+        .filter-btn.active {
+            background-color: #f7c103 !important;
+            color: #07080B !important;
+            border-color: #f7c103 !important;
+            box-shadow: 0 0 20px rgba(247, 193, 3, 0.4);
+            font-weight: 700;
+        }
+
+        /* Card Image Container */
+        .poster-img-box {
+            position: relative;
+            overflow: hidden;
+            background: #000;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .poster-img-box img {
+            transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+        .portfolio-card:hover .poster-img-box img {
+            transform: scale(1.035);
+        }
+
+        /* Light Mode Specific Overrides */
+        html.light body {
+            background-color: #F8FAFC !important;
+            color: #0F172A !important;
+        }
+
+        html.light .glass-nav {
+            background: rgba(255, 255, 255, 0.88) !important;
+            border-bottom: 1px solid #E2E8F0 !important;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        html.light .glass-panel {
+            background: #FFFFFF !important;
+            border: 1px solid #E2E8F0 !important;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04) !important;
+        }
+
+        html.light .glass-panel-hover:hover {
+            background: #FFFFFF !important;
+            border-color: #f7c103 !important;
+            box-shadow: 0 20px 30px -10px rgba(247, 193, 3, 0.22) !important;
+        }
+
+        html.light .brand-text-name {
+            color: #0F172A !important;
+        }
+
+        html.light .text-white {
+            color: #0F172A !important;
+        }
+
+        html.light .text-gray-300 {
+            color: #475569 !important;
+        }
+
+        html.light .text-gray-400 {
+            color: #64748B !important;
+        }
+
+        html.light .filter-btn:not(.active) {
+            background: #FFFFFF !important;
+            color: #475569 !important;
+            border: 1px solid #E2E8F0 !important;
+        }
+        html.light .filter-btn:not(.active):hover {
+            border-color: #f7c103 !important;
+            color: #0F172A !important;
+        }
+
+        html.light footer {
+            background-color: #FFFFFF !important;
+            border-top: 1px solid #E2E8F0 !important;
+            color: #64748B !important;
+        }
+
+        html.light footer a {
+            color: #64748B !important;
+        }
+        html.light footer a:hover {
+            color: #f7c103 !important;
+        }
+
+        html.light .border-white\/5,
+        html.light .border-white\/10,
+        html.light .border-gray-800 {
+            border-color: #E2E8F0 !important;
+        }
+
+        /* Modal Styles */
+        #lightbox-modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        #lightbox-modal.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        #lightbox-modal:not(.hidden) {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #07080B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #232733;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f7c103;
+        }
+        html.light ::-webkit-scrollbar-track {
+            background: #F8FAFC !important;
+        }
+        html.light ::-webkit-scrollbar-thumb {
+            background: #CBD5E1 !important;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen">
+
+    <!-- Ambient Glowing Orbs -->
+    <div class="glow-yellow top-12 left-1/4 -translate-x-1/2"></div>
+    <div class="glow-yellow top-[35%] right-10"></div>
+    <div class="glow-yellow top-[70%] left-10"></div>
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="index.html#home" class="flex items-center gap-3.5 group">
+                <img src="assets/logo_icon.png" alt="Digibrandify Logo" class="w-10 h-10 rounded-full object-contain group-hover:scale-105 transition-transform duration-300">
+                <div class="flex flex-col">
+                    <span class="font-display text-xl font-extrabold tracking-wider leading-none">
+                        <span class="text-[#f7c103]">Digi</span><span class="brand-text-name text-white">brandify</span>
+                    </span>
+                    <span class="brand-tagline text-[10px] text-gray-400 tracking-widest uppercase mt-1 font-semibold">Scale Without Limits</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
+                <a href="index.html#home" class="hover:text-brand-yellow transition-colors py-1 flex items-center gap-1.5">
+                    <i class="fa-solid fa-arrow-left text-xs"></i> Back to Home
+                </a>
+                <a href="index.html#services" class="hover:text-brand-yellow transition-colors py-1">Services & Pricing</a>
+                <a href="index.html#about" class="hover:text-brand-yellow transition-colors py-1">About Agency</a>
+                <a href="index.html#reviews" class="hover:text-brand-yellow transition-colors py-1">Client Reviews</a>
+                <a href="index.html#contact" class="hover:text-brand-yellow transition-colors py-1">Contact Us</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-3">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle-btn" onclick="togglePortfolioTheme()" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-brand-yellow hover:scale-105 active:scale-95 transition-all border border-brand-yellow/30" title="Switch Theme (Light / Dark)" aria-label="Toggle theme">
+                    <i id="theme-icon" class="fa-solid fa-sun text-sm"></i>
+                </button>
+
+                <a href="https://wa.me/918056107314?text=Hi%20Digibrandify,%20I%20saw%20your%20Portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex glass-button px-5 py-2.5 rounded-xl text-sm font-bold items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Inquire Project</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-14 md:pt-40 md:pb-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel text-xs sm:text-sm font-semibold text-brand-yellow border-brand-yellow/30 mb-6">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-yellow animate-ping"></span>
+                <span>Digibrandify Creative Showcase & Portfolio Vault</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white leading-tight max-w-4xl mx-auto">
+                Bespoke Marketing Creatives & <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow via-yellow-200 to-amber-500">Brand Powerhouses</span>
+            </h1>
+
+            <p class="text-gray-300 text-base sm:text-lg max-w-3xl mx-auto mt-5 font-normal leading-relaxed">
+                Browse our curated gallery of 20 high-converting marketing campaigns, viral social media creatives, algorithmic SEO strategies, custom software platforms, and mobile apps crafted for modern businesses.
+            </p>
+
+            <!-- Quick Showcase Badges -->
+            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mt-8 text-xs sm:text-sm text-gray-300 font-medium">
+                <div class="px-4 py-2 rounded-xl glass-panel flex items-center gap-2 border border-brand-yellow/20">
+                    <i class="fa-solid fa-layer-group text-brand-yellow"></i>
+                    <span>20 Featured Posters</span>
+                </div>
+                <div class="px-4 py-2 rounded-xl glass-panel flex items-center gap-2 border border-brand-yellow/20">
+                    <i class="fa-solid fa-wand-magic-sparkles text-brand-yellow"></i>
+                    <span>100% Custom Execution</span>
+                </div>
+                <div class="px-4 py-2 rounded-xl glass-panel flex items-center gap-2 border border-brand-yellow/20">
+                    <i class="fa-solid fa-chart-line text-brand-yellow"></i>
+                    <span>Data & ROI Driven</span>
+                </div>
+                <div class="px-4 py-2 rounded-xl glass-panel flex items-center gap-2 border border-brand-yellow/20">
+                    <i class="fa-solid fa-star text-brand-yellow"></i>
+                    <span>4.9/5 Client Rating</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Filter & Search Controls -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 relative z-20">
+        <div class="glass-panel p-4 sm:p-5 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4 border border-brand-yellow/25">
+            
+            <!-- Category Filter Pills -->
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 w-full md:w-auto" id="filter-pills">
+                <button onclick="filterGallery('all', this)" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel border border-brand-yellow/30 text-white cursor-pointer">
+                    All Works (20)
+                </button>
+                <button onclick="filterGallery('branding', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel border border-white/10 text-gray-300 cursor-pointer hover:border-brand-yellow/40">
+                    <i class="fa-solid fa-crown mr-1.5 text-brand-yellow"></i> Brand Strategy
+                </button>
+                <button onclick="filterGallery('social', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel border border-white/10 text-gray-300 cursor-pointer hover:border-brand-yellow/40">
+                    <i class="fa-solid fa-hashtag mr-1.5 text-brand-yellow"></i> Social Media
+                </button>
+                <button onclick="filterGallery('tech', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel border border-white/10 text-gray-300 cursor-pointer hover:border-brand-yellow/40">
+                    <i class="fa-solid fa-laptop-code mr-1.5 text-brand-yellow"></i> Web & Tech
+                </button>
+                <button onclick="filterGallery('ads', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel border border-white/10 text-gray-300 cursor-pointer hover:border-brand-yellow/40">
+                    <i class="fa-solid fa-bullhorn mr-1.5 text-brand-yellow"></i> Creative Ads
+                </button>
+                <button onclick="filterGallery('seo', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel border border-white/10 text-gray-300 cursor-pointer hover:border-brand-yellow/40">
+                    <i class="fa-solid fa-magnifying-glass-chart mr-1.5 text-brand-yellow"></i> SEO & Growth
+                </button>
+            </div>
+
+            <!-- Search Filter Bar -->
+            <div class="relative w-full md:w-72">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+                <input type="text" id="gallery-search" oninput="handleSearch(this.value)" placeholder="Search posters & topics..." class="w-full pl-9 pr-4 py-2 rounded-xl glass-panel bg-transparent border border-white/10 text-white placeholder-gray-400 text-xs sm:text-sm focus:outline-none focus:border-brand-yellow transition-all">
+            </div>
+
+        </div>
+
+        <!-- Filter Count Indicator -->
+        <div class="mt-4 flex items-center justify-between text-xs text-gray-400 px-2 font-medium">
+            <span id="results-count">Showing all 20 creative portfolio works</span>
+            <span class="text-brand-yellow"><i class="fa-solid fa-circle-info mr-1"></i> Click any card to view full-resolution poster</span>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery Grid -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 relative z-10">
+        <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Cards rendered dynamically via JavaScript for speed, searchability, and modal linkage -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="no-results" class="hidden text-center py-20 glass-panel rounded-3xl p-8 max-w-lg mx-auto">
+            <i class="fa-solid fa-folder-open text-5xl text-brand-yellow/60 mb-4"></i>
+            <h3 class="text-xl font-bold text-white mb-2">No Matching Works Found</h3>
+            <p class="text-gray-400 text-sm mb-6">We couldn't find any posters matching your search term. Try another keyword or browse all categories.</p>
+            <button onclick="resetFilters()" class="glass-button px-6 py-2.5 rounded-xl text-sm font-bold">
+                Reset All Filters
+            </button>
+        </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 relative z-10">
+        <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-brand-yellow/30 relative overflow-hidden text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div class="space-y-4 max-w-2xl">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs font-bold uppercase tracking-wider">
+                    ⚡ Elevate Your Brand
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-display font-extrabold text-white leading-tight">
+                    Want High-Impact Creatives Like These For <span class="text-brand-yellow">Your Business?</span>
+                </h2>
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                    Our creative team crafts conversion-first marketing creatives, bespoke web applications, and multi-channel campaigns designed specifically for your industry.
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                <a href="https://wa.me/918056107314?text=Hi%20Digibrandify,%20I%20want%20to%20start%20a%20marketing%20campaign%20for%20my%20brand." target="_blank" rel="noopener noreferrer" class="glass-button w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Chat on WhatsApp</span>
+                </a>
+                <a href="index.html#contact" class="glass-panel w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-white hover:text-brand-yellow border border-white/20 hover:border-brand-yellow transition-all flex items-center justify-center gap-2">
+                    <span>Contact Agency</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/10 bg-[#07080B]/90 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+                <!-- Col 1 -->
+                <div class="space-y-4 md:col-span-2">
+                    <a href="index.html#home" class="flex items-center gap-3 group">
+                        <img src="assets/logo_icon.png" alt="Digibrandify Logo" class="w-10 h-10 rounded-full object-contain">
+                        <span class="font-display text-2xl font-extrabold tracking-wider"><span class="text-[#f7c103]">Digi</span><span class="brand-text-name text-white">brandify</span></span>
+                    </a>
+                    <p class="text-gray-400 text-sm max-w-md leading-relaxed">
+                        Digibrandify is a premium digital marketing & creative technology powerhouse. We engineer brand identities, omnichannel social campaigns, custom web applications, and hyper-targeted advertising.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="https://instagram.com/digibrandify" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-gray-300 hover:text-brand-yellow hover:border-brand-yellow transition-all" title="Follow on Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/918056107314" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-gray-300 hover:text-brand-yellow hover:border-brand-yellow transition-all" title="WhatsApp Us">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="tel:+918056107314" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-gray-300 hover:text-brand-yellow hover:border-brand-yellow transition-all" title="Call Us">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="space-y-3">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider">Navigation</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html#home" class="hover:text-brand-yellow transition-colors">Home</a></li>
+                        <li><a href="index.html#services" class="hover:text-brand-yellow transition-colors">Services & Pricing</a></li>
+                        <li><a href="index.html#about" class="hover:text-brand-yellow transition-colors">About Us</a></li>
+                        <li><a href="index.html#reviews" class="hover:text-brand-yellow transition-colors">Reviews & Testimonials</a></li>
+                        <li><a href="index.html#contact" class="hover:text-brand-yellow transition-colors">Get A Quote</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Direct Contact -->
+                <div class="space-y-3">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider">Direct Contact</h4>
+                    <p class="text-sm text-gray-400 flex items-center gap-2">
+                        <i class="fa-solid fa-phone text-brand-yellow"></i>
+                        <span>+91 80561 07314</span>
+                    </p>
+                    <p class="text-sm text-gray-400 flex items-center gap-2">
+                        <i class="fa-brands fa-instagram text-brand-yellow"></i>
+                        <span>@digibrandify</span>
+                    </p>
+                    <p class="text-sm text-gray-400 flex items-center gap-2">
+                        <i class="fa-solid fa-globe text-brand-yellow"></i>
+                        <span>www.digibrandify.com</span>
+                    </p>
+                    <p class="text-xs text-gray-500 pt-2">
+                        Operating worldwide with high-speed digital delivery.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>&copy; 2026 Digibrandify. All rights reserved.</p>
+                <p class="flex items-center gap-1">
+                    Crafted with <i class="fa-solid fa-heart text-brand-yellow text-xs mx-1"></i> by Digibrandify Creative Labs
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fullscreen Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-xl">
+        <div class="relative w-full max-w-5xl max-h-[94vh] flex flex-col md:flex-row rounded-3xl glass-panel border border-brand-yellow/30 overflow-hidden shadow-2xl bg-[#0e1017]">
+            
+            <!-- Close Button -->
+            <button onclick="closeLightbox()" class="absolute top-4 right-4 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-brand-yellow hover:text-black text-white flex items-center justify-center transition-all border border-white/20 cursor-pointer shadow-lg" title="Close (Esc)">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Previous / Next Navigation Buttons (Floating) -->
+            <button onclick="navigateLightbox(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/70 hover:bg-brand-yellow hover:text-black text-white flex items-center justify-center transition-all border border-white/20 cursor-pointer shadow-lg" title="Previous Poster (Left Arrow)">
+                <i class="fa-solid fa-chevron-left text-sm"></i>
+            </button>
+            <button onclick="navigateLightbox(1)" class="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/70 hover:bg-brand-yellow hover:text-black text-white flex items-center justify-center transition-all border border-white/20 cursor-pointer shadow-lg" title="Next Poster (Right Arrow)">
+                <i class="fa-solid fa-chevron-right text-sm"></i>
+            </button>
+
+            <!-- Image View Column -->
+            <div class="md:w-3/5 p-4 sm:p-6 bg-black/50 flex items-center justify-center relative overflow-hidden">
+                <img id="modal-img" src="" alt="Portfolio Showcase" class="max-h-[75vh] w-auto max-w-full object-contain rounded-2xl shadow-xl transition-transform duration-300">
+            </div>
+
+            <!-- Content Detail Column -->
+            <div class="md:w-2/5 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto max-h-[45vh] md:max-h-[85vh] border-t md:border-t-0 md:border-l border-white/10">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span id="modal-category" class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/30">
+                            Category
+                        </span>
+                        <span id="modal-index" class="text-xs font-mono text-gray-400 font-bold">
+                            #01 / 20
+                        </span>
+                    </div>
+
+                    <h3 id="modal-title" class="text-xl sm:text-2xl font-display font-extrabold text-white leading-tight">
+                        Poster Title
+                    </h3>
+
+                    <p id="modal-desc" class="text-gray-300 text-sm leading-relaxed font-normal">
+                        Description
+                    </p>
+
+                    <!-- Feature Badges -->
+                    <div class="pt-2">
+                        <h4 class="text-xs uppercase tracking-wider font-bold text-gray-400 mb-2">Campaign Highlights</h4>
+                        <div id="modal-tags" class="flex flex-wrap gap-2">
+                            <!-- Tags injected via JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Bottom Actions -->
+                <div class="pt-6 mt-6 border-t border-white/10 space-y-3">
+                    <a id="modal-wa-btn" href="#" target="_blank" rel="noopener noreferrer" class="glass-button w-full py-3.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Get Similar Work For My Brand</span>
+                    </a>
+                    <button onclick="closeLightbox()" class="w-full py-2.5 rounded-xl text-xs font-semibold text-gray-400 hover:text-white transition-colors">
+                        Back to Portfolio Gallery
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Gallery Posters Data (20 Projects)
+        const galleryData = [
+            {
+                id: 1,
+                image: "assets/portfolio_gallery/poster_01.png",
+                title: "Creative Brand Positioning: Lifting Giants",
+                tag: "Brand Strategy",
+                category: "branding",
+                icon: "fa-crown",
+                description: "Bold conceptual creative showing that with precision strategy and Digibrandify's creative execution, even an ant can lift an elephant. Built to establish memorable market dominance and fearless positioning.",
+                tags: ["Concept Creative", "Brand Positioning", "Visual Metaphor", "Market Impact"]
+            },
+            {
+                id: 2,
+                image: "assets/portfolio_gallery/poster_02.png",
+                title: "Rapid Turnaround Creative Campaigns",
+                tag: "Creative Ads",
+                category: "ads",
+                icon: "fa-bolt",
+                description: "High-speed ad creatives and conversion copywriting deployed faster than inbox refresh cycles, engineered for fast-moving D2C, e-commerce, and modern digital brands.",
+                tags: ["Speed Delivery", "High-Converting Copy", "Ad Creative", "D2C Scaling"]
+            },
+            {
+                id: 3,
+                image: "assets/portfolio_gallery/poster_03.png",
+                title: "Full-Stack Brand & Code Architecture",
+                tag: "Web & Tech",
+                category: "tech",
+                icon: "fa-laptop-code",
+                description: "Bridging world-class visual branding with resilient custom web and app engineering, integrating design systems, scalable APIs, SEO, and omnichannel social deployment.",
+                tags: ["Full-Stack Dev", "Brand Architecture", "Custom Code", "API Integration"]
+            },
+            {
+                id: 4,
+                image: "assets/portfolio_gallery/poster_04.png",
+                title: "Algorithmic SEO: Zero to Ninja Velocity",
+                tag: "SEO & Growth",
+                category: "seo",
+                icon: "fa-magnifying-glass-chart",
+                description: "Humorous and punchy visual contrast of slow traditional business vs agile Ninja-level organic search performance powered by Digibrandify's algorithmic SEO engine.",
+                tags: ["Top 3 Google", "Technical SEO", "Organic Influx", "Ninja Speed"]
+            },
+            {
+                id: 5,
+                image: "assets/portfolio_gallery/poster_05.png",
+                title: "High-Impact UI/UX & Search Authority",
+                tag: "Web & Tech",
+                category: "tech",
+                icon: "fa-wand-magic-sparkles",
+                description: "Great design meets measurable search results. Premium websites optimized for Google Top 3 positions, lighting fast performance, and high-converting customer journeys.",
+                tags: ["UI/UX Design", "Search Authority", "Responsive Web", "Conversion Journeys"]
+            },
+            {
+                id: 6,
+                image: "assets/portfolio_gallery/poster_06.png",
+                title: "Omnichannel Growth & Ad Automation",
+                tag: "Social Media",
+                category: "social",
+                icon: "fa-rocket",
+                description: "Save time, reduce ad burn, and scale across Instagram, YouTube, LinkedIn, Meta, and Twitter with our data-driven growth orchestration and rocket fuel campaigns.",
+                tags: ["Omnichannel", "Ad Automation", "Cost Efficiency", "Meta & Google Ads"]
+            },
+            {
+                id: 7,
+                image: "assets/portfolio_gallery/poster_07.png",
+                title: "Strategic Social Marketing & ROI Blueprint",
+                tag: "Social Media",
+                category: "social",
+                icon: "fa-chart-pie",
+                description: "Comprehensive breakdown of audience reach, brand visibility, web traffic influx, and customer acquisition return on ad spend engineered to drive measurable bottom-line profit.",
+                tags: ["Social ROI", "Audience Reach", "Traffic Funnels", "Conversion Strategy"]
+            },
+            {
+                id: 8,
+                image: "assets/portfolio_gallery/poster_08.png",
+                title: "Multi-Channel Lead Generation Grid",
+                tag: "Social Media",
+                category: "social",
+                icon: "fa-bullseye",
+                description: "Omnichannel paid campaigns across Meta, Google Ads, LinkedIn, and YouTube delivering vetted high-intent leads and market-wide visibility for B2B and consumer brands.",
+                tags: ["Lead Generation", "LinkedIn Ads", "Google Ads", "Quality Inquiries"]
+            },
+            {
+                id: 9,
+                image: "assets/portfolio_gallery/poster_09.png",
+                title: "Precision Audience Magnetic Attraction",
+                tag: "Social Media",
+                category: "social",
+                icon: "fa-magnet",
+                description: "Going beyond passive posting to build an active, loyal brand community through targeted campaigns and interactive performance analytics that pull the right audience right to you.",
+                tags: ["Community Building", "Magnetic Content", "Analytics Tracking", "Targeted Campaigns"]
+            },
+            {
+                id: 10,
+                image: "assets/portfolio_gallery/poster_10.png",
+                title: "One-Click Performance Marketing & CRO",
+                tag: "Creative Ads",
+                category: "ads",
+                icon: "fa-arrow-pointer",
+                description: "Striking black & electric yellow hardware visual demonstrating how performance marketing and conversion rate optimization capture ready-to-buy consumers before competitors can.",
+                tags: ["Conversion Rate", "Performance Ads", "TikTok & Meta", "One-Click Sales"]
+            },
+            {
+                id: 11,
+                image: "assets/portfolio_gallery/poster_11.png",
+                title: "Total Brand Transformation: Zero to Hero",
+                tag: "Brand Strategy",
+                category: "branding",
+                icon: "fa-fire",
+                description: "Dramatic split-peel visual converting legacy, rusted business presence into a sleek, high-octane digital market powerhouse equipped with modern identity and digital tools.",
+                tags: ["Brand Rebirth", "Modern Identity", "Zero to Hero", "Market Disruption"]
+            },
+            {
+                id: 12,
+                image: "assets/portfolio_gallery/poster_12.png",
+                title: "High-Speed Business Momentum Boost",
+                tag: "Creative Ads",
+                category: "ads",
+                icon: "fa-forward-fast",
+                description: "Playful and unforgettable skateboard snail campaign designed to accelerate sluggish sales pipelines with multi-tier digital marketing, SMO, and web optimization.",
+                tags: ["Growth Velocity", "Viral Concept", "E-commerce Boost", "Creative Execution"]
+            },
+            {
+                id: 13,
+                image: "assets/portfolio_gallery/poster_13.png",
+                title: "Custom POS & Enterprise Billing Software",
+                tag: "Web & Tech",
+                category: "tech",
+                icon: "fa-cash-register",
+                description: "Custom cloud billing, inventory control, automated GST invoicing, barcode systems, and real-time sales dashboards engineered for retail and scaling enterprise operations.",
+                tags: ["POS Software", "Billing Automation", "Inventory Sync", "Cloud SaaS"]
+            },
+            {
+                id: 14,
+                image: "assets/portfolio_gallery/poster_14.png",
+                title: "Native iOS & Android Mobile Apps",
+                tag: "Web & Tech",
+                category: "tech",
+                icon: "fa-mobile-screen-button",
+                description: "From sleek UI/UX design to robust mobile engineering and seamless App Store / Play Store deployment for e-commerce, on-demand food delivery, and modern SaaS.",
+                tags: ["iOS & Android", "UI/UX Optimization", "App Deployment", "Mobile Commerce"]
+            },
+            {
+                id: 15,
+                image: "assets/portfolio_gallery/poster_15.png",
+                title: "Creative SEO & Traffic Bowl Migration",
+                tag: "SEO & Growth",
+                category: "seo",
+                icon: "fa-arrow-up-right-dots",
+                description: "Symbolic goldfish leaping into a bigger golden sphere—upgrading your website to higher search rankings, higher traffic volume, and exponential customer revenue.",
+                tags: ["SEO Migration", "Traffic Expansion", "Google Dominance", "Audience Growth"]
+            },
+            {
+                id: 16,
+                image: "assets/portfolio_gallery/poster_16.png",
+                title: "Full-Funnel Agency Advisory & Strategy",
+                tag: "Brand Strategy",
+                category: "branding",
+                icon: "fa-lightbulb",
+                description: "Clearing business confusion with focused end-to-end execution across Web Development, Mobile Apps, Performance Digital Marketing, and Software Architecture.",
+                tags: ["Strategic Clarity", "Agency Advisory", "Growth Solutions", "End-to-End Build"]
+            },
+            {
+                id: 17,
+                image: "assets/portfolio_gallery/poster_17.png",
+                title: "Cinematic Video Production & Viral Reels",
+                tag: "Creative Ads",
+                category: "ads",
+                icon: "fa-video",
+                description: "Shoot. Edit. Deliver. Repeat. Studio and on-location high-production commercial shoots and vertical viral reels engineered for maximum social reach and retention.",
+                tags: ["Commercial Video", "Instagram Reels", "Studio Shoots", "High Production"]
+            },
+            {
+                id: 18,
+                image: "assets/portfolio_gallery/poster_18.png",
+                title: "360° Integrated Digital Services",
+                tag: "Brand Strategy",
+                category: "branding",
+                icon: "fa-cubes",
+                description: "Interactive origami visual highlighting seamlessly integrated Web Development, High-ROI Paid Ads, Algorithmic SEO Optimization, and Social Media Marketing.",
+                tags: ["360° Services", "Origami Concept", "Integrated Funnel", "Complete Agency"]
+            },
+            {
+                id: 19,
+                image: "assets/portfolio_gallery/poster_19.png",
+                title: "Managed Tech & 24/7 Web Infrastructure",
+                tag: "Web & Tech",
+                category: "tech",
+                icon: "fa-shield-halved",
+                description: "You relax while our dedicated tech team handles speed optimization, security updates, server infrastructure, zero-downtime maintenance, and proactive bug prevention.",
+                tags: ["Server Care", "24/7 Security", "Zero Downtime", "Tech Peace of Mind"]
+            },
+            {
+                id: 20,
+                image: "assets/portfolio_gallery/poster_20.png",
+                title: "Elite Growth Acceleration & Brand Scaling",
+                tag: "Brand Strategy",
+                category: "branding",
+                icon: "fa-trophy",
+                description: "Energetic flagship campaign embodying Digibrandify's core mission: elevating ambitious brands from local contenders to industry-leading market authorities.",
+                tags: ["Market Authority", "Brand Scaling", "Digital Dominance", "Proven Growth"]
+            }
+        ];
+
+        let currentFilter = 'all';
+        let searchQuery = '';
+        let activeModalIndex = 0;
+        let filteredPosters = [...galleryData];
+
+        // Render Cards
+        function renderGallery() {
+            const grid = document.getElementById('gallery-grid');
+            const noResults = document.getElementById('no-results');
+            const resultsCount = document.getElementById('results-count');
+
+            filteredPosters = galleryData.filter(item => {
+                const matchesFilter = (currentFilter === 'all') || (item.category === currentFilter);
+                const query = searchQuery.toLowerCase().trim();
+                const matchesSearch = !query || 
+                    item.title.toLowerCase().includes(query) || 
+                    item.description.toLowerCase().includes(query) || 
+                    item.tag.toLowerCase().includes(query) ||
+                    item.tags.some(t => t.toLowerCase().includes(query));
+                return matchesFilter && matchesSearch;
+            });
+
+            if (filteredPosters.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+                resultsCount.textContent = 'Showing 0 matching works';
+                return;
+            }
+
+            noResults.classList.add('hidden');
+            resultsCount.textContent = `Showing ${filteredPosters.length} of ${galleryData.length} creative portfolio works`;
+
+            grid.innerHTML = filteredPosters.map((item, index) => {
+                const waText = encodeURIComponent(`Hi Digibrandify, I love your portfolio work "${item.title}". I want a creative campaign like this for my business.`);
+                return `
+                    <div class="portfolio-card glass-panel glass-panel-hover rounded-3xl p-5 flex flex-col justify-between group transition-all duration-300 relative border border-brand-yellow/20 hover:border-brand-yellow/50">
+                        
+                        <!-- Top Image Showcase -->
+                        <div class="poster-img-box mb-5 cursor-pointer relative shadow-lg overflow-hidden border border-white/10" onclick="openLightbox(${item.id})">
+                            <img src="${item.image}" alt="${item.title}" loading="lazy" class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-500">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="glass-button px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                    <i class="fa-solid fa-expand"></i> View High-Res Poster
+                                </span>
+                            </div>
+
+                            <!-- Poster Index Badge -->
+                            <div class="absolute top-3 right-3 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-mono font-bold text-brand-yellow border border-brand-yellow/40">
+                                #${String(item.id).padStart(2, '0')}
+                            </div>
+                        </div>
+
+                        <!-- Card Info -->
+                        <div class="space-y-3 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-yellow/10 text-brand-yellow border border-brand-yellow/30">
+                                        <i class="fa-solid ${item.icon} text-[10px]"></i>
+                                        <span>${item.tag}</span>
+                                    </span>
+                                </div>
+                                <h3 class="font-display text-lg font-bold text-white group-hover:text-brand-yellow transition-colors leading-snug cursor-pointer" onclick="openLightbox(${item.id})">
+                                    ${item.title}
+                                </h3>
+                                <p class="text-gray-300 text-xs sm:text-sm mt-2 leading-relaxed font-light line-clamp-3">
+                                    ${item.description}
+                                </p>
+                            </div>
+
+                            <!-- Tags -->
+                            <div class="flex flex-wrap gap-1.5 pt-2">
+                                ${item.tags.map(t => `<span class="px-2 py-0.5 rounded-md text-[10px] font-medium bg-white/5 text-gray-400 border border-white/5">${t}</span>`).join('')}
+                            </div>
+
+                            <!-- Card Bottom Action -->
+                            <div class="pt-4 border-t border-white/10 flex items-center justify-between gap-3 mt-4">
+                                <button onclick="openLightbox(${item.id})" class="text-xs font-semibold text-gray-300 hover:text-brand-yellow transition-colors flex items-center gap-1.5 py-1.5">
+                                    <i class="fa-solid fa-eye text-[11px]"></i> Preview Full
+                                </button>
+                                <a href="https://wa.me/918056107314?text=${waText}" target="_blank" rel="noopener noreferrer" class="glass-button px-4 py-2 rounded-xl text-xs font-bold inline-flex items-center gap-1.5 hover:scale-105 active:scale-95 transition-all">
+                                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                                    <span>Get Similar</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Category Filter
+        function filterGallery(category, buttonElem) {
+            currentFilter = category;
+            const buttons = document.querySelectorAll('#filter-pills .filter-btn');
+            buttons.forEach(b => b.classList.remove('active'));
+            if (buttonElem) buttonElem.classList.add('active');
+            renderGallery();
+        }
+
+        // Search Input
+        function handleSearch(query) {
+            searchQuery = query;
+            renderGallery();
+        }
+
+        function resetFilters() {
+            currentFilter = 'all';
+            searchQuery = '';
+            document.getElementById('gallery-search').value = '';
+            const allBtn = document.querySelector('#filter-pills button:first-child');
+            filterGallery('all', allBtn);
+        }
+
+        // Lightbox Logic
+        function openLightbox(posterId) {
+            const index = galleryData.findIndex(p => p.id === posterId);
+            if (index === -1) return;
+            activeModalIndex = index;
+            updateLightboxContent();
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function navigateLightbox(step) {
+            activeModalIndex = (activeModalIndex + step + galleryData.length) % galleryData.length;
+            updateLightboxContent();
+        }
+
+        function updateLightboxContent() {
+            const poster = galleryData[activeModalIndex];
+            if (!poster) return;
+
+            document.getElementById('modal-img').src = poster.image;
+            document.getElementById('modal-title').textContent = poster.title;
+            document.getElementById('modal-desc').textContent = poster.description;
+            document.getElementById('modal-category').textContent = poster.tag;
+            document.getElementById('modal-index').textContent = `#${String(poster.id).padStart(2, '0')} / ${galleryData.length}`;
+
+            const tagsContainer = document.getElementById('modal-tags');
+            tagsContainer.innerHTML = poster.tags.map(t => `
+                <span class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-brand-yellow/10 text-brand-yellow border border-brand-yellow/20">${t}</span>
+            `).join('');
+
+            const waText = encodeURIComponent(`Hi Digibrandify, I am viewing "${poster.title}" from your portfolio showcase. I would love to get a custom creative campaign designed for my brand!`);
+            document.getElementById('modal-wa-btn').href = `https://wa.me/918056107314?text=${waText}`;
+        }
+
+        // Keyboard navigation for Lightbox
+        window.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('lightbox-modal');
+            if (!modal.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') navigateLightbox(-1);
+                if (e.key === 'ArrowRight') navigateLightbox(1);
+            }
+        });
+
+        // Theme Toggle
+        function togglePortfolioTheme() {
+            const html = document.documentElement;
+            const isLight = html.classList.contains('light');
+            const themeIcon = document.getElementById('theme-icon');
+
+            if (isLight) {
+                html.classList.remove('light');
+                sessionStorage.setItem('digibrandify_theme', 'dark');
+                localStorage.setItem('digibrandify_theme', 'dark');
+                if (themeIcon) {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                }
+            } else {
+                html.classList.add('light');
+                sessionStorage.setItem('digibrandify_theme', 'light');
+                localStorage.setItem('digibrandify_theme', 'light');
+                if (themeIcon) {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                }
+            }
+        }
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            const isLight = document.documentElement.classList.contains('light');
+            const themeIcon = document.getElementById('theme-icon');
+            if (themeIcon) {
+                if (isLight) {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                } else {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                }
+            }
+            renderGallery();
+        });
+    </script>
+</body>
+</html>

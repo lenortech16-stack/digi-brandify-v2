@@ -300,6 +300,67 @@
             border-color: rgba(247, 193, 3, 0.45) !important;
         }
 
+        /* Discount Badge System (Black, Yellow & White in Both Themes) */
+        .discount-badge {
+            background-color: #08090C !important;
+            color: #f7c103 !important;
+            border: 1px solid rgba(247, 193, 3, 0.45) !important;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-weight: 800 !important;
+            letter-spacing: 0.02em !important;
+        }
+        .discount-badge .badge-off {
+            color: #FFFFFF !important;
+            margin-left: 0.25rem !important;
+        }
+
+        /* Service Cards Pricing & Batch in Light Mode */
+        html.light .price-block {
+            border-color: #E2E8F0 !important;
+        }
+        html.light .discount-badge {
+            background-color: #0F172A !important;
+            color: #f7c103 !important;
+            border: 1px solid rgba(247, 193, 3, 0.45) !important;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.15) !important;
+        }
+        html.light .discount-badge .badge-off {
+            color: #FFFFFF !important;
+        }
+        html.light .batch-badge-pink {
+            background: #FDF2F8 !important;
+            color: #BE185D !important;
+            border-color: #FBCFE8 !important;
+        }
+        html.light .batch-badge-red {
+            background: #FEF2F2 !important;
+            color: #B91C1C !important;
+            border-color: #FECACA !important;
+        }
+        html.light .batch-badge-blue {
+            background: #EFF6FF !important;
+            color: #1D4ED8 !important;
+            border-color: #BFDBFE !important;
+        }
+        html.light .batch-badge-emerald {
+            background: #ECFDF5 !important;
+            color: #047857 !important;
+            border-color: #A7F3D0 !important;
+        }
+        html.light .batch-badge-amber {
+            background: #FFFBEB !important;
+            color: #B45309 !important;
+            border-color: #FDE68A !important;
+        }
+        html.light .batch-badge-yellow {
+            background: rgba(247, 193, 3, 0.18) !important;
+            color: #855800 !important;
+            border-color: rgba(247, 193, 3, 0.45) !important;
+        }
+
         /* Portfolio Popup Modal in Light Mode */
         html.light #portfolio-modal .glass-panel {
             background: #FFFFFF !important;
@@ -469,9 +530,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Brand Logo -->
             <a href="#home" class="flex items-center gap-3.5 group">
-                <img src="assets/logo_icon.png" alt="DIGI Brandify Logo" class="w-10 h-10 rounded-full object-contain group-hover:scale-105 transition-transform duration-300">
+                <img src="assets/logo_icon.png" alt="Digibrandify Logo" class="w-10 h-10 rounded-full object-contain group-hover:scale-105 transition-transform duration-300">
                 <div class="flex flex-col">
-                    <span class="font-display text-xl font-extrabold tracking-wider leading-none"><span class="text-[#f7c103]">DIGI</span><span class="brand-text-name text-white">BRANDIFY</span></span>
+                    <span class="font-display text-xl font-extrabold tracking-wider leading-none"><span class="text-[#f7c103]">Digi</span><span class="brand-text-name text-white">brandify</span></span>
                     <span class="brand-tagline text-[10px] text-gray-400 tracking-widest uppercase mt-1 font-semibold">Scale Without Limits</span>
                 </div>
             </a>
@@ -560,9 +621,9 @@
                     </div>
                 </div>
 
-                <!-- Hero Visual - Relaxed Founder Character -->
+                <!-- Hero Visual - Alternating 3D Characters -->
                 <div class="lg:col-span-5">
-                    <div class="relative mx-auto max-w-md lg:max-w-none flex flex-col justify-center items-center">
+                    <div class="relative mx-auto max-w-md lg:max-w-none flex flex-col justify-center items-center" onmouseenter="if(typeof heroInterval !== 'undefined') clearInterval(heroInterval)" onmouseleave="if(typeof startHeroSlider !== 'undefined') startHeroSlider()">
                         <div class="relative w-full flex flex-col items-center animate-float">
                             <!-- Ambient Yellow Glow -->
                             <div class="absolute w-72 h-72 rounded-full bg-brand-yellow/20 blur-3xl pointer-events-none -z-10"></div>
@@ -576,18 +637,34 @@
                                 <span class="text-xs font-bold text-brand-yellow">100% Hands-Free Growth</span>
                             </div>
 
-                            <!-- 3D Character PNG -->
-                            <img src="assets/hero_character.png" alt="Relax while DIGI Brandify scales your brand" class="w-full max-h-[460px] sm:max-h-[500px] lg:max-h-[520px] object-contain drop-shadow-2xl">
+                            <!-- Slides Container (Fixed Height prevents layout jumping) -->
+                            <div class="relative w-full h-[380px] sm:h-[440px] lg:h-[470px] flex items-center justify-center">
+                                <!-- Slide 1: Male Founder Relaxing -->
+                                <div id="hero-slide-1" class="hero-character-slide absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out opacity-100 scale-100 pointer-events-auto">
+                                    <img src="assets/hero_character.png" alt="Relax while Digibrandify scales your brand" class="h-full w-auto max-h-[380px] sm:max-h-[440px] lg:max-h-[470px] object-contain drop-shadow-2xl">
+                                </div>
+
+                                <!-- Slide 2: Female Founder on Laptop -->
+                                <div id="hero-slide-2" class="hero-character-slide absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out opacity-0 scale-95 pointer-events-none">
+                                    <img src="assets/hero_character_female.png" alt="Work smart and scale fast with Digibrandify" class="h-full w-auto max-h-[380px] sm:max-h-[440px] lg:max-h-[470px] object-contain drop-shadow-2xl">
+                                </div>
+                            </div>
 
                             <!-- Bottom glass tag -->
-                            <div class="glass-panel px-5 py-2.5 rounded-2xl border border-brand-yellow/30 flex items-center gap-3 shadow-2xl -mt-2 z-20">
-                                <div class="w-8 h-8 rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center text-sm font-bold shadow-md">
+                            <div id="hero-bottom-tag" class="glass-panel px-5 py-2.5 rounded-2xl border border-brand-yellow/30 flex items-center gap-3 shadow-2xl -mt-2 z-20 transition-all duration-500">
+                                <div id="hero-tag-icon" class="w-8 h-8 rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center text-sm font-bold shadow-md transition-all duration-300">
                                     <i class="fa-solid fa-couch"></i>
                                 </div>
                                 <div>
-                                    <p class="text-xs font-bold text-white">Sit Back & Relax</p>
-                                    <p class="text-[11px] text-gray-400">We Handle Your Complete Scaling</p>
+                                    <p id="hero-tag-title" class="text-xs font-bold text-white transition-opacity duration-300">Sit Back & Relax</p>
+                                    <p id="hero-tag-desc" class="text-[11px] text-gray-400 transition-opacity duration-300">We Handle Your Complete Scaling</p>
                                 </div>
+                            </div>
+
+                            <!-- Slide Indicators / Dots -->
+                            <div class="flex items-center gap-2 mt-3 z-20">
+                                <button onclick="manualHeroSlide(0)" id="hero-dot-0" aria-label="Founder 1" class="h-1.5 w-6 rounded-full bg-brand-yellow transition-all duration-300 cursor-pointer"></button>
+                                <button onclick="manualHeroSlide(1)" id="hero-dot-1" aria-label="Founder 2" class="h-1.5 w-2 rounded-full bg-gray-600 hover:bg-gray-400 transition-all duration-300 cursor-pointer"></button>
                             </div>
                         </div>
                     </div>
@@ -718,61 +795,116 @@
             <div id="services-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <!-- Instagram Card -->
-                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl space-y-4" data-cat="instagram">
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white text-2xl shadow-lg">
-                        <i class="fa-brands fa-instagram"></i>
+                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl flex flex-col h-full" data-cat="instagram">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white text-2xl shadow-lg">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <span class="batch-badge batch-badge-pink px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide uppercase border bg-pink-500/10 text-pink-400 border-pink-500/30 flex items-center gap-1.5 shadow-sm">
+                            <span class="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse"></span> Limited Batch
+                        </span>
                     </div>
-                    <div>
+                    <div class="mt-4">
                         <span class="text-xs text-pink-400 font-bold uppercase tracking-wider">Social Growth</span>
-                        <h3 class="text-xl font-bold text-white mt-1">Instagram Growth & Branding</h3>
+                        <h3 class="text-xl font-bold text-white mt-1 min-h-[56px] flex items-start">Instagram Growth & Branding</h3>
                     </div>
-                    <p class="text-xs text-gray-400 leading-relaxed">
+                    <p class="text-xs text-gray-400 leading-relaxed min-h-[60px] mt-2">
                         Skyrocket your handle authority with targeted follower acquisition, high reel views, authentic engagement, and creative branding.
                     </p>
-                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4">
+                    <!-- Pricing Block -->
+                    <div class="price-block pt-3 pb-2 border-t border-gray-800/80 flex items-center justify-between mt-4">
+                        <div>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-2xl font-black font-display text-white">₹11,999</span>
+                                <span class="text-xs text-gray-500 line-through">₹19,999</span>
+                            </div>
+                            <p class="text-[10px] text-gray-400 font-medium">Starting Package • Active Offer</p>
+                        </div>
+                        <span class="discount-badge px-2.5 py-1 rounded-lg text-xs font-black">
+                            40%<span class="badge-off">OFF</span>
+                        </span>
+                    </div>
+                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4 flex-1">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Followers Increase</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Views & Reel Virality Increase</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Authentic Comments & Engagement</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Complete Account / ID Handling</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> High-Converting Brand Posters</li>
                     </ul>
-                    <button onclick="openCalcModal('Instagram Growth')" class="w-full mt-4 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10">Get Started</button>
+                    <button onclick="openCalcModal('Instagram Growth')" class="w-full mt-6 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10 mt-auto">Get Started</button>
                 </div>
 
                 <!-- YouTube Card -->
-                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl space-y-4" data-cat="youtube">
-                    <div class="w-12 h-12 rounded-2xl bg-red-600 flex items-center justify-center text-white text-2xl shadow-lg">
-                        <i class="fa-brands fa-youtube"></i>
+                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl flex flex-col h-full" data-cat="youtube">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-red-600 flex items-center justify-center text-white text-2xl shadow-lg">
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                        <span class="batch-badge batch-badge-red px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide uppercase border bg-red-500/10 text-red-400 border-red-500/30 flex items-center gap-1.5 shadow-sm">
+                            <span class="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse"></span> Elite Batch
+                        </span>
                     </div>
-                    <div>
+                    <div class="mt-4">
                         <span class="text-xs text-red-400 font-bold uppercase tracking-wider">Video Acceleration</span>
-                        <h3 class="text-xl font-bold text-white mt-1">YouTube Channel Mastery</h3>
+                        <h3 class="text-xl font-bold text-white mt-1 min-h-[56px] flex items-start">YouTube Channel Mastery</h3>
                     </div>
-                    <p class="text-xs text-gray-400 leading-relaxed">
+                    <p class="text-xs text-gray-400 leading-relaxed min-h-[60px] mt-2">
                         Fast-track your monetization requirements with real watch-time, subscriber growth, and targeted comment strategy.
                     </p>
-                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4">
+                    <!-- Pricing Block -->
+                    <div class="price-block pt-3 pb-2 border-t border-gray-800/80 flex items-center justify-between mt-4">
+                        <div>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-2xl font-black font-display text-white">₹15,999</span>
+                                <span class="text-xs text-gray-500 line-through">₹26,999</span>
+                            </div>
+                            <p class="text-[10px] text-gray-400 font-medium">Starting Package • Active Offer</p>
+                        </div>
+                        <span class="discount-badge px-2.5 py-1 rounded-lg text-xs font-black">
+                            40%<span class="badge-off">OFF</span>
+                        </span>
+                    </div>
+                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4 flex-1">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Subscribers Expansion</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> High Retention Views</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Niche Targeted Comments</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> YouTube Monetization Help & Setup</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Viral Shorts & Video SEO Strategy</li>
                     </ul>
-                    <button onclick="openCalcModal('YouTube Growth')" class="w-full mt-4 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10">Get Started</button>
+                    <button onclick="openCalcModal('YouTube Growth')" class="w-full mt-6 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10 mt-auto">Get Started</button>
                 </div>
 
                 <!-- Web Creation Card -->
-                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl space-y-4" data-cat="website">
-                    <div class="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center text-white text-2xl shadow-lg">
-                        <i class="fa-solid fa-code"></i>
+                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl flex flex-col h-full" data-cat="website">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center text-white text-2xl shadow-lg">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <span class="batch-badge batch-badge-blue px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide uppercase border bg-blue-500/10 text-blue-400 border-blue-500/30 flex items-center gap-1.5 shadow-sm">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span> Pro Batch
+                        </span>
                     </div>
-                    <div>
+                    <div class="mt-4">
                         <span class="text-xs text-blue-400 font-bold uppercase tracking-wider">Web Development</span>
-                        <h3 class="text-xl font-bold text-white mt-1">Website Creation & SEO</h3>
+                        <h3 class="text-xl font-bold text-white mt-1 min-h-[56px] flex items-start">Website Creation & SEO</h3>
                     </div>
-                    <p class="text-xs text-gray-400 leading-relaxed">
+                    <p class="text-xs text-gray-400 leading-relaxed min-h-[60px] mt-2">
                         High-performance responsive websites optimized for conversions and search engine ranking algorithms (SEO & AEO).
                     </p>
-                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4">
+                    <!-- Pricing Block -->
+                    <div class="price-block pt-3 pb-2 border-t border-gray-800/80 flex items-center justify-between mt-4">
+                        <div>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-2xl font-black font-display text-white">₹27,999</span>
+                                <span class="text-xs text-gray-500 line-through">₹45,999</span>
+                            </div>
+                            <p class="text-[10px] text-gray-400 font-medium">Starting Package • Active Offer</p>
+                        </div>
+                        <span class="discount-badge px-2.5 py-1 rounded-lg text-xs font-black">
+                            39%<span class="badge-off">OFF</span>
+                        </span>
+                    </div>
+                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4 flex-1">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> E-Commerce Website Design</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Static & Dynamic Website Creation</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Premium Portfolio Websites</li>
@@ -780,22 +912,40 @@
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Advanced SEO & AEO Optimization</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> SSL Certificate Setup Included</li>
                     </ul>
-                    <button onclick="openCalcModal('Website Creation')" class="w-full mt-4 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10">Get Started</button>
+                    <button onclick="openCalcModal('Website Creation')" class="w-full mt-6 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10 mt-auto">Get Started</button>
                 </div>
 
                 <!-- Software Engineering Card -->
-                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl space-y-4" data-cat="software">
-                    <div class="w-12 h-12 rounded-2xl bg-emerald-600 flex items-center justify-center text-white text-2xl shadow-lg">
-                        <i class="fa-solid fa-network-wired"></i>
+                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl flex flex-col h-full" data-cat="software">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-600 flex items-center justify-center text-white text-2xl shadow-lg">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <span class="batch-badge batch-badge-emerald px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide uppercase border bg-emerald-500/10 text-emerald-400 border-emerald-500/30 flex items-center gap-1.5 shadow-sm">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Enterprise Batch
+                        </span>
                     </div>
-                    <div>
+                    <div class="mt-4">
                         <span class="text-xs text-emerald-400 font-bold uppercase tracking-wider">Software Engineering</span>
-                        <h3 class="text-xl font-bold text-white mt-1">Custom Software Build</h3>
+                        <h3 class="text-xl font-bold text-white mt-1 min-h-[56px] flex items-start">Custom Software Build</h3>
                     </div>
-                    <p class="text-xs text-gray-400 leading-relaxed">
+                    <p class="text-xs text-gray-400 leading-relaxed min-h-[60px] mt-2">
                         Tailor-made internal enterprise tools to automate billing, inventory, hotel bookings, and customer relations.
                     </p>
-                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4">
+                    <!-- Pricing Block -->
+                    <div class="price-block pt-3 pb-2 border-t border-gray-800/80 flex items-center justify-between mt-4">
+                        <div>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-2xl font-black font-display text-white">₹39,999</span>
+                                <span class="text-xs text-gray-500 line-through">₹64,999</span>
+                            </div>
+                            <p class="text-[10px] text-gray-400 font-medium">Starting Package • Active Offer</p>
+                        </div>
+                        <span class="discount-badge px-2.5 py-1 rounded-lg text-xs font-black">
+                            38%<span class="badge-off">OFF</span>
+                        </span>
+                    </div>
+                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4 flex-1">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Customized Software Build</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> POS & Billing Software</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Attendance Management Systems</li>
@@ -803,48 +953,87 @@
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Restaurant & Hotel Systems</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Customer Management (CRM)</li>
                     </ul>
-                    <button onclick="openCalcModal('Software Build')" class="w-full mt-4 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10">Get Started</button>
+                    <button onclick="openCalcModal('Software Build')" class="w-full mt-6 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10 mt-auto">Get Started</button>
                 </div>
 
                 <!-- Mobile App Card -->
-                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl space-y-4" data-cat="mobile">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-500 flex items-center justify-center text-brand-dark text-2xl font-bold shadow-lg">
-                        <i class="fa-solid fa-mobile-screen-button"></i>
+                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl flex flex-col h-full" data-cat="mobile">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500 flex items-center justify-center text-brand-dark text-2xl font-bold shadow-lg">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <span class="batch-badge batch-badge-amber px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide uppercase border bg-amber-500/10 text-amber-400 border-amber-500/30 flex items-center gap-1.5 shadow-sm">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span> Exclusive Batch
+                        </span>
                     </div>
-                    <div>
+                    <div class="mt-4">
                         <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">App Development</span>
-                        <h3 class="text-xl font-bold text-white mt-1">Mobile App Systems</h3>
+                        <h3 class="text-xl font-bold text-white mt-1 min-h-[56px] flex items-start">Mobile App Systems</h3>
                     </div>
-                    <p class="text-xs text-gray-400 leading-relaxed">
+                    <p class="text-xs text-gray-400 leading-relaxed min-h-[60px] mt-2">
                         Intuitive, native performance cross-platform mobile apps published straight to Google Play Store & Apple App Store.
                     </p>
-                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4">
+                    <!-- Pricing Block -->
+                    <div class="price-block pt-3 pb-2 border-t border-gray-800/80 flex items-center justify-between mt-4">
+                        <div>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-2xl font-black font-display text-white">₹49,999</span>
+                                <span class="text-xs text-gray-500 line-through">₹79,999</span>
+                            </div>
+                            <p class="text-[10px] text-gray-400 font-medium">Starting Package • Active Offer</p>
+                        </div>
+                        <span class="discount-badge px-2.5 py-1 rounded-lg text-xs font-black">
+                            37%<span class="badge-off">OFF</span>
+                        </span>
+                    </div>
+                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4 flex-1">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Android & iOS Mobile Applications</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Play Store & App Store Deployment</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Push Notifications & Analytics</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> App Store Optimization (ASO)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> High-Performance Native 60FPS UX</li>
                     </ul>
-                    <button onclick="openCalcModal('Mobile App Build')" class="w-full mt-4 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10">Get Started</button>
+                    <button onclick="openCalcModal('Mobile App Build')" class="w-full mt-6 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10 mt-auto">Get Started</button>
                 </div>
 
                 <!-- Custom Combo Growth Pack -->
-                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl space-y-4 border-brand-yellow/40 bg-gradient-to-b from-brand-yellow/10 to-transparent" data-cat="all">
-                    <div class="w-12 h-12 rounded-2xl bg-brand-yellow flex items-center justify-center text-brand-dark text-2xl font-bold shadow-lg">
-                        <i class="fa-solid fa-rocket"></i>
+                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl flex flex-col h-full border-brand-yellow/40 bg-gradient-to-b from-brand-yellow/10 to-transparent" data-cat="all">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-yellow flex items-center justify-center text-brand-dark text-2xl font-bold shadow-lg">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <span class="batch-badge batch-badge-yellow px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide uppercase border bg-brand-yellow/15 text-brand-yellow border-brand-yellow/40 flex items-center gap-1.5 shadow-sm">
+                            <i class="fa-solid fa-crown text-[10px]"></i> VIP Master Batch
+                        </span>
                     </div>
-                    <div>
+                    <div class="mt-4">
                         <span class="text-xs text-brand-yellow font-bold uppercase tracking-wider">Full Package</span>
-                        <h3 class="text-xl font-bold text-white mt-1">Complete Digital Brand Transformation</h3>
+                        <h3 class="text-xl font-bold text-white mt-1 min-h-[56px] flex items-start">Complete Digital Brand Transformation</h3>
                     </div>
-                    <p class="text-xs text-gray-300 leading-relaxed">
+                    <p class="text-xs text-gray-300 leading-relaxed min-h-[60px] mt-2">
                         Combine Social Growth, Web E-Commerce, Software CRM, and Mobile App launch for total market domination.
                     </p>
-                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4">
+                    <!-- Pricing Block -->
+                    <div class="price-block pt-3 pb-2 border-t border-brand-yellow/30 flex items-center justify-between mt-4">
+                        <div>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-2xl font-black font-display text-brand-yellow">₹79,999</span>
+                                <span class="text-xs text-gray-400 line-through">₹1,29,999</span>
+                            </div>
+                            <p class="text-[10px] text-gray-400 font-medium">All-Inclusive Enterprise Bundle</p>
+                        </div>
+                        <span class="discount-badge px-2.5 py-1 rounded-lg text-xs font-black">
+                            38%<span class="badge-off">OFF</span>
+                        </span>
+                    </div>
+                    <ul class="space-y-2 text-xs text-gray-300 border-t border-brand-yellow/30 pt-4 flex-1">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-yellow"></i> Priority 1-on-1 Strategy Team</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-yellow"></i> Custom Discounted Bundle Pricing</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-yellow"></i> Weekly Progress & Growth Reports</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-yellow"></i> Dedicated Tech & Growth Director</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-yellow"></i> Complete Omnichannel Execution</li>
                     </ul>
-                    <button onclick="openCalcModal('Complete Digital Bundle')" class="w-full mt-4 glass-button py-2.5 rounded-xl text-xs font-bold">Request Custom Quote</button>
+                    <button onclick="openCalcModal('Complete Digital Bundle')" class="w-full mt-6 py-2.5 rounded-xl glass-button text-xs font-bold mt-auto">Request Custom Quote</button>
                 </div>
 
             </div>
@@ -939,21 +1128,21 @@
 
             <!-- View More Button -->
             <div class="mt-12 text-center">
-                <button onclick="handleViewMorePortfolio()" class="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-2xl glass-panel border border-brand-yellow/40 text-brand-yellow hover:bg-brand-yellow hover:text-brand-dark font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-brand-yellow/20 cursor-pointer group">
-                    <span>View More</span>
-                    <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-                </button>
+                <a href="portfolio.html" class="inline-flex items-center gap-3 px-9 py-4 rounded-2xl glass-panel border border-brand-yellow/40 text-brand-yellow hover:bg-brand-yellow hover:text-brand-dark font-bold text-sm sm:text-base transition-all duration-300 shadow-xl hover:shadow-brand-yellow/30 hover:scale-105 active:scale-95 cursor-pointer group">
+                    <span>View All Portfolio & Creative Works</span>
+                    <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <section id="reviews" class="py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+            <div class="text-center max-w-5xl mx-auto mb-12 space-y-3">
                 <div class="inline-block px-3 py-1 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs font-bold uppercase tracking-wider">
                     Client Testimonials
                 </div>
-                <h2 class="text-3xl sm:text-5xl font-display font-bold text-white">What Clients Say About DIGI Brandify</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white md:whitespace-nowrap">What Clients Say About <span class="text-brand-yellow">Digi</span><span class="brand-text-name text-white">brandify</span></h2>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
@@ -1112,9 +1301,9 @@
             <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
                 <div class="col-span-2 space-y-4">
                     <a href="#home" class="flex items-center gap-3 group">
-                        <img src="assets/logo_icon.png" alt="DIGI Brandify Logo" class="w-9 h-9 rounded-full object-contain group-hover:scale-105 transition-transform duration-300">
+                        <img src="assets/logo_icon.png" alt="Digibrandify Logo" class="w-9 h-9 rounded-full object-contain group-hover:scale-105 transition-transform duration-300">
                         <div class="flex flex-col">
-                            <span class="font-display text-lg font-extrabold tracking-wider leading-none"><span class="text-[#f7c103]">DIGI</span><span class="brand-text-name text-white">BRANDIFY</span></span>
+                            <span class="font-display text-lg font-extrabold tracking-wider leading-none"><span class="text-[#f7c103]">Digi</span><span class="brand-text-name text-white">brandify</span></span>
                             <span class="brand-tagline text-[9px] text-gray-400 tracking-widest uppercase mt-1 font-semibold">Scale Without Limits</span>
                         </div>
                     </a>
@@ -1457,7 +1646,7 @@ Sent via DIGI Brandify Official Website`;
 
         // Portfolio Showcase & Modal Logic
         function handleViewMorePortfolio() {
-            showToast('🚀 More Case Studies & Client Projects Coming Soon!');
+            window.location.href = 'portfolio.html';
         }
 
         const portfolioProjects = [
@@ -1620,9 +1809,90 @@ Sent via DIGI Brandify Official Website`;
             if (mIcon) mIcon.className = isLight ? 'fa-solid fa-moon text-sm' : 'fa-solid fa-sun text-sm';
         }
 
+        // Hero Character Alternation (every 5 seconds)
+        let currentHeroSlide = 0;
+        let heroInterval = null;
+
+        const heroSlideData = [
+            {
+                icon: 'fa-solid fa-couch',
+                title: 'Sit Back & Relax',
+                desc: 'We Handle Your Complete Scaling'
+            },
+            {
+                icon: 'fa-solid fa-laptop-code',
+                title: 'Focus On Your Business',
+                desc: 'We Engineer Your Digital Growth'
+            }
+        ];
+
+        function setHeroSlide(index) {
+            currentHeroSlide = index;
+            const slide1 = document.getElementById('hero-slide-1');
+            const slide2 = document.getElementById('hero-slide-2');
+            const dot0 = document.getElementById('hero-dot-0');
+            const dot1 = document.getElementById('hero-dot-1');
+            const tagIcon = document.getElementById('hero-tag-icon');
+            const tagTitle = document.getElementById('hero-tag-title');
+            const tagDesc = document.getElementById('hero-tag-desc');
+
+            if (!slide1 || !slide2) return;
+
+            if (index === 0) {
+                slide1.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                slide1.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+
+                slide2.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+                slide2.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+
+                if (dot0 && dot1) {
+                    dot0.className = 'h-1.5 w-6 rounded-full bg-brand-yellow transition-all duration-300 cursor-pointer';
+                    dot1.className = 'h-1.5 w-2 rounded-full bg-gray-600 hover:bg-gray-400 transition-all duration-300 cursor-pointer';
+                }
+            } else {
+                slide2.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                slide2.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+
+                slide1.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+                slide1.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+
+                if (dot0 && dot1) {
+                    dot0.className = 'h-1.5 w-2 rounded-full bg-gray-600 hover:bg-gray-400 transition-all duration-300 cursor-pointer';
+                    dot1.className = 'h-1.5 w-6 rounded-full bg-brand-yellow transition-all duration-300 cursor-pointer';
+                }
+            }
+
+            if (tagTitle && tagDesc && tagIcon) {
+                tagTitle.style.opacity = '0';
+                tagDesc.style.opacity = '0';
+                setTimeout(() => {
+                    tagIcon.innerHTML = `<i class="${heroSlideData[index].icon}"></i>`;
+                    tagTitle.textContent = heroSlideData[index].title;
+                    tagDesc.textContent = heroSlideData[index].desc;
+                    tagTitle.style.opacity = '1';
+                    tagDesc.style.opacity = '1';
+                }, 200);
+            }
+        }
+
+        function nextHeroSlide() {
+            setHeroSlide((currentHeroSlide + 1) % 2);
+        }
+
+        function startHeroSlider() {
+            if (heroInterval) clearInterval(heroInterval);
+            heroInterval = setInterval(nextHeroSlide, 5000);
+        }
+
+        function manualHeroSlide(index) {
+            setHeroSlide(index);
+            startHeroSlider();
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const isLight = document.documentElement.classList.contains('light');
             updateThemeIcons(isLight);
+            startHeroSlider();
         });
     </script>
 </body>
