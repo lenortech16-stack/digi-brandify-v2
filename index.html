@@ -527,13 +527,13 @@
     <div class="glow-yellow bottom-10 left-10"></div>
 
     <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
             <!-- Brand Logo -->
-            <a href="#home" class="flex items-center gap-3.5 group">
-                <img src="assets/logo_icon.png" alt="Digibrandify Logo" class="w-10 h-10 rounded-full object-contain group-hover:scale-105 transition-transform duration-300">
+            <a href="#home" class="flex items-center gap-2 sm:gap-3.5 group shrink-0">
+                <img src="assets/logo_icon.png" alt="Digibrandify Logo" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-contain group-hover:scale-105 transition-transform duration-300">
                 <div class="flex flex-col">
-                    <span class="font-display text-xl font-extrabold tracking-wider leading-none"><span class="text-[#f7c103]">Digi</span><span class="brand-text-name text-white">brandify</span></span>
-                    <span class="brand-tagline text-[10px] text-gray-400 tracking-widest uppercase mt-1 font-semibold">Scale Without Limits</span>
+                    <span class="font-display text-base sm:text-xl font-extrabold tracking-tight sm:tracking-wider leading-none"><span class="text-[#f7c103]">Digi</span><span class="brand-text-name text-white">brandify</span></span>
+                    <span class="brand-tagline text-[8px] sm:text-[10px] text-gray-400 tracking-wider sm:tracking-widest uppercase mt-0.5 sm:mt-1 font-semibold">Scale Without Limits</span>
                 </div>
             </a>
 
@@ -546,13 +546,13 @@
                 <a href="#reviews" class="hover:text-brand-yellow transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-yellow hover:after:w-full after:transition-all">Reviews</a>
             </nav>
 
-            <!-- Actions -->
+            <!-- Actions (Desktop) -->
             <div class="hidden md:flex items-center gap-3">
                 <!-- Theme Toggle Button (Desktop) -->
-                <button id="theme-toggle-desktop" onclick="toggleTheme()" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-brand-yellow hover:scale-105 active:scale-95 transition-all border border-brand-yellow/30" title="Switch Theme (Light / Dark)" aria-label="Toggle theme">
+                <button id="theme-toggle-desktop" onclick="toggleTheme()" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-brand-yellow hover:scale-105 active:scale-95 transition-all border border-brand-yellow/30 cursor-pointer" title="Switch Theme (Light / Dark)" aria-label="Toggle theme">
                     <i id="theme-icon-desktop" class="fa-solid fa-sun text-sm"></i>
                 </button>
-                <button onclick="openCalcModal()" class="px-4 py-2.5 rounded-xl border border-brand-yellow/30 text-brand-yellow hover:bg-brand-yellow/10 text-sm font-semibold transition-all">
+                <button onclick="openCalcModal()" class="px-4 py-2.5 rounded-xl border border-brand-yellow/30 text-brand-yellow hover:bg-brand-yellow/10 text-sm font-semibold transition-all cursor-pointer">
                     <i class="fa-solid fa-calculator mr-2"></i> Quote Estimator
                 </button>
                 <a href="#contact" class="glass-button px-6 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2">
@@ -561,55 +561,56 @@
                 </a>
             </div>
 
-            <!-- Mobile Actions -->
-            <div class="md:hidden flex items-center gap-2">
+            <!-- Mobile Actions (No overflow, compact) -->
+            <div class="md:hidden flex items-center gap-1.5 shrink-0">
                 <!-- Theme Toggle Button (Mobile) -->
-                <button id="theme-toggle-mobile" onclick="toggleTheme()" class="w-10 h-10 rounded-xl glass-panel border border-brand-yellow/30 text-brand-yellow flex items-center justify-center transition-all" title="Switch Theme (Light / Dark)" aria-label="Toggle theme">
-                    <i id="theme-icon-mobile" class="fa-solid fa-sun text-sm"></i>
+                <button id="theme-toggle-mobile" onclick="toggleTheme()" class="w-8 h-8 rounded-lg glass-panel border border-brand-yellow/30 text-brand-yellow flex items-center justify-center transition-all cursor-pointer" title="Switch Theme (Light / Dark)" aria-label="Toggle theme">
+                    <i id="theme-icon-mobile" class="fa-solid fa-sun text-xs"></i>
                 </button>
-                <button onclick="openCalcModal()" class="w-10 h-10 rounded-xl bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow flex items-center justify-center">
-                    <i class="fa-solid fa-calculator"></i>
+                <button onclick="openCalcModal()" class="w-8 h-8 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow flex items-center justify-center cursor-pointer" title="Quote Estimator">
+                    <i class="fa-solid fa-calculator text-xs"></i>
                 </button>
             </div>
+        </div>
     </header>
 
-    <section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+    <section id="home" class="relative pt-24 pb-12 sm:pt-32 sm:pb-20 md:pt-44 md:pb-32 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-xs sm:text-sm font-medium text-brand-yellow border-brand-yellow/30">
+                <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass-panel text-[11px] sm:text-sm font-medium text-brand-yellow border-brand-yellow/30 mx-auto lg:mx-0">
                         <span class="w-2 h-2 rounded-full bg-brand-yellow animate-ping"></span>
                         <span>#1 Digital Growth & App Development Partner</span>
                     </div>
 
-                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-white leading-tight">
+                    <h1 class="text-2xl sm:text-5xl lg:text-7xl font-display font-extrabold text-white leading-tight">
                         Transform Your Brand Into A <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow via-yellow-200 to-amber-500">Digital Empire</span>
                     </h1>
 
-                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-                        Explode your Instagram & YouTube reach, engineer high-converting web apps, custom software, and cross-platform mobile apps with DIGI Brandify.
+                    <p class="text-gray-300 text-xs sm:text-base lg:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Explode your Instagram & YouTube reach, engineer high-converting web apps, custom software, and cross-platform mobile apps with Digibrandify.
                     </p>
 
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#services" class="w-full sm:w-auto glass-button px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-3">
+                    <div class="flex flex-row items-center justify-center lg:justify-start gap-2.5 sm:gap-4 pt-2 sm:pt-4">
+                        <a href="#services" class="glass-button px-5 py-2.5 sm:px-8 sm:py-4 rounded-xl text-xs sm:text-base font-bold flex items-center justify-center gap-2">
                             <span>Explore Services</span>
-                            <i class="fa-solid fa-arrow-down-long"></i>
+                            <i class="fa-solid fa-arrow-down-long text-xs"></i>
                         </a>
-                        <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-white hover:text-brand-yellow text-base font-semibold text-center transition-all">
+                        <a href="#portfolio" class="px-5 py-2.5 sm:px-8 sm:py-4 rounded-xl glass-panel text-white hover:text-brand-yellow text-xs sm:text-base font-semibold text-center transition-all">
                             View Case Studies
                         </a>
                     </div>
 
                     <!-- Client Avatars Trust Badge -->
-                    <div class="pt-6 flex items-center justify-center lg:justify-start gap-4 text-xs text-gray-400">
-                        <div class="flex -space-x-3">
-                            <img class="w-9 h-9 rounded-full border-2 border-brand-dark" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Client">
-                            <img class="w-9 h-9 rounded-full border-2 border-brand-dark" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Client">
-                            <img class="w-9 h-9 rounded-full border-2 border-brand-dark" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Client">
+                    <div class="pt-3 sm:pt-6 flex items-center justify-center lg:justify-start gap-3 sm:gap-4 text-[11px] sm:text-xs text-gray-400">
+                        <div class="flex -space-x-2.5 sm:-space-x-3">
+                            <img class="w-7 h-7 sm:w-9 sm:h-9 rounded-full border-2 border-brand-dark" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Client">
+                            <img class="w-7 h-7 sm:w-9 sm:h-9 rounded-full border-2 border-brand-dark" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Client">
+                            <img class="w-7 h-7 sm:w-9 sm:h-9 rounded-full border-2 border-brand-dark" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Client">
                         </div>
                         <div>
-                            <div class="flex text-brand-yellow text-xs">
+                            <div class="flex text-brand-yellow text-[10px] sm:text-xs">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
@@ -638,26 +639,26 @@
                             </div>
 
                             <!-- Slides Container (Fixed Height prevents layout jumping) -->
-                            <div class="relative w-full h-[380px] sm:h-[440px] lg:h-[470px] flex items-center justify-center">
+                            <div class="relative w-full h-[270px] sm:h-[400px] lg:h-[470px] flex items-center justify-center">
                                 <!-- Slide 1: Male Founder Relaxing -->
                                 <div id="hero-slide-1" class="hero-character-slide absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out opacity-100 scale-100 pointer-events-auto">
-                                    <img src="assets/hero_character.png" alt="Relax while Digibrandify scales your brand" class="h-full w-auto max-h-[380px] sm:max-h-[440px] lg:max-h-[470px] object-contain drop-shadow-2xl">
+                                    <img src="assets/hero_character.png" alt="Relax while Digibrandify scales your brand" class="h-full w-auto max-h-[270px] sm:max-h-[400px] lg:max-h-[470px] object-contain drop-shadow-2xl">
                                 </div>
 
                                 <!-- Slide 2: Female Founder on Laptop -->
                                 <div id="hero-slide-2" class="hero-character-slide absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out opacity-0 scale-95 pointer-events-none">
-                                    <img src="assets/hero_character_female.png" alt="Work smart and scale fast with Digibrandify" class="h-full w-auto max-h-[380px] sm:max-h-[440px] lg:max-h-[470px] object-contain drop-shadow-2xl">
+                                    <img src="assets/hero_character_female.png" alt="Work smart and scale fast with Digibrandify" class="h-full w-auto max-h-[270px] sm:max-h-[400px] lg:max-h-[470px] object-contain drop-shadow-2xl">
                                 </div>
                             </div>
 
                             <!-- Bottom glass tag -->
-                            <div id="hero-bottom-tag" class="glass-panel px-5 py-2.5 rounded-2xl border border-brand-yellow/30 flex items-center gap-3 shadow-2xl -mt-2 z-20 transition-all duration-500">
-                                <div id="hero-tag-icon" class="w-8 h-8 rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center text-sm font-bold shadow-md transition-all duration-300">
+                            <div id="hero-bottom-tag" class="glass-panel px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-xl sm:rounded-2xl border border-brand-yellow/30 flex items-center gap-2.5 sm:gap-3 shadow-2xl -mt-2 z-20 transition-all duration-500">
+                                <div id="hero-tag-icon" class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center text-xs sm:text-sm font-bold shadow-md transition-all duration-300">
                                     <i class="fa-solid fa-couch"></i>
                                 </div>
                                 <div>
-                                    <p id="hero-tag-title" class="text-xs font-bold text-white transition-opacity duration-300">Sit Back & Relax</p>
-                                    <p id="hero-tag-desc" class="text-[11px] text-gray-400 transition-opacity duration-300">We Handle Your Complete Scaling</p>
+                                    <p id="hero-tag-title" class="text-[11px] sm:text-xs font-bold text-white transition-opacity duration-300">Sit Back & Relax</p>
+                                    <p id="hero-tag-desc" class="text-[9px] sm:text-[11px] text-gray-400 transition-opacity duration-300">We Handle Your Complete Scaling</p>
                                 </div>
                             </div>
 
@@ -673,85 +674,85 @@
             </div>
 
             <!-- Stats Bar Grid -->
-            <div class="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                <div class="glass-panel p-6 rounded-2xl text-center border-brand-yellow/20">
-                    <div class="text-3xl sm:text-4xl font-display font-bold text-brand-yellow mb-1">500+</div>
-                    <p class="text-xs sm:text-sm text-gray-400">Brands Scaled</p>
+            <div class="mt-8 sm:mt-16 lg:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6">
+                <div class="glass-panel p-3.5 sm:p-6 rounded-xl sm:rounded-2xl text-center border-brand-yellow/20">
+                    <div class="text-2xl sm:text-4xl font-display font-bold text-brand-yellow mb-0.5 sm:mb-1">500+</div>
+                    <p class="text-[11px] sm:text-sm text-gray-400 font-medium">Brands Scaled</p>
                 </div>
-                <div class="glass-panel p-6 rounded-2xl text-center border-brand-yellow/20">
-                    <div class="text-3xl sm:text-4xl font-display font-bold text-brand-yellow mb-1">10M+</div>
-                    <p class="text-xs sm:text-sm text-gray-400">Views Delivered</p>
+                <div class="glass-panel p-3.5 sm:p-6 rounded-xl sm:rounded-2xl text-center border-brand-yellow/20">
+                    <div class="text-2xl sm:text-4xl font-display font-bold text-brand-yellow mb-0.5 sm:mb-1">10M+</div>
+                    <p class="text-[11px] sm:text-sm text-gray-400 font-medium">Views Delivered</p>
                 </div>
-                <div class="glass-panel p-6 rounded-2xl text-center border-brand-yellow/20">
-                    <div class="text-3xl sm:text-4xl font-display font-bold text-brand-yellow mb-1">120+</div>
-                    <p class="text-xs sm:text-sm text-gray-400">Software & Apps Built</p>
+                <div class="glass-panel p-3.5 sm:p-6 rounded-xl sm:rounded-2xl text-center border-brand-yellow/20">
+                    <div class="text-2xl sm:text-4xl font-display font-bold text-brand-yellow mb-0.5 sm:mb-1">120+</div>
+                    <p class="text-[11px] sm:text-sm text-gray-400 font-medium">Software & Apps Built</p>
                 </div>
-                <div class="glass-panel p-6 rounded-2xl text-center border-brand-yellow/20">
-                    <div class="text-3xl sm:text-4xl font-display font-bold text-brand-yellow mb-1">99.8%</div>
-                    <p class="text-xs sm:text-sm text-gray-400">Satisfaction Rate</p>
+                <div class="glass-panel p-3.5 sm:p-6 rounded-xl sm:rounded-2xl text-center border-brand-yellow/20">
+                    <div class="text-2xl sm:text-4xl font-display font-bold text-brand-yellow mb-0.5 sm:mb-1">99.8%</div>
+                    <p class="text-[11px] sm:text-sm text-gray-400 font-medium">Satisfaction Rate</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-20 relative">
+    <section id="about" class="py-10 sm:py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-panel rounded-3xl p-8 sm:p-12 relative overflow-hidden border-brand-yellow/20">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-6">
-                        <div class="inline-block px-3 py-1 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs font-bold uppercase tracking-wider">
-                            About DIGI Brandify
+            <div class="glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-12 relative overflow-hidden border-brand-yellow/20">
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="space-y-4 sm:space-y-6 text-center lg:text-left">
+                        <div class="inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-[10px] sm:text-xs font-bold uppercase tracking-wider">
+                            About Digibrandify
                         </div>
-                        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white leading-snug">
+                        <h2 class="text-xl sm:text-3xl lg:text-4xl font-display font-bold text-white leading-snug">
                             We Don't Just Execute Marketing. We Build <span class="text-brand-yellow">Digital Dominance.</span>
                         </h2>
-                        <p class="text-gray-300 leading-relaxed text-sm sm:text-base font-light">
-                            At DIGI Brandify, we bridge the gap between creative social media growth and enterprise-grade software engineering. Whether you need explosive viral reach on Instagram and YouTube or dedicated billing systems, custom mobile apps, and high-ranking websites, our end-to-end agency handles it with precision.
+                        <p class="text-gray-300 leading-relaxed text-xs sm:text-base font-light">
+                            At Digibrandify, we bridge the gap between creative social media growth and enterprise-grade software engineering. Whether you need explosive viral reach on Instagram and YouTube or dedicated billing systems, custom mobile apps, and high-ranking websites, our end-to-end agency handles it with precision.
                         </p>
                         
-                        <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-brand-yellow/10 text-brand-yellow flex items-center justify-center shrink-0 mt-1">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-1 sm:pt-2 text-left">
+                            <div class="flex items-start gap-2.5 sm:gap-3 p-2.5 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent">
+                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-yellow/10 text-brand-yellow flex items-center justify-center shrink-0 mt-0.5 text-xs sm:text-sm">
                                     <i class="fa-solid fa-chart-line"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-white text-sm">Data Driven Growth</h4>
-                                    <p class="text-xs text-gray-400">Algorithmic targeting for guaranteed engagement.</p>
+                                    <h4 class="font-bold text-white text-xs sm:text-sm">Data Driven Growth</h4>
+                                    <p class="text-[10px] sm:text-xs text-gray-400">Algorithmic targeting for guaranteed engagement.</p>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-brand-yellow/10 text-brand-yellow flex items-center justify-center shrink-0 mt-1">
+                            <div class="flex items-start gap-2.5 sm:gap-3 p-2.5 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent">
+                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-yellow/10 text-brand-yellow flex items-center justify-center shrink-0 mt-0.5 text-xs sm:text-sm">
                                     <i class="fa-solid fa-shield-halved"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-white text-sm">Safe & Secure Systems</h4>
-                                    <p class="text-xs text-gray-400">SSL, encrypted code, and safe ID handling.</p>
+                                    <h4 class="font-bold text-white text-xs sm:text-sm">Safe & Secure Systems</h4>
+                                    <p class="text-[10px] sm:text-xs text-gray-400">SSL, encrypted code, and safe ID handling.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Highlight Highlights Cards Grid -->
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="glass-panel p-5 rounded-2xl border-white/5 space-y-2">
-                            <i class="fa-solid fa-bullseye text-2xl text-brand-yellow"></i>
-                            <h3 class="font-bold text-white text-base">Targeted Reach</h3>
-                            <p class="text-xs text-gray-400">Hyper-focused organic and boosted growth strategies.</p>
+                    <div class="grid grid-cols-2 gap-2.5 sm:gap-4">
+                        <div class="glass-panel p-3.5 sm:p-5 rounded-xl sm:rounded-2xl border-white/5 space-y-1.5 sm:space-y-2">
+                            <i class="fa-solid fa-bullseye text-lg sm:text-2xl text-brand-yellow"></i>
+                            <h3 class="font-bold text-white text-xs sm:text-base leading-tight">Targeted Reach</h3>
+                            <p class="text-[10px] sm:text-xs text-gray-400 leading-normal">Hyper-focused organic and boosted growth strategies.</p>
                         </div>
-                        <div class="glass-panel p-5 rounded-2xl border-white/5 space-y-2">
-                            <i class="fa-solid fa-laptop-code text-2xl text-brand-yellow"></i>
-                            <h3 class="font-bold text-white text-base">Custom Tech Stack</h3>
-                            <p class="text-xs text-gray-400">Modern code bases designed for extreme speed and scale.</p>
+                        <div class="glass-panel p-3.5 sm:p-5 rounded-xl sm:rounded-2xl border-white/5 space-y-1.5 sm:space-y-2">
+                            <i class="fa-solid fa-laptop-code text-lg sm:text-2xl text-brand-yellow"></i>
+                            <h3 class="font-bold text-white text-xs sm:text-base leading-tight">Custom Tech Stack</h3>
+                            <p class="text-[10px] sm:text-xs text-gray-400 leading-normal">Modern code bases designed for extreme speed and scale.</p>
                         </div>
-                        <div class="glass-panel p-5 rounded-2xl border-white/5 space-y-2">
-                            <i class="fa-solid fa-headset text-2xl text-brand-yellow"></i>
-                            <h3 class="font-bold text-white text-base">24/7 Priority Support</h3>
-                            <p class="text-xs text-gray-400">Dedicated account managers for seamless service.</p>
+                        <div class="glass-panel p-3.5 sm:p-5 rounded-xl sm:rounded-2xl border-white/5 space-y-1.5 sm:space-y-2">
+                            <i class="fa-solid fa-headset text-lg sm:text-2xl text-brand-yellow"></i>
+                            <h3 class="font-bold text-white text-xs sm:text-base leading-tight">24/7 Priority Support</h3>
+                            <p class="text-[10px] sm:text-xs text-gray-400 leading-normal">Dedicated account managers for seamless service.</p>
                         </div>
-                        <div class="glass-panel p-5 rounded-2xl border-white/5 space-y-2">
-                            <i class="fa-solid fa-bolt text-2xl text-brand-yellow"></i>
-                            <h3 class="font-bold text-white text-base">Rapid Deployment</h3>
-                            <p class="text-xs text-gray-400">Quick turnarounds on growth and development pipelines.</p>
+                        <div class="glass-panel p-3.5 sm:p-5 rounded-xl sm:rounded-2xl border-white/5 space-y-1.5 sm:space-y-2">
+                            <i class="fa-solid fa-bolt text-lg sm:text-2xl text-brand-yellow"></i>
+                            <h3 class="font-bold text-white text-xs sm:text-base leading-tight">Rapid Deployment</h3>
+                            <p class="text-[10px] sm:text-xs text-gray-400 leading-normal">Quick turnarounds on growth and development pipelines.</p>
                         </div>
                     </div>
                 </div>
@@ -759,152 +760,152 @@
         </div>
     </section>
 
-    <section id="services" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-                <div class="inline-block px-3 py-1 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs font-bold uppercase tracking-wider">
+    <section id="services" class="py-12 sm:py-20 relative">
+        <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 space-y-2 sm:space-y-4">
+                <div class="inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-[10px] sm:text-xs font-bold uppercase tracking-wider">
                     Our Specialized Capabilities
                 </div>
-                <h2 class="text-3xl sm:text-5xl font-display font-bold text-white">Full-Spectrum Digital Solutions</h2>
-                <p class="text-gray-400 text-sm sm:text-base">Filter through our primary growth and technical offerings tailored for creators, startups, and enterprise brands.</p>
+                <h2 class="text-2xl sm:text-4xl lg:text-5xl font-display font-bold text-white">Full-Spectrum Digital Solutions</h2>
+                <p class="text-gray-400 text-xs sm:text-base max-w-xl mx-auto">Filter through our primary growth and technical offerings tailored for creators, startups, and enterprise brands.</p>
             </div>
 
             <!-- Service Category Filter Tabs -->
-            <div class="flex items-center justify-center gap-2 sm:gap-3 flex-wrap mb-12">
-                <button onclick="filterServices('all')" class="svc-tab active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-panel border-brand-yellow bg-brand-yellow text-brand-dark" data-category="all">
+            <div class="flex items-center justify-center gap-1.5 sm:gap-3 flex-wrap mb-8 sm:mb-12">
+                <button onclick="filterServices('all')" class="svc-tab active px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-semibold transition-all glass-panel border-brand-yellow bg-brand-yellow text-brand-dark cursor-pointer" data-category="all">
                     All Services
                 </button>
-                <button onclick="filterServices('instagram')" class="svc-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-panel text-gray-300 hover:text-white" data-category="instagram">
+                <button onclick="filterServices('instagram')" class="svc-tab px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-semibold transition-all glass-panel text-gray-300 hover:text-white cursor-pointer" data-category="instagram">
                     <i class="fa-brands fa-instagram text-pink-500 mr-1"></i> Instagram
                 </button>
-                <button onclick="filterServices('youtube')" class="svc-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-panel text-gray-300 hover:text-white" data-category="youtube">
+                <button onclick="filterServices('youtube')" class="svc-tab px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-semibold transition-all glass-panel text-gray-300 hover:text-white cursor-pointer" data-category="youtube">
                     <i class="fa-brands fa-youtube text-red-500 mr-1"></i> YouTube
                 </button>
-                <button onclick="filterServices('website')" class="svc-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-panel text-gray-300 hover:text-white" data-category="website">
-                    <i class="fa-solid fa-globe text-blue-400 mr-1"></i> Website Creation
+                <button onclick="filterServices('website')" class="svc-tab px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-semibold transition-all glass-panel text-gray-300 hover:text-white cursor-pointer" data-category="website">
+                    <i class="fa-solid fa-globe text-blue-400 mr-1"></i> Websites
                 </button>
-                <button onclick="filterServices('software')" class="svc-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-panel text-gray-300 hover:text-white" data-category="software">
-                    <i class="fa-solid fa-cubes text-emerald-400 mr-1"></i> Software Build
+                <button onclick="filterServices('software')" class="svc-tab px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-semibold transition-all glass-panel text-gray-300 hover:text-white cursor-pointer" data-category="software">
+                    <i class="fa-solid fa-cubes text-emerald-400 mr-1"></i> Software
                 </button>
-                <button onclick="filterServices('mobile')" class="svc-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-panel text-gray-300 hover:text-white" data-category="mobile">
+                <button onclick="filterServices('mobile')" class="svc-tab px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-semibold transition-all glass-panel text-gray-300 hover:text-white cursor-pointer" data-category="mobile">
                     <i class="fa-solid fa-mobile-screen text-amber-400 mr-1"></i> Mobile Apps
                 </button>
             </div>
 
             <!-- Services Grid Cards -->
-            <div id="services-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div id="services-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
                 
                 <!-- Instagram Card -->
-                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl flex flex-col h-full" data-cat="instagram">
+                <div class="service-card glass-panel glass-panel-hover p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex flex-col h-full" data-cat="instagram">
                     <div class="flex items-center justify-between">
-                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white text-2xl shadow-lg">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg">
                             <i class="fa-brands fa-instagram"></i>
                         </div>
-                        <span class="batch-badge batch-badge-pink px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide uppercase border bg-pink-500/10 text-pink-400 border-pink-500/30 flex items-center gap-1.5 shadow-sm">
+                        <span class="batch-badge batch-badge-pink px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[9px] sm:text-[11px] font-bold tracking-wide uppercase border bg-pink-500/10 text-pink-400 border-pink-500/30 flex items-center gap-1.5 shadow-sm">
                             <span class="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse"></span> Limited Batch
                         </span>
                     </div>
-                    <div class="mt-4">
-                        <span class="text-xs text-pink-400 font-bold uppercase tracking-wider">Social Growth</span>
-                        <h3 class="text-xl font-bold text-white mt-1 min-h-[56px] flex items-start">Instagram Growth & Branding</h3>
+                    <div class="mt-3 sm:mt-4">
+                        <span class="text-[11px] sm:text-xs text-pink-400 font-bold uppercase tracking-wider">Social Growth</span>
+                        <h3 class="text-base sm:text-xl font-bold text-white mt-1 sm:min-h-[56px] flex items-start leading-snug">Instagram Growth & Branding</h3>
                     </div>
-                    <p class="text-xs text-gray-400 leading-relaxed min-h-[60px] mt-2">
+                    <p class="text-xs text-gray-400 leading-relaxed sm:min-h-[60px] mt-1.5 sm:mt-2">
                         Skyrocket your handle authority with targeted follower acquisition, high reel views, authentic engagement, and creative branding.
                     </p>
                     <!-- Pricing Block -->
-                    <div class="price-block pt-3 pb-2 border-t border-gray-800/80 flex items-center justify-between mt-4">
+                    <div class="price-block pt-2.5 pb-2 sm:pt-3 border-t border-gray-800/80 flex items-center justify-between mt-3 sm:mt-4">
                         <div>
                             <div class="flex items-baseline gap-2">
-                                <span class="text-2xl font-black font-display text-white">₹11,999</span>
-                                <span class="text-xs text-gray-500 line-through">₹19,999</span>
+                                <span class="text-xl sm:text-2xl font-black font-display text-white">₹11,999</span>
+                                <span class="text-[11px] sm:text-xs text-gray-500 line-through">₹19,999</span>
                             </div>
-                            <p class="text-[10px] text-gray-400 font-medium">Starting Package • Active Offer</p>
+                            <p class="text-[9px] sm:text-[10px] text-gray-400 font-medium">Starting Package • Active Offer</p>
                         </div>
-                        <span class="discount-badge px-2.5 py-1 rounded-lg text-xs font-black">
+                        <span class="discount-badge px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[11px] sm:text-xs font-black">
                             40%<span class="badge-off">OFF</span>
                         </span>
                     </div>
-                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4 flex-1">
+                    <ul class="space-y-1.5 sm:space-y-2 text-[11px] sm:text-xs text-gray-300 border-t border-gray-800/80 pt-3 sm:pt-4 flex-1">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Followers Increase</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Views & Reel Virality Increase</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Authentic Comments & Engagement</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Complete Account / ID Handling</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> High-Converting Brand Posters</li>
                     </ul>
-                    <button onclick="openCalcModal('Instagram Growth')" class="w-full mt-6 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10 mt-auto">Get Started</button>
+                    <button onclick="openCalcModal('Instagram Growth')" class="w-full mt-4 sm:mt-6 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10 mt-auto cursor-pointer">Get Started</button>
                 </div>
 
                 <!-- YouTube Card -->
-                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl flex flex-col h-full" data-cat="youtube">
+                <div class="service-card glass-panel glass-panel-hover p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex flex-col h-full" data-cat="youtube">
                     <div class="flex items-center justify-between">
-                        <div class="w-12 h-12 rounded-2xl bg-red-600 flex items-center justify-center text-white text-2xl shadow-lg">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-red-600 flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg">
                             <i class="fa-brands fa-youtube"></i>
                         </div>
-                        <span class="batch-badge batch-badge-red px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide uppercase border bg-red-500/10 text-red-400 border-red-500/30 flex items-center gap-1.5 shadow-sm">
+                        <span class="batch-badge batch-badge-red px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[9px] sm:text-[11px] font-bold tracking-wide uppercase border bg-red-500/10 text-red-400 border-red-500/30 flex items-center gap-1.5 shadow-sm">
                             <span class="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse"></span> Elite Batch
                         </span>
                     </div>
-                    <div class="mt-4">
-                        <span class="text-xs text-red-400 font-bold uppercase tracking-wider">Video Acceleration</span>
-                        <h3 class="text-xl font-bold text-white mt-1 min-h-[56px] flex items-start">YouTube Channel Mastery</h3>
+                    <div class="mt-3 sm:mt-4">
+                        <span class="text-[11px] sm:text-xs text-red-400 font-bold uppercase tracking-wider">Video Acceleration</span>
+                        <h3 class="text-base sm:text-xl font-bold text-white mt-1 sm:min-h-[56px] flex items-start leading-snug">YouTube Channel Mastery</h3>
                     </div>
-                    <p class="text-xs text-gray-400 leading-relaxed min-h-[60px] mt-2">
+                    <p class="text-xs text-gray-400 leading-relaxed sm:min-h-[60px] mt-1.5 sm:mt-2">
                         Fast-track your monetization requirements with real watch-time, subscriber growth, and targeted comment strategy.
                     </p>
                     <!-- Pricing Block -->
-                    <div class="price-block pt-3 pb-2 border-t border-gray-800/80 flex items-center justify-between mt-4">
+                    <div class="price-block pt-2.5 pb-2 sm:pt-3 border-t border-gray-800/80 flex items-center justify-between mt-3 sm:mt-4">
                         <div>
                             <div class="flex items-baseline gap-2">
-                                <span class="text-2xl font-black font-display text-white">₹15,999</span>
-                                <span class="text-xs text-gray-500 line-through">₹26,999</span>
+                                <span class="text-xl sm:text-2xl font-black font-display text-white">₹15,999</span>
+                                <span class="text-[11px] sm:text-xs text-gray-500 line-through">₹26,999</span>
                             </div>
-                            <p class="text-[10px] text-gray-400 font-medium">Starting Package • Active Offer</p>
+                            <p class="text-[9px] sm:text-[10px] text-gray-400 font-medium">Starting Package • Active Offer</p>
                         </div>
-                        <span class="discount-badge px-2.5 py-1 rounded-lg text-xs font-black">
+                        <span class="discount-badge px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[11px] sm:text-xs font-black">
                             40%<span class="badge-off">OFF</span>
                         </span>
                     </div>
-                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4 flex-1">
+                    <ul class="space-y-1.5 sm:space-y-2 text-[11px] sm:text-xs text-gray-300 border-t border-gray-800/80 pt-3 sm:pt-4 flex-1">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Subscribers Expansion</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> High Retention Views</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Niche Targeted Comments</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> YouTube Monetization Help & Setup</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Viral Shorts & Video SEO Strategy</li>
                     </ul>
-                    <button onclick="openCalcModal('YouTube Growth')" class="w-full mt-6 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10 mt-auto">Get Started</button>
+                    <button onclick="openCalcModal('YouTube Growth')" class="w-full mt-4 sm:mt-6 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10 mt-auto cursor-pointer">Get Started</button>
                 </div>
 
                 <!-- Web Creation Card -->
-                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl flex flex-col h-full" data-cat="website">
+                <div class="service-card glass-panel glass-panel-hover p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex flex-col h-full" data-cat="website">
                     <div class="flex items-center justify-between">
-                        <div class="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center text-white text-2xl shadow-lg">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-600 flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg">
                             <i class="fa-solid fa-code"></i>
                         </div>
-                        <span class="batch-badge batch-badge-blue px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide uppercase border bg-blue-500/10 text-blue-400 border-blue-500/30 flex items-center gap-1.5 shadow-sm">
+                        <span class="batch-badge batch-badge-blue px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[9px] sm:text-[11px] font-bold tracking-wide uppercase border bg-blue-500/10 text-blue-400 border-blue-500/30 flex items-center gap-1.5 shadow-sm">
                             <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span> Pro Batch
                         </span>
                     </div>
-                    <div class="mt-4">
-                        <span class="text-xs text-blue-400 font-bold uppercase tracking-wider">Web Development</span>
-                        <h3 class="text-xl font-bold text-white mt-1 min-h-[56px] flex items-start">Website Creation & SEO</h3>
+                    <div class="mt-3 sm:mt-4">
+                        <span class="text-[11px] sm:text-xs text-blue-400 font-bold uppercase tracking-wider">Web Development</span>
+                        <h3 class="text-base sm:text-xl font-bold text-white mt-1 sm:min-h-[56px] flex items-start leading-snug">Website Creation & SEO</h3>
                     </div>
-                    <p class="text-xs text-gray-400 leading-relaxed min-h-[60px] mt-2">
+                    <p class="text-xs text-gray-400 leading-relaxed sm:min-h-[60px] mt-1.5 sm:mt-2">
                         High-performance responsive websites optimized for conversions and search engine ranking algorithms (SEO & AEO).
                     </p>
                     <!-- Pricing Block -->
-                    <div class="price-block pt-3 pb-2 border-t border-gray-800/80 flex items-center justify-between mt-4">
+                    <div class="price-block pt-2.5 pb-2 sm:pt-3 border-t border-gray-800/80 flex items-center justify-between mt-3 sm:mt-4">
                         <div>
                             <div class="flex items-baseline gap-2">
-                                <span class="text-2xl font-black font-display text-white">₹27,999</span>
-                                <span class="text-xs text-gray-500 line-through">₹45,999</span>
+                                <span class="text-xl sm:text-2xl font-black font-display text-white">₹27,999</span>
+                                <span class="text-[11px] sm:text-xs text-gray-500 line-through">₹45,999</span>
                             </div>
-                            <p class="text-[10px] text-gray-400 font-medium">Starting Package • Active Offer</p>
+                            <p class="text-[9px] sm:text-[10px] text-gray-400 font-medium">Starting Package • Active Offer</p>
                         </div>
-                        <span class="discount-badge px-2.5 py-1 rounded-lg text-xs font-black">
+                        <span class="discount-badge px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[11px] sm:text-xs font-black">
                             39%<span class="badge-off">OFF</span>
                         </span>
                     </div>
-                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4 flex-1">
+                    <ul class="space-y-1.5 sm:space-y-2 text-[11px] sm:text-xs text-gray-300 border-t border-gray-800/80 pt-3 sm:pt-4 flex-1">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> E-Commerce Website Design</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Static & Dynamic Website Creation</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Premium Portfolio Websites</li>
@@ -912,40 +913,40 @@
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Advanced SEO & AEO Optimization</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> SSL Certificate Setup Included</li>
                     </ul>
-                    <button onclick="openCalcModal('Website Creation')" class="w-full mt-6 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10 mt-auto">Get Started</button>
+                    <button onclick="openCalcModal('Website Creation')" class="w-full mt-4 sm:mt-6 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10 mt-auto cursor-pointer">Get Started</button>
                 </div>
 
                 <!-- Software Engineering Card -->
-                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl flex flex-col h-full" data-cat="software">
+                <div class="service-card glass-panel glass-panel-hover p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex flex-col h-full" data-cat="software">
                     <div class="flex items-center justify-between">
-                        <div class="w-12 h-12 rounded-2xl bg-emerald-600 flex items-center justify-center text-white text-2xl shadow-lg">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-600 flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg">
                             <i class="fa-solid fa-network-wired"></i>
                         </div>
-                        <span class="batch-badge batch-badge-emerald px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide uppercase border bg-emerald-500/10 text-emerald-400 border-emerald-500/30 flex items-center gap-1.5 shadow-sm">
+                        <span class="batch-badge batch-badge-emerald px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[9px] sm:text-[11px] font-bold tracking-wide uppercase border bg-emerald-500/10 text-emerald-400 border-emerald-500/30 flex items-center gap-1.5 shadow-sm">
                             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Enterprise Batch
                         </span>
                     </div>
-                    <div class="mt-4">
-                        <span class="text-xs text-emerald-400 font-bold uppercase tracking-wider">Software Engineering</span>
-                        <h3 class="text-xl font-bold text-white mt-1 min-h-[56px] flex items-start">Custom Software Build</h3>
+                    <div class="mt-3 sm:mt-4">
+                        <span class="text-[11px] sm:text-xs text-emerald-400 font-bold uppercase tracking-wider">Software Engineering</span>
+                        <h3 class="text-base sm:text-xl font-bold text-white mt-1 sm:min-h-[56px] flex items-start leading-snug">Custom Software Build</h3>
                     </div>
-                    <p class="text-xs text-gray-400 leading-relaxed min-h-[60px] mt-2">
+                    <p class="text-xs text-gray-400 leading-relaxed sm:min-h-[60px] mt-1.5 sm:mt-2">
                         Tailor-made internal enterprise tools to automate billing, inventory, hotel bookings, and customer relations.
                     </p>
                     <!-- Pricing Block -->
-                    <div class="price-block pt-3 pb-2 border-t border-gray-800/80 flex items-center justify-between mt-4">
+                    <div class="price-block pt-2.5 pb-2 sm:pt-3 border-t border-gray-800/80 flex items-center justify-between mt-3 sm:mt-4">
                         <div>
                             <div class="flex items-baseline gap-2">
-                                <span class="text-2xl font-black font-display text-white">₹39,999</span>
-                                <span class="text-xs text-gray-500 line-through">₹64,999</span>
+                                <span class="text-xl sm:text-2xl font-black font-display text-white">₹39,999</span>
+                                <span class="text-[11px] sm:text-xs text-gray-500 line-through">₹64,999</span>
                             </div>
-                            <p class="text-[10px] text-gray-400 font-medium">Starting Package • Active Offer</p>
+                            <p class="text-[9px] sm:text-[10px] text-gray-400 font-medium">Starting Package • Active Offer</p>
                         </div>
-                        <span class="discount-badge px-2.5 py-1 rounded-lg text-xs font-black">
+                        <span class="discount-badge px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[11px] sm:text-xs font-black">
                             38%<span class="badge-off">OFF</span>
                         </span>
                     </div>
-                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4 flex-1">
+                    <ul class="space-y-1.5 sm:space-y-2 text-[11px] sm:text-xs text-gray-300 border-t border-gray-800/80 pt-3 sm:pt-4 flex-1">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Customized Software Build</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> POS & Billing Software</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Attendance Management Systems</li>
@@ -953,173 +954,173 @@
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Restaurant & Hotel Systems</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Customer Management (CRM)</li>
                     </ul>
-                    <button onclick="openCalcModal('Software Build')" class="w-full mt-6 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10 mt-auto">Get Started</button>
+                    <button onclick="openCalcModal('Software Build')" class="w-full mt-4 sm:mt-6 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10 mt-auto cursor-pointer">Get Started</button>
                 </div>
 
                 <!-- Mobile App Card -->
-                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl flex flex-col h-full" data-cat="mobile">
+                <div class="service-card glass-panel glass-panel-hover p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex flex-col h-full" data-cat="mobile">
                     <div class="flex items-center justify-between">
-                        <div class="w-12 h-12 rounded-2xl bg-amber-500 flex items-center justify-center text-brand-dark text-2xl font-bold shadow-lg">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-amber-500 flex items-center justify-center text-brand-dark text-xl sm:text-2xl font-bold shadow-lg">
                             <i class="fa-solid fa-mobile-screen-button"></i>
                         </div>
-                        <span class="batch-badge batch-badge-amber px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide uppercase border bg-amber-500/10 text-amber-400 border-amber-500/30 flex items-center gap-1.5 shadow-sm">
+                        <span class="batch-badge batch-badge-amber px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[9px] sm:text-[11px] font-bold tracking-wide uppercase border bg-amber-500/10 text-amber-400 border-amber-500/30 flex items-center gap-1.5 shadow-sm">
                             <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span> Exclusive Batch
                         </span>
                     </div>
-                    <div class="mt-4">
-                        <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">App Development</span>
-                        <h3 class="text-xl font-bold text-white mt-1 min-h-[56px] flex items-start">Mobile App Systems</h3>
+                    <div class="mt-3 sm:mt-4">
+                        <span class="text-[11px] sm:text-xs text-amber-400 font-bold uppercase tracking-wider">App Development</span>
+                        <h3 class="text-base sm:text-xl font-bold text-white mt-1 sm:min-h-[56px] flex items-start leading-snug">Mobile App Systems</h3>
                     </div>
-                    <p class="text-xs text-gray-400 leading-relaxed min-h-[60px] mt-2">
+                    <p class="text-xs text-gray-400 leading-relaxed sm:min-h-[60px] mt-1.5 sm:mt-2">
                         Intuitive, native performance cross-platform mobile apps published straight to Google Play Store & Apple App Store.
                     </p>
                     <!-- Pricing Block -->
-                    <div class="price-block pt-3 pb-2 border-t border-gray-800/80 flex items-center justify-between mt-4">
+                    <div class="price-block pt-2.5 pb-2 sm:pt-3 border-t border-gray-800/80 flex items-center justify-between mt-3 sm:mt-4">
                         <div>
                             <div class="flex items-baseline gap-2">
-                                <span class="text-2xl font-black font-display text-white">₹49,999</span>
-                                <span class="text-xs text-gray-500 line-through">₹79,999</span>
+                                <span class="text-xl sm:text-2xl font-black font-display text-white">₹49,999</span>
+                                <span class="text-[11px] sm:text-xs text-gray-500 line-through">₹79,999</span>
                             </div>
-                            <p class="text-[10px] text-gray-400 font-medium">Starting Package • Active Offer</p>
+                            <p class="text-[9px] sm:text-[10px] text-gray-400 font-medium">Starting Package • Active Offer</p>
                         </div>
-                        <span class="discount-badge px-2.5 py-1 rounded-lg text-xs font-black">
+                        <span class="discount-badge px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[11px] sm:text-xs font-black">
                             37%<span class="badge-off">OFF</span>
                         </span>
                     </div>
-                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4 flex-1">
+                    <ul class="space-y-1.5 sm:space-y-2 text-[11px] sm:text-xs text-gray-300 border-t border-gray-800/80 pt-3 sm:pt-4 flex-1">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Android & iOS Mobile Applications</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Play Store & App Store Deployment</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> Push Notifications & Analytics</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> App Store Optimization (ASO)</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-yellow"></i> High-Performance Native 60FPS UX</li>
                     </ul>
-                    <button onclick="openCalcModal('Mobile App Build')" class="w-full mt-6 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10 mt-auto">Get Started</button>
+                    <button onclick="openCalcModal('Mobile App Build')" class="w-full mt-4 sm:mt-6 py-2.5 rounded-xl bg-white/5 hover:bg-brand-yellow hover:text-brand-dark text-white text-xs font-bold transition-all border border-white/10 mt-auto cursor-pointer">Get Started</button>
                 </div>
 
                 <!-- Custom Combo Growth Pack -->
-                <div class="service-card glass-panel glass-panel-hover p-6 rounded-3xl flex flex-col h-full border-brand-yellow/40 bg-gradient-to-b from-brand-yellow/10 to-transparent" data-cat="all">
+                <div class="service-card glass-panel glass-panel-hover p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex flex-col h-full border-brand-yellow/40 bg-gradient-to-b from-brand-yellow/10 to-transparent" data-cat="all">
                     <div class="flex items-center justify-between">
-                        <div class="w-12 h-12 rounded-2xl bg-brand-yellow flex items-center justify-center text-brand-dark text-2xl font-bold shadow-lg">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-brand-yellow flex items-center justify-center text-brand-dark text-xl sm:text-2xl font-bold shadow-lg">
                             <i class="fa-solid fa-rocket"></i>
                         </div>
-                        <span class="batch-badge batch-badge-yellow px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide uppercase border bg-brand-yellow/15 text-brand-yellow border-brand-yellow/40 flex items-center gap-1.5 shadow-sm">
+                        <span class="batch-badge batch-badge-yellow px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[9px] sm:text-[11px] font-bold tracking-wide uppercase border bg-brand-yellow/15 text-brand-yellow border-brand-yellow/40 flex items-center gap-1.5 shadow-sm">
                             <i class="fa-solid fa-crown text-[10px]"></i> VIP Master Batch
                         </span>
                     </div>
-                    <div class="mt-4">
-                        <span class="text-xs text-brand-yellow font-bold uppercase tracking-wider">Full Package</span>
-                        <h3 class="text-xl font-bold text-white mt-1 min-h-[56px] flex items-start">Complete Digital Brand Transformation</h3>
+                    <div class="mt-3 sm:mt-4">
+                        <span class="text-[11px] sm:text-xs text-brand-yellow font-bold uppercase tracking-wider">Full Package</span>
+                        <h3 class="text-base sm:text-xl font-bold text-white mt-1 sm:min-h-[56px] flex items-start leading-snug">Complete Digital Brand Transformation</h3>
                     </div>
-                    <p class="text-xs text-gray-300 leading-relaxed min-h-[60px] mt-2">
+                    <p class="text-xs text-gray-300 leading-relaxed sm:min-h-[60px] mt-1.5 sm:mt-2">
                         Combine Social Growth, Web E-Commerce, Software CRM, and Mobile App launch for total market domination.
                     </p>
                     <!-- Pricing Block -->
-                    <div class="price-block pt-3 pb-2 border-t border-brand-yellow/30 flex items-center justify-between mt-4">
+                    <div class="price-block pt-2.5 pb-2 sm:pt-3 border-t border-brand-yellow/30 flex items-center justify-between mt-3 sm:mt-4">
                         <div>
                             <div class="flex items-baseline gap-2">
-                                <span class="text-2xl font-black font-display text-brand-yellow">₹79,999</span>
-                                <span class="text-xs text-gray-400 line-through">₹1,29,999</span>
+                                <span class="text-xl sm:text-2xl font-black font-display text-brand-yellow">₹79,999</span>
+                                <span class="text-[11px] sm:text-xs text-gray-400 line-through">₹1,29,999</span>
                             </div>
-                            <p class="text-[10px] text-gray-400 font-medium">All-Inclusive Enterprise Bundle</p>
+                            <p class="text-[9px] sm:text-[10px] text-gray-400 font-medium">All-Inclusive Enterprise Bundle</p>
                         </div>
-                        <span class="discount-badge px-2.5 py-1 rounded-lg text-xs font-black">
+                        <span class="discount-badge px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[11px] sm:text-xs font-black">
                             38%<span class="badge-off">OFF</span>
                         </span>
                     </div>
-                    <ul class="space-y-2 text-xs text-gray-300 border-t border-brand-yellow/30 pt-4 flex-1">
+                    <ul class="space-y-1.5 sm:space-y-2 text-[11px] sm:text-xs text-gray-300 border-t border-brand-yellow/30 pt-3 sm:pt-4 flex-1">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-yellow"></i> Priority 1-on-1 Strategy Team</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-yellow"></i> Custom Discounted Bundle Pricing</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-yellow"></i> Weekly Progress & Growth Reports</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-yellow"></i> Dedicated Tech & Growth Director</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-yellow"></i> Complete Omnichannel Execution</li>
                     </ul>
-                    <button onclick="openCalcModal('Complete Digital Bundle')" class="w-full mt-6 py-2.5 rounded-xl glass-button text-xs font-bold mt-auto">Request Custom Quote</button>
+                    <button onclick="openCalcModal('Complete Digital Bundle')" class="w-full mt-4 sm:mt-6 py-2.5 rounded-xl glass-button text-xs font-bold mt-auto cursor-pointer">Request Custom Quote</button>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+    <section id="portfolio" class="py-12 sm:py-20 relative">
+        <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
                 <div>
-                    <div class="inline-block px-3 py-1 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs font-bold uppercase tracking-wider mb-3">
+                    <div class="inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2 sm:mb-3">
                         Featured Projects
                     </div>
-                    <h2 class="text-3xl sm:text-5xl font-display font-bold text-white">Our Success Stories</h2>
+                    <h2 class="text-2xl sm:text-4xl lg:text-5xl font-display font-bold text-white">Our Success Stories</h2>
                 </div>
-                <p class="text-gray-400 text-sm max-w-md mt-4 md:mt-0">
-                    A glimpse of mobile apps, web solutions, and social media reach campaigns crafted by the DIGI Brandify team.
+                <p class="text-gray-400 text-xs sm:text-sm max-w-md mt-2 md:mt-0">
+                    A glimpse of mobile apps, web solutions, and social media reach campaigns crafted by the Digibrandify team.
                 </p>
             </div>
 
             <!-- Portfolio Grid -->
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-3 gap-5 sm:gap-6">
                 <!-- Project Item 1 -->
-                <div onclick="openPortfolioModal(0)" class="glass-panel rounded-3xl overflow-hidden glass-panel-hover group cursor-pointer transition-all duration-300 transform hover:-translate-y-2">
+                <div onclick="openPortfolioModal(0)" class="glass-panel rounded-2xl sm:rounded-3xl overflow-hidden glass-panel-hover group cursor-pointer transition-all duration-300 transform hover:-translate-y-2">
                     <div class="aspect-[16/9] w-full overflow-hidden relative">
-                        <img src="assets/portfolio/portfolio_digital_marketing.png" alt="DIGI Brandify - Omnichannel Digital Marketing" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3.5 right-3.5 bg-brand-dark/85 backdrop-blur-md px-3 py-1 rounded-full text-[10px] text-brand-yellow font-bold border border-brand-yellow/30 shadow-md">Digital Marketing</span>
+                        <img src="assets/portfolio/portfolio_digital_marketing.png" alt="Digibrandify - Omnichannel Digital Marketing" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-brand-dark/85 backdrop-blur-md px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[9px] sm:text-[10px] text-brand-yellow font-bold border border-brand-yellow/30 shadow-md">Digital Marketing</span>
                         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-dark/80 text-brand-yellow text-xs font-bold px-3.5 py-1.5 rounded-full border border-brand-yellow/40 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-dark/80 text-brand-yellow text-xs font-bold px-3 py-1 rounded-full border border-brand-yellow/40 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
                                 <i class="fa-solid fa-expand text-[10px]"></i> View Details
                             </span>
                         </div>
                     </div>
-                    <div class="p-6 space-y-2">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand-yellow transition-colors">Omnichannel Audience & Marketing</h3>
-                        <p class="text-xs text-gray-400">Targeted multi-channel campaigns across Instagram, Meta, YouTube & Google for maximum reach and audience attraction.</p>
+                    <div class="p-4 sm:p-6 space-y-2">
+                        <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-brand-yellow transition-colors leading-snug">Omnichannel Audience & Marketing</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">Targeted multi-channel campaigns across Instagram, Meta, YouTube & Google for maximum reach and audience attraction.</p>
                         <div class="pt-2 flex items-center justify-between text-xs text-brand-yellow font-semibold">
                             <span>+350% Targeted Reach</span>
                             <span class="flex items-center gap-1 text-[11px] group-hover:translate-x-1 transition-transform">
-                                Full Case Study <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                Full Case Study <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                             </span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project Item 2 -->
-                <div onclick="openPortfolioModal(1)" class="glass-panel rounded-3xl overflow-hidden glass-panel-hover group cursor-pointer transition-all duration-300 transform hover:-translate-y-2">
+                <div onclick="openPortfolioModal(1)" class="glass-panel rounded-2xl sm:rounded-3xl overflow-hidden glass-panel-hover group cursor-pointer transition-all duration-300 transform hover:-translate-y-2">
                     <div class="aspect-[16/9] w-full overflow-hidden relative">
-                        <img src="assets/portfolio/portfolio_mobile_app.png" alt="DIGI Brandify - Mobile App Development" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3.5 right-3.5 bg-brand-dark/85 backdrop-blur-md px-3 py-1 rounded-full text-[10px] text-brand-yellow font-bold border border-brand-yellow/30 shadow-md">Mobile App Development</span>
+                        <img src="assets/portfolio/portfolio_mobile_app.png" alt="Digibrandify - Mobile App Development" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-brand-dark/85 backdrop-blur-md px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[9px] sm:text-[10px] text-brand-yellow font-bold border border-brand-yellow/30 shadow-md">Mobile App Development</span>
                         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-dark/80 text-brand-yellow text-xs font-bold px-3.5 py-1.5 rounded-full border border-brand-yellow/40 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-dark/80 text-brand-yellow text-xs font-bold px-3 py-1 rounded-full border border-brand-yellow/40 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
                                 <i class="fa-solid fa-expand text-[10px]"></i> View Details
                             </span>
                         </div>
                     </div>
-                    <div class="p-6 space-y-2">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand-yellow transition-colors">Custom Mobile Apps (Android & iOS)</h3>
-                        <p class="text-xs text-gray-400">Turn vision into reality with high-performance, secure and scalable mobile apps built for seamless user experience.</p>
+                    <div class="p-4 sm:p-6 space-y-2">
+                        <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-brand-yellow transition-colors leading-snug">Custom Mobile Apps (Android & iOS)</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">Turn vision into reality with high-performance, secure and scalable mobile apps built for seamless user experience.</p>
                         <div class="pt-2 flex items-center justify-between text-xs text-brand-yellow font-semibold">
                             <span>Android & iOS Ready</span>
                             <span class="flex items-center gap-1 text-[11px] group-hover:translate-x-1 transition-transform">
-                                Full Case Study <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                Full Case Study <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                             </span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project Item 3 -->
-                <div onclick="openPortfolioModal(2)" class="glass-panel rounded-3xl overflow-hidden glass-panel-hover group cursor-pointer transition-all duration-300 transform hover:-translate-y-2">
+                <div onclick="openPortfolioModal(2)" class="glass-panel rounded-2xl sm:rounded-3xl overflow-hidden glass-panel-hover group cursor-pointer transition-all duration-300 transform hover:-translate-y-2">
                     <div class="aspect-[16/9] w-full overflow-hidden relative">
-                        <img src="assets/portfolio/portfolio_website_development.png" alt="DIGI Brandify - Website Development" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3.5 right-3.5 bg-brand-dark/85 backdrop-blur-md px-3 py-1 rounded-full text-[10px] text-brand-yellow font-bold border border-brand-yellow/30 shadow-md">Website Development</span>
+                        <img src="assets/portfolio/portfolio_website_development.png" alt="Digibrandify - Website Development" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-brand-dark/85 backdrop-blur-md px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[9px] sm:text-[10px] text-brand-yellow font-bold border border-brand-yellow/30 shadow-md">Website Development</span>
                         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-dark/80 text-brand-yellow text-xs font-bold px-3.5 py-1.5 rounded-full border border-brand-yellow/40 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-dark/80 text-brand-yellow text-xs font-bold px-3 py-1 rounded-full border border-brand-yellow/40 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
                                 <i class="fa-solid fa-expand text-[10px]"></i> View Details
                             </span>
                         </div>
                     </div>
-                    <div class="p-6 space-y-2">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand-yellow transition-colors">Modern Websites & Web Platforms</h3>
-                        <p class="text-xs text-gray-400">Fast, responsive, and SEO-optimized dynamic websites and e-commerce stores designed to turn visitors into loyal customers.</p>
+                    <div class="p-4 sm:p-6 space-y-2">
+                        <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-brand-yellow transition-colors leading-snug">Modern Websites & Web Platforms</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">Fast, responsive, and SEO-optimized dynamic websites and e-commerce stores designed to turn visitors into loyal customers.</p>
                         <div class="pt-2 flex items-center justify-between text-xs text-brand-yellow font-semibold">
                             <span>99/100 Performance & SEO</span>
                             <span class="flex items-center gap-1 text-[11px] group-hover:translate-x-1 transition-transform">
-                                Full Case Study <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                Full Case Study <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                             </span>
                         </div>
                     </div>
@@ -1127,8 +1128,8 @@
             </div>
 
             <!-- View More Button -->
-            <div class="mt-12 text-center">
-                <a href="portfolio.html" class="inline-flex items-center gap-3 px-9 py-4 rounded-2xl glass-panel border border-brand-yellow/40 text-brand-yellow hover:bg-brand-yellow hover:text-brand-dark font-bold text-sm sm:text-base transition-all duration-300 shadow-xl hover:shadow-brand-yellow/30 hover:scale-105 active:scale-95 cursor-pointer group">
+            <div class="mt-8 sm:mt-12 text-center">
+                <a href="portfolio.html" class="inline-flex items-center gap-2.5 px-6 py-3 sm:px-9 sm:py-4 rounded-xl sm:rounded-2xl glass-panel border border-brand-yellow/40 text-brand-yellow hover:bg-brand-yellow hover:text-brand-dark font-bold text-xs sm:text-base transition-all duration-300 shadow-xl hover:shadow-brand-yellow/30 hover:scale-105 active:scale-95 cursor-pointer group">
                     <span>View All Portfolio & Creative Works</span>
                     <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                 </a>
@@ -1136,63 +1137,63 @@
         </div>
     </section>
 
-    <section id="reviews" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-5xl mx-auto mb-12 space-y-3">
-                <div class="inline-block px-3 py-1 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs font-bold uppercase tracking-wider">
+    <section id="reviews" class="py-12 sm:py-20 relative">
+        <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+            <div class="text-center max-w-5xl mx-auto mb-8 sm:mb-12 space-y-2 sm:space-y-3">
+                <div class="inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-[10px] sm:text-xs font-bold uppercase tracking-wider">
                     Client Testimonials
                 </div>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white md:whitespace-nowrap">What Clients Say About <span class="text-brand-yellow">Digi</span><span class="brand-text-name text-white">brandify</span></h2>
+                <h2 class="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white md:whitespace-nowrap">What Clients Say About <span class="text-brand-yellow">Digi</span><span class="brand-text-name text-white">brandify</span></h2>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-3 gap-5 sm:gap-6">
                 <!-- Review 1 -->
-                <div class="glass-panel p-6 rounded-3xl space-y-4 border-brand-yellow/20">
-                    <div class="flex text-brand-yellow gap-1 text-sm">
+                <div class="glass-panel p-4 sm:p-6 rounded-2xl sm:rounded-3xl space-y-3 sm:space-y-4 border-brand-yellow/20">
+                    <div class="flex text-brand-yellow gap-1 text-xs sm:text-sm">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
                     <p class="text-xs sm:text-sm text-gray-300 italic leading-relaxed">
-                        "DIGI Brandify helped our YouTube channel cross the watch time milestone within weeks! Plus their Instagram posters gave our identity a huge makeover."
+                        "Digibrandify helped our YouTube channel cross the watch time milestone within weeks! Plus their Instagram posters gave our identity a huge makeover."
                     </p>
                     <div class="flex items-center gap-3 pt-2 border-t border-gray-800">
-                        <div class="w-10 h-10 rounded-full bg-brand-yellow text-brand-dark flex items-center justify-center font-bold">RK</div>
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-brand-yellow text-brand-dark flex items-center justify-center font-bold text-xs sm:text-sm">RK</div>
                         <div>
-                            <h4 class="text-sm font-bold text-white">Rahul Kapoor</h4>
-                            <p class="text-[11px] text-gray-400">Creator & Tech Vlogger</p>
+                            <h4 class="text-xs sm:text-sm font-bold text-white">Rahul Kapoor</h4>
+                            <p class="text-[10px] sm:text-[11px] text-gray-400">Creator & Tech Vlogger</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Review 2 -->
-                <div class="glass-panel p-6 rounded-3xl space-y-4 border-brand-yellow/20">
-                    <div class="flex text-brand-yellow gap-1 text-sm">
+                <div class="glass-panel p-4 sm:p-6 rounded-2xl sm:rounded-3xl space-y-3 sm:space-y-4 border-brand-yellow/20">
+                    <div class="flex text-brand-yellow gap-1 text-xs sm:text-sm">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
                     <p class="text-xs sm:text-sm text-gray-300 italic leading-relaxed">
                         "Our restaurant billing software and mobile app were built ahead of schedule. Payment gateway integration was flawless. Highly recommended!"
                     </p>
                     <div class="flex items-center gap-3 pt-2 border-t border-gray-800">
-                        <div class="w-10 h-10 rounded-full bg-brand-yellow text-brand-dark flex items-center justify-center font-bold">SM</div>
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-brand-yellow text-brand-dark flex items-center justify-center font-bold text-xs sm:text-sm">SM</div>
                         <div>
-                            <h4 class="text-sm font-bold text-white">Sarah Mehta</h4>
-                            <p class="text-[11px] text-gray-400">Owner, Fusion Dine</p>
+                            <h4 class="text-xs sm:text-sm font-bold text-white">Sarah Mehta</h4>
+                            <p class="text-[10px] sm:text-[11px] text-gray-400">Owner, Fusion Dine</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Review 3 -->
-                <div class="glass-panel p-6 rounded-3xl space-y-4 border-brand-yellow/20">
-                    <div class="flex text-brand-yellow gap-1 text-sm">
+                <div class="glass-panel p-4 sm:p-6 rounded-2xl sm:rounded-3xl space-y-3 sm:space-y-4 border-brand-yellow/20">
+                    <div class="flex text-brand-yellow gap-1 text-xs sm:text-sm">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
                     <p class="text-xs sm:text-sm text-gray-300 italic leading-relaxed">
                         "E-Commerce website creation with SEO & AEO gave us immediate Google page 1 placement. Followers and sales started rolling in within 15 days."
                     </p>
                     <div class="flex items-center gap-3 pt-2 border-t border-gray-800">
-                        <div class="w-10 h-10 rounded-full bg-brand-yellow text-brand-dark flex items-center justify-center font-bold">AV</div>
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-brand-yellow text-brand-dark flex items-center justify-center font-bold text-xs sm:text-sm">AV</div>
                         <div>
-                            <h4 class="text-sm font-bold text-white">Alex Verma</h4>
-                            <p class="text-[11px] text-gray-400">Founder, Trendify Store</p>
+                            <h4 class="text-xs sm:text-sm font-bold text-white">Alex Verma</h4>
+                            <p class="text-[10px] sm:text-[11px] text-gray-400">Founder, Trendify Store</p>
                         </div>
                     </div>
                 </div>
@@ -1200,48 +1201,48 @@
         </div>
     </section>
 
-    <section id="contact" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-panel rounded-3xl p-8 sm:p-12 border-brand-yellow/30">
-                <div class="grid lg:grid-cols-12 gap-12">
+    <section id="contact" class="py-12 sm:py-20 relative">
+        <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+            <div class="glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-12 border-brand-yellow/30">
+                <div class="grid lg:grid-cols-12 gap-8 lg:gap-12">
                     
-                    <div class="lg:col-span-5 space-y-6">
-                        <div class="inline-block px-3 py-1 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs font-bold uppercase tracking-wider">
+                    <div class="lg:col-span-5 space-y-4 sm:space-y-6">
+                        <div class="inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-[10px] sm:text-xs font-bold uppercase tracking-wider">
                             Get In Touch
                         </div>
-                        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">Ready To Scale Your Brand?</h2>
+                        <h2 class="text-2xl sm:text-4xl font-display font-bold text-white">Ready To Scale Your Brand?</h2>
                         <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
                             Send us a message or request a quick callback. Our growth strategists will analyze your account or technical project within 2 hours.
                         </p>
 
-                        <div class="space-y-4 pt-4">
-                            <a href="mailto:digibrandify01@gmail.com" class="flex items-center gap-4 p-4 rounded-2xl glass-panel glass-panel-hover transition-all">
-                                <div class="w-10 h-10 rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center text-lg font-bold">
+                        <div class="space-y-3 sm:space-y-4 pt-2 sm:pt-4">
+                            <a href="mailto:digibrandify01@gmail.com" class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl glass-panel glass-panel-hover transition-all">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center text-base sm:text-lg font-bold">
                                     <i class="fa-solid fa-envelope"></i>
                                 </div>
                                 <div>
-                                    <p class="text-xs text-gray-400">Email Direct</p>
-                                    <p class="text-sm font-bold text-white">digibrandify01@gmail.com</p>
+                                    <p class="text-[11px] sm:text-xs text-gray-400">Email Direct</p>
+                                    <p class="text-xs sm:text-sm font-bold text-white">digibrandify01@gmail.com</p>
                                 </div>
                             </a>
 
-                            <a href="https://wa.me/918056107314" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl glass-panel glass-panel-hover transition-all">
-                                <div class="w-10 h-10 rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center text-lg font-bold">
-                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <a href="https://wa.me/918056107314" target="_blank" class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl glass-panel glass-panel-hover transition-all">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center text-lg sm:text-xl font-bold">
+                                    <i class="fa-brands fa-whatsapp"></i>
                                 </div>
                                 <div>
-                                    <p class="text-xs text-gray-400">Phone / WhatsApp</p>
-                                    <p class="text-sm font-bold text-white">+91 80561 07314</p>
+                                    <p class="text-[11px] sm:text-xs text-gray-400">Phone / WhatsApp</p>
+                                    <p class="text-xs sm:text-sm font-bold text-white">+91 80561 07314</p>
                                 </div>
                             </a>
 
-                            <div class="flex items-center gap-4 p-4 rounded-2xl glass-panel">
-                                <div class="w-10 h-10 rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center text-lg font-bold">
+                            <div class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl glass-panel">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center text-base sm:text-lg font-bold">
                                     <i class="fa-solid fa-clock"></i>
                                 </div>
                                 <div>
-                                    <p class="text-xs text-gray-400">Response Time</p>
-                                    <p class="text-sm font-bold text-white">Under 2 Hours Guaranteed</p>
+                                    <p class="text-[11px] sm:text-xs text-gray-400">Response Time</p>
+                                    <p class="text-xs sm:text-sm font-bold text-white">Under 2 Hours Guaranteed</p>
                                 </div>
                             </div>
                         </div>
@@ -1249,22 +1250,22 @@
 
                     <!-- Form Panel -->
                     <div class="lg:col-span-7">
-                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
-                            <div class="grid sm:grid-cols-2 gap-4">
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-3 sm:space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-3 sm:gap-4">
                                 <div>
                                     <label class="block text-xs font-semibold text-gray-300 mb-1">Your Name</label>
-                                    <input type="text" id="contact-name" required placeholder="John Doe" class="w-full bg-brand-dark/80 border border-gray-800 focus:border-brand-yellow rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none transition-all">
+                                    <input type="text" id="contact-name" required placeholder="John Doe" class="w-full bg-brand-dark/80 border border-gray-800 focus:border-brand-yellow rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-white placeholder-gray-500 focus:outline-none transition-all">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-gray-300 mb-1">Email Address</label>
-                                    <input type="email" id="contact-email" required placeholder="john@example.com" class="w-full bg-brand-dark/80 border border-gray-800 focus:border-brand-yellow rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none transition-all">
+                                    <input type="email" id="contact-email" required placeholder="john@example.com" class="w-full bg-brand-dark/80 border border-gray-800 focus:border-brand-yellow rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-white placeholder-gray-500 focus:outline-none transition-all">
                                 </div>
                             </div>
 
-                            <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="grid sm:grid-cols-2 gap-3 sm:gap-4">
                                 <div>
                                     <label class="block text-xs font-semibold text-gray-300 mb-1">Primary Interest Service</label>
-                                    <select id="contact-service" required class="w-full bg-brand-dark/80 border border-gray-800 focus:border-brand-yellow rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-all">
+                                    <select id="contact-service" required class="w-full bg-brand-dark/80 border border-gray-800 focus:border-brand-yellow rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-white focus:outline-none transition-all">
                                         <option value="">Select Service...</option>
                                         <option value="Instagram Growth & Posters">Instagram Growth & Posters</option>
                                         <option value="YouTube Subscribers & Monetization">YouTube Subscribers & Monetization</option>
@@ -1275,17 +1276,17 @@
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-gray-300 mb-1">Phone / WhatsApp</label>
-                                    <input type="tel" id="contact-phone" placeholder="+91 98765 43210" class="w-full bg-brand-dark/80 border border-gray-800 focus:border-brand-yellow rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none transition-all">
+                                    <input type="tel" id="contact-phone" placeholder="+91 98765 43210" class="w-full bg-brand-dark/80 border border-gray-800 focus:border-brand-yellow rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-white placeholder-gray-500 focus:outline-none transition-all">
                                 </div>
                             </div>
 
                             <div>
                                 <label class="block text-xs font-semibold text-gray-300 mb-1">Project Details / Goals</label>
-                                <textarea id="contact-details" rows="4" required placeholder="Describe your growth goals or software specifications..." class="w-full bg-brand-dark/80 border border-gray-800 focus:border-brand-yellow rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none transition-all"></textarea>
+                                <textarea id="contact-details" rows="3" required placeholder="Describe your growth goals or software specifications..." class="w-full bg-brand-dark/80 border border-gray-800 focus:border-brand-yellow rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-white placeholder-gray-500 focus:outline-none transition-all"></textarea>
                             </div>
 
-                            <button type="submit" class="w-full glass-button py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2.5 transition-all">
-                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <button type="submit" class="w-full glass-button py-3 sm:py-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2.5 transition-all cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
                                 <span>Submit & Chat on WhatsApp</span>
                             </button>
                         </form>
@@ -1296,7 +1297,7 @@
         </div>
     </section>
 
-    <footer class="bg-brand-dark/90 border-t border-gray-800/80 pt-16 pb-28 md:pb-12 text-gray-400 text-xs">
+    <footer class="bg-brand-dark/90 border-t border-gray-800/80 pt-12 sm:pt-16 pb-24 md:pb-12 text-gray-400 text-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
                 <div class="col-span-2 space-y-4">
@@ -1359,7 +1360,7 @@
             </div>
 
             <div class="border-t border-gray-800/80 pt-6 flex flex-col sm:flex-row items-center justify-between text-gray-500 text-[11px]">
-                <p>&copy; 2026 DIGI Brandify. All rights reserved.</p>
+                <p>&copy; 2026 Digibrandify. All rights reserved.</p>
                 <div class="flex gap-4 mt-2 sm:mt-0">
                     <a href="#" class="hover:underline">Privacy Policy</a>
                     <a href="#" class="hover:underline">Terms of Service</a>
@@ -1369,27 +1370,27 @@
         </div>
     </footer>
 
-    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 glass-nav border-t border-brand-yellow/20 px-4 py-2">
-        <div class="flex items-center justify-around">
-            <a href="#home" class="mobile-nav-btn flex flex-col items-center gap-1 text-brand-yellow">
-                <i class="fa-solid fa-house text-lg"></i>
-                <span class="text-[10px] font-medium">Home</span>
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 glass-nav border-t border-brand-yellow/20 px-3 py-1.5 pb-2">
+        <div class="flex items-center justify-around max-w-md mx-auto">
+            <a href="#home" class="mobile-nav-btn flex flex-col items-center gap-0.5 text-brand-yellow py-1 px-2">
+                <i class="fa-solid fa-house text-base"></i>
+                <span class="text-[9px] font-medium tracking-tight">Home</span>
             </a>
-            <a href="#services" class="mobile-nav-btn flex flex-col items-center gap-1 text-gray-400 hover:text-brand-yellow">
-                <i class="fa-solid fa-layer-group text-lg"></i>
-                <span class="text-[10px] font-medium">Services</span>
+            <a href="#services" class="mobile-nav-btn flex flex-col items-center gap-0.5 text-gray-400 hover:text-brand-yellow py-1 px-2">
+                <i class="fa-solid fa-layer-group text-base"></i>
+                <span class="text-[9px] font-medium tracking-tight">Services</span>
             </a>
-            <a href="#portfolio" class="mobile-nav-btn flex flex-col items-center gap-1 text-gray-400 hover:text-brand-yellow">
-                <i class="fa-solid fa-briefcase text-lg"></i>
-                <span class="text-[10px] font-medium">Works</span>
+            <a href="#portfolio" class="mobile-nav-btn flex flex-col items-center gap-0.5 text-gray-400 hover:text-brand-yellow py-1 px-2">
+                <i class="fa-solid fa-briefcase text-base"></i>
+                <span class="text-[9px] font-medium tracking-tight">Works</span>
             </a>
-            <a href="#reviews" class="mobile-nav-btn flex flex-col items-center gap-1 text-gray-400 hover:text-brand-yellow">
-                <i class="fa-solid fa-star text-lg"></i>
-                <span class="text-[10px] font-medium">Reviews</span>
+            <a href="#reviews" class="mobile-nav-btn flex flex-col items-center gap-0.5 text-gray-400 hover:text-brand-yellow py-1 px-2">
+                <i class="fa-solid fa-star text-base"></i>
+                <span class="text-[9px] font-medium tracking-tight">Reviews</span>
             </a>
-            <a href="#contact" class="mobile-nav-btn flex flex-col items-center gap-1 text-gray-400 hover:text-brand-yellow">
-                <i class="fa-solid fa-paper-plane text-lg"></i>
-                <span class="text-[10px] font-medium">Contact</span>
+            <a href="#contact" class="mobile-nav-btn flex flex-col items-center gap-0.5 text-gray-400 hover:text-brand-yellow py-1 px-2">
+                <i class="fa-solid fa-paper-plane text-base"></i>
+                <span class="text-[9px] font-medium tracking-tight">Contact</span>
             </a>
         </div>
     </nav>

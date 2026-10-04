@@ -274,19 +274,19 @@
 
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
             <!-- Brand Logo -->
-            <a href="index.html#home" class="flex items-center gap-3.5 group">
-                <img src="assets/logo_icon.png" alt="Digibrandify Logo" class="w-10 h-10 rounded-full object-contain group-hover:scale-105 transition-transform duration-300">
+            <a href="index.html#home" class="flex items-center gap-2 sm:gap-3.5 group shrink-0">
+                <img src="assets/logo_icon.png" alt="Digibrandify Logo" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-contain group-hover:scale-105 transition-transform duration-300">
                 <div class="flex flex-col">
-                    <span class="font-display text-xl font-extrabold tracking-wider leading-none">
+                    <span class="font-display text-base sm:text-xl font-extrabold tracking-tight sm:tracking-wider leading-none">
                         <span class="text-[#f7c103]">Digi</span><span class="brand-text-name text-white">brandify</span>
                     </span>
-                    <span class="brand-tagline text-[10px] text-gray-400 tracking-widest uppercase mt-1 font-semibold">Scale Without Limits</span>
+                    <span class="brand-tagline text-[8px] sm:text-[10px] text-gray-400 tracking-wider sm:tracking-widest uppercase mt-0.5 sm:mt-1 font-semibold">Scale Without Limits</span>
                 </div>
             </a>
 
-            <!-- Navigation Links -->
+            <!-- Navigation Links (Desktop) -->
             <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
                 <a href="index.html#home" class="hover:text-brand-yellow transition-colors py-1 flex items-center gap-1.5">
                     <i class="fa-solid fa-arrow-left text-xs"></i> Back to Home
@@ -298,10 +298,15 @@
             </nav>
 
             <!-- Actions -->
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+                <!-- Back to Home link on mobile -->
+                <a href="index.html#home" class="md:hidden px-2.5 py-1.5 rounded-lg glass-panel text-xs text-brand-yellow flex items-center gap-1 border border-brand-yellow/30 font-semibold" title="Home">
+                    <i class="fa-solid fa-arrow-left text-[10px]"></i> Home
+                </a>
+
                 <!-- Theme Toggle Button -->
-                <button id="theme-toggle-btn" onclick="togglePortfolioTheme()" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-brand-yellow hover:scale-105 active:scale-95 transition-all border border-brand-yellow/30" title="Switch Theme (Light / Dark)" aria-label="Toggle theme">
-                    <i id="theme-icon" class="fa-solid fa-sun text-sm"></i>
+                <button id="theme-toggle-btn" onclick="togglePortfolioTheme()" class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl glass-panel flex items-center justify-center text-brand-yellow hover:scale-105 active:scale-95 transition-all border border-brand-yellow/30 cursor-pointer" title="Switch Theme (Light / Dark)" aria-label="Toggle theme">
+                    <i id="theme-icon" class="fa-solid fa-sun text-xs sm:text-sm"></i>
                 </button>
 
                 <a href="https://wa.me/918056107314?text=Hi%20Digibrandify,%20I%20saw%20your%20Portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex glass-button px-5 py-2.5 rounded-xl text-sm font-bold items-center gap-2">
@@ -313,38 +318,38 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-14 md:pt-40 md:pb-20 overflow-hidden">
+    <section class="relative pt-24 pb-10 sm:pt-32 sm:pb-14 md:pt-40 md:pb-20 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             
-            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel text-xs sm:text-sm font-semibold text-brand-yellow border-brand-yellow/30 mb-6">
-                <span class="w-2.5 h-2.5 rounded-full bg-brand-yellow animate-ping"></span>
+            <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass-panel text-[11px] sm:text-sm font-semibold text-brand-yellow border-brand-yellow/30 mb-4 sm:mb-6">
+                <span class="w-2 h-2 rounded-full bg-brand-yellow animate-ping"></span>
                 <span>Digibrandify Creative Showcase & Portfolio Vault</span>
             </div>
 
-            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white leading-tight max-w-4xl mx-auto">
+            <h1 class="text-2xl sm:text-4xl lg:text-6xl font-display font-extrabold text-white leading-tight max-w-4xl mx-auto">
                 Bespoke Marketing Creatives & <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow via-yellow-200 to-amber-500">Brand Powerhouses</span>
             </h1>
 
-            <p class="text-gray-300 text-base sm:text-lg max-w-3xl mx-auto mt-5 font-normal leading-relaxed">
+            <p class="text-gray-300 text-xs sm:text-base lg:text-lg max-w-3xl mx-auto mt-3 sm:mt-5 font-normal leading-relaxed">
                 Browse our curated gallery of 20 high-converting marketing campaigns, viral social media creatives, algorithmic SEO strategies, custom software platforms, and mobile apps crafted for modern businesses.
             </p>
 
             <!-- Quick Showcase Badges -->
-            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mt-8 text-xs sm:text-sm text-gray-300 font-medium">
-                <div class="px-4 py-2 rounded-xl glass-panel flex items-center gap-2 border border-brand-yellow/20">
-                    <i class="fa-solid fa-layer-group text-brand-yellow"></i>
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-6 mt-6 sm:mt-8 text-[11px] sm:text-sm text-gray-300 font-medium">
+                <div class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl glass-panel flex items-center gap-1.5 sm:gap-2 border border-brand-yellow/20">
+                    <i class="fa-solid fa-layer-group text-brand-yellow text-xs"></i>
                     <span>20 Featured Posters</span>
                 </div>
-                <div class="px-4 py-2 rounded-xl glass-panel flex items-center gap-2 border border-brand-yellow/20">
-                    <i class="fa-solid fa-wand-magic-sparkles text-brand-yellow"></i>
+                <div class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl glass-panel flex items-center gap-1.5 sm:gap-2 border border-brand-yellow/20">
+                    <i class="fa-solid fa-wand-magic-sparkles text-brand-yellow text-xs"></i>
                     <span>100% Custom Execution</span>
                 </div>
-                <div class="px-4 py-2 rounded-xl glass-panel flex items-center gap-2 border border-brand-yellow/20">
-                    <i class="fa-solid fa-chart-line text-brand-yellow"></i>
+                <div class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl glass-panel flex items-center gap-1.5 sm:gap-2 border border-brand-yellow/20">
+                    <i class="fa-solid fa-chart-line text-brand-yellow text-xs"></i>
                     <span>Data & ROI Driven</span>
                 </div>
-                <div class="px-4 py-2 rounded-xl glass-panel flex items-center gap-2 border border-brand-yellow/20">
-                    <i class="fa-solid fa-star text-brand-yellow"></i>
+                <div class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl glass-panel flex items-center gap-1.5 sm:gap-2 border border-brand-yellow/20">
+                    <i class="fa-solid fa-star text-brand-yellow text-xs"></i>
                     <span>4.9/5 Client Rating</span>
                 </div>
             </div>
@@ -353,28 +358,28 @@
     </section>
 
     <!-- Filter & Search Controls -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 relative z-20">
-        <div class="glass-panel p-4 sm:p-5 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4 border border-brand-yellow/25">
+    <section class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 mb-8 sm:mb-10 relative z-20">
+        <div class="glass-panel p-3.5 sm:p-5 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 border border-brand-yellow/25">
             
             <!-- Category Filter Pills -->
-            <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 w-full md:w-auto" id="filter-pills">
-                <button onclick="filterGallery('all', this)" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel border border-brand-yellow/30 text-white cursor-pointer">
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-1.5 sm:gap-2 w-full md:w-auto" id="filter-pills">
+                <button onclick="filterGallery('all', this)" class="filter-btn active px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-semibold glass-panel border border-brand-yellow/30 text-white cursor-pointer">
                     All Works (20)
                 </button>
-                <button onclick="filterGallery('branding', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel border border-white/10 text-gray-300 cursor-pointer hover:border-brand-yellow/40">
-                    <i class="fa-solid fa-crown mr-1.5 text-brand-yellow"></i> Brand Strategy
+                <button onclick="filterGallery('branding', this)" class="filter-btn px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-semibold glass-panel border border-white/10 text-gray-300 cursor-pointer hover:border-brand-yellow/40">
+                    <i class="fa-solid fa-crown mr-1 text-brand-yellow"></i> Brand Strategy
                 </button>
-                <button onclick="filterGallery('social', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel border border-white/10 text-gray-300 cursor-pointer hover:border-brand-yellow/40">
-                    <i class="fa-solid fa-hashtag mr-1.5 text-brand-yellow"></i> Social Media
+                <button onclick="filterGallery('social', this)" class="filter-btn px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-semibold glass-panel border border-white/10 text-gray-300 cursor-pointer hover:border-brand-yellow/40">
+                    <i class="fa-solid fa-hashtag mr-1 text-brand-yellow"></i> Social Media
                 </button>
-                <button onclick="filterGallery('tech', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel border border-white/10 text-gray-300 cursor-pointer hover:border-brand-yellow/40">
-                    <i class="fa-solid fa-laptop-code mr-1.5 text-brand-yellow"></i> Web & Tech
+                <button onclick="filterGallery('tech', this)" class="filter-btn px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-semibold glass-panel border border-white/10 text-gray-300 cursor-pointer hover:border-brand-yellow/40">
+                    <i class="fa-solid fa-laptop-code mr-1 text-brand-yellow"></i> Web & Tech
                 </button>
-                <button onclick="filterGallery('ads', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel border border-white/10 text-gray-300 cursor-pointer hover:border-brand-yellow/40">
-                    <i class="fa-solid fa-bullhorn mr-1.5 text-brand-yellow"></i> Creative Ads
+                <button onclick="filterGallery('ads', this)" class="filter-btn px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-semibold glass-panel border border-white/10 text-gray-300 cursor-pointer hover:border-brand-yellow/40">
+                    <i class="fa-solid fa-bullhorn mr-1 text-brand-yellow"></i> Creative Ads
                 </button>
-                <button onclick="filterGallery('seo', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel border border-white/10 text-gray-300 cursor-pointer hover:border-brand-yellow/40">
-                    <i class="fa-solid fa-magnifying-glass-chart mr-1.5 text-brand-yellow"></i> SEO & Growth
+                <button onclick="filterGallery('seo', this)" class="filter-btn px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-semibold glass-panel border border-white/10 text-gray-300 cursor-pointer hover:border-brand-yellow/40">
+                    <i class="fa-solid fa-magnifying-glass-chart mr-1 text-brand-yellow"></i> SEO & Growth
                 </button>
             </div>
 
@@ -411,34 +416,34 @@
     </section>
 
     <!-- Call to Action Banner -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 relative z-10">
-        <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-brand-yellow/30 relative overflow-hidden text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div class="space-y-4 max-w-2xl">
-                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs font-bold uppercase tracking-wider">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 relative z-10">
+        <div class="glass-panel p-5 sm:p-12 rounded-2xl sm:rounded-3xl border border-brand-yellow/30 relative overflow-hidden text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8">
+            <div class="space-y-3 sm:space-y-4 max-w-2xl">
+                <span class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-[11px] sm:text-xs font-bold uppercase tracking-wider">
                     ⚡ Elevate Your Brand
                 </span>
-                <h2 class="text-2xl sm:text-4xl font-display font-extrabold text-white leading-tight">
+                <h2 class="text-xl sm:text-4xl font-display font-extrabold text-white leading-tight">
                     Want High-Impact Creatives Like These For <span class="text-brand-yellow">Your Business?</span>
                 </h2>
-                <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                <p class="text-gray-300 text-xs sm:text-base leading-relaxed">
                     Our creative team crafts conversion-first marketing creatives, bespoke web applications, and multi-channel campaigns designed specifically for your industry.
                 </p>
             </div>
-            <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                <a href="https://wa.me/918056107314?text=Hi%20Digibrandify,%20I%20want%20to%20start%20a%20marketing%20campaign%20for%20my%20brand." target="_blank" rel="noopener noreferrer" class="glass-button w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-3">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
+            <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
+                <a href="https://wa.me/918056107314?text=Hi%20Digibrandify,%20I%20want%20to%20start%20a%20marketing%20campaign%20for%20my%20brand." target="_blank" rel="noopener noreferrer" class="glass-button w-full sm:w-auto px-5 py-3 sm:px-8 sm:py-4 rounded-xl text-xs sm:text-base font-bold flex items-center justify-center gap-2.5 sm:gap-3">
+                    <i class="fa-brands fa-whatsapp text-base sm:text-lg"></i>
                     <span>Chat on WhatsApp</span>
                 </a>
-                <a href="index.html#contact" class="glass-panel w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-white hover:text-brand-yellow border border-white/20 hover:border-brand-yellow transition-all flex items-center justify-center gap-2">
+                <a href="index.html#contact" class="glass-panel w-full sm:w-auto px-5 py-3 sm:px-8 sm:py-4 rounded-xl text-xs sm:text-base font-semibold text-white hover:text-brand-yellow border border-white/20 hover:border-brand-yellow transition-all flex items-center justify-center gap-2">
                     <span>Contact Agency</span>
-                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                    <i class="fa-solid fa-arrow-right text-[10px] sm:text-xs"></i>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="relative z-10 border-t border-white/10 bg-[#07080B]/90 pt-16 pb-12">
+    <footer class="relative z-10 border-t border-white/10 bg-[#07080B]/90 pt-12 sm:pt-16 pb-24 sm:pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
                 <!-- Col 1 -->
@@ -505,64 +510,90 @@
         </div>
     </footer>
 
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-40 glass-nav border-t border-brand-yellow/20 px-3 py-1.5 pb-2">
+        <div class="flex items-center justify-around max-w-md mx-auto">
+            <a href="index.html#home" class="mobile-nav-btn flex flex-col items-center gap-0.5 text-gray-400 hover:text-brand-yellow py-1 px-2">
+                <i class="fa-solid fa-house text-base"></i>
+                <span class="text-[9px] font-medium tracking-tight">Home</span>
+            </a>
+            <a href="index.html#services" class="mobile-nav-btn flex flex-col items-center gap-0.5 text-gray-400 hover:text-brand-yellow py-1 px-2">
+                <i class="fa-solid fa-layer-group text-base"></i>
+                <span class="text-[9px] font-medium tracking-tight">Services</span>
+            </a>
+            <a href="#" class="mobile-nav-btn flex flex-col items-center gap-0.5 text-brand-yellow py-1 px-2">
+                <i class="fa-solid fa-briefcase text-base"></i>
+                <span class="text-[9px] font-medium tracking-tight">Portfolio</span>
+            </a>
+            <a href="https://wa.me/918056107314" target="_blank" rel="noopener noreferrer" class="mobile-nav-btn flex flex-col items-center gap-0.5 text-gray-400 hover:text-brand-yellow py-1 px-2">
+                <i class="fa-brands fa-whatsapp text-base"></i>
+                <span class="text-[9px] font-medium tracking-tight">WhatsApp</span>
+            </a>
+            <a href="index.html#contact" class="mobile-nav-btn flex flex-col items-center gap-0.5 text-gray-400 hover:text-brand-yellow py-1 px-2">
+                <i class="fa-solid fa-paper-plane text-base"></i>
+                <span class="text-[9px] font-medium tracking-tight">Contact</span>
+            </a>
+        </div>
+    </nav>
+
     <!-- Fullscreen Lightbox Modal -->
-    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-xl">
-        <div class="relative w-full max-w-5xl max-h-[94vh] flex flex-col md:flex-row rounded-3xl glass-panel border border-brand-yellow/30 overflow-hidden shadow-2xl bg-[#0e1017]">
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-2 sm:p-6 bg-black/90 backdrop-blur-xl">
+        <div class="relative w-full max-w-5xl max-h-[96vh] sm:max-h-[94vh] flex flex-col md:flex-row rounded-2xl sm:rounded-3xl glass-panel border border-brand-yellow/30 overflow-hidden shadow-2xl bg-[#0e1017]">
             
             <!-- Close Button -->
-            <button onclick="closeLightbox()" class="absolute top-4 right-4 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-brand-yellow hover:text-black text-white flex items-center justify-center transition-all border border-white/20 cursor-pointer shadow-lg" title="Close (Esc)">
-                <i class="fa-solid fa-xmark text-lg"></i>
+            <button onclick="closeLightbox()" class="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/75 hover:bg-brand-yellow hover:text-black text-white flex items-center justify-center transition-all border border-white/20 cursor-pointer shadow-lg" title="Close (Esc)">
+                <i class="fa-solid fa-xmark text-sm sm:text-lg"></i>
             </button>
 
             <!-- Previous / Next Navigation Buttons (Floating) -->
-            <button onclick="navigateLightbox(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/70 hover:bg-brand-yellow hover:text-black text-white flex items-center justify-center transition-all border border-white/20 cursor-pointer shadow-lg" title="Previous Poster (Left Arrow)">
-                <i class="fa-solid fa-chevron-left text-sm"></i>
+            <button onclick="navigateLightbox(-1)" class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/75 hover:bg-brand-yellow hover:text-black text-white flex items-center justify-center transition-all border border-white/20 cursor-pointer shadow-lg" title="Previous Poster (Left Arrow)">
+                <i class="fa-solid fa-chevron-left text-xs sm:text-sm"></i>
             </button>
-            <button onclick="navigateLightbox(1)" class="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/70 hover:bg-brand-yellow hover:text-black text-white flex items-center justify-center transition-all border border-white/20 cursor-pointer shadow-lg" title="Next Poster (Right Arrow)">
-                <i class="fa-solid fa-chevron-right text-sm"></i>
+            <button onclick="navigateLightbox(1)" class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/75 hover:bg-brand-yellow hover:text-black text-white flex items-center justify-center transition-all border border-white/20 cursor-pointer shadow-lg" title="Next Poster (Right Arrow)">
+                <i class="fa-solid fa-chevron-right text-xs sm:text-sm"></i>
             </button>
 
             <!-- Image View Column -->
-            <div class="md:w-3/5 p-4 sm:p-6 bg-black/50 flex items-center justify-center relative overflow-hidden">
-                <img id="modal-img" src="" alt="Portfolio Showcase" class="max-h-[75vh] w-auto max-w-full object-contain rounded-2xl shadow-xl transition-transform duration-300">
+            <div class="md:w-3/5 p-3 sm:p-6 bg-black/50 flex items-center justify-center relative overflow-hidden">
+                <img id="modal-img" src="" alt="Portfolio Showcase" class="max-h-[42vh] md:max-h-[75vh] w-auto max-w-full object-contain rounded-xl sm:rounded-2xl shadow-xl transition-transform duration-300">
             </div>
 
             <!-- Content Detail Column -->
-            <div class="md:w-2/5 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto max-h-[45vh] md:max-h-[85vh] border-t md:border-t-0 md:border-l border-white/10">
-                <div class="space-y-4">
+            <div class="md:w-2/5 p-4 sm:p-8 flex flex-col justify-between overflow-y-auto max-h-[50vh] md:max-h-[85vh] border-t md:border-t-0 md:border-l border-white/10">
+                <div class="space-y-3 sm:space-y-4">
                     <div class="flex items-center justify-between">
-                        <span id="modal-category" class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/30">
+                        <span id="modal-category" class="px-2.5 py-0.5 sm:px-3.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/30">
                             Category
                         </span>
-                        <span id="modal-index" class="text-xs font-mono text-gray-400 font-bold">
+                        <span id="modal-index" class="text-[10px] sm:text-xs font-mono text-gray-400 font-bold">
                             #01 / 20
                         </span>
                     </div>
 
-                    <h3 id="modal-title" class="text-xl sm:text-2xl font-display font-extrabold text-white leading-tight">
+                    <h3 id="modal-title" class="text-base sm:text-2xl font-display font-extrabold text-white leading-tight">
                         Poster Title
                     </h3>
 
-                    <p id="modal-desc" class="text-gray-300 text-sm leading-relaxed font-normal">
+                    <p id="modal-desc" class="text-gray-300 text-xs sm:text-sm leading-relaxed font-normal">
                         Description
                     </p>
 
                     <!-- Feature Badges -->
-                    <div class="pt-2">
-                        <h4 class="text-xs uppercase tracking-wider font-bold text-gray-400 mb-2">Campaign Highlights</h4>
-                        <div id="modal-tags" class="flex flex-wrap gap-2">
+                    <div class="pt-1 sm:pt-2">
+                        <h4 class="text-[10px] sm:text-xs uppercase tracking-wider font-bold text-gray-400 mb-1.5 sm:mb-2">Campaign Highlights</h4>
+                        <div id="modal-tags" class="flex flex-wrap gap-1.5 sm:gap-2">
                             <!-- Tags injected via JS -->
                         </div>
                     </div>
                 </div>
 
                 <!-- Modal Bottom Actions -->
-                <div class="pt-6 mt-6 border-t border-white/10 space-y-3">
-                    <a id="modal-wa-btn" href="#" target="_blank" rel="noopener noreferrer" class="glass-button w-full py-3.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                <div class="pt-4 sm:pt-6 mt-4 sm:mt-6 border-t border-white/10 space-y-2 sm:space-y-3">
+                    <a id="modal-wa-btn" href="#" target="_blank" rel="noopener noreferrer" class="glass-button w-full py-2.5 sm:py-3.5 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-base sm:text-lg"></i>
                         <span>Get Similar Work For My Brand</span>
                     </a>
-                    <button onclick="closeLightbox()" class="w-full py-2.5 rounded-xl text-xs font-semibold text-gray-400 hover:text-white transition-colors">
+                    <button onclick="closeLightbox()" class="w-full py-1.5 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-semibold text-gray-400 hover:text-white transition-colors">
                         Back to Portfolio Gallery
                     </button>
                 </div>
@@ -812,54 +843,54 @@
             grid.innerHTML = filteredPosters.map((item, index) => {
                 const waText = encodeURIComponent(`Hi Digibrandify, I love your portfolio work "${item.title}". I want a creative campaign like this for my business.`);
                 return `
-                    <div class="portfolio-card glass-panel glass-panel-hover rounded-3xl p-5 flex flex-col justify-between group transition-all duration-300 relative border border-brand-yellow/20 hover:border-brand-yellow/50">
+                    <div class="portfolio-card glass-panel glass-panel-hover rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 flex flex-col justify-between group transition-all duration-300 relative border border-brand-yellow/20 hover:border-brand-yellow/50">
                         
                         <!-- Top Image Showcase -->
-                        <div class="poster-img-box mb-5 cursor-pointer relative shadow-lg overflow-hidden border border-white/10" onclick="openLightbox(${item.id})">
+                        <div class="poster-img-box mb-3 sm:mb-5 cursor-pointer relative shadow-lg overflow-hidden border border-white/10 rounded-xl sm:rounded-2xl" onclick="openLightbox(${item.id})">
                             <img src="${item.image}" alt="${item.title}" loading="lazy" class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-500">
                             
                             <!-- Hover Overlay -->
                             <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                                <span class="glass-button px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                                    <i class="fa-solid fa-expand"></i> View High-Res Poster
+                                <span class="glass-button px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                    <i class="fa-solid fa-expand"></i> View Poster
                                 </span>
                             </div>
 
                             <!-- Poster Index Badge -->
-                            <div class="absolute top-3 right-3 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-mono font-bold text-brand-yellow border border-brand-yellow/40">
+                            <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 bg-black/80 backdrop-blur-md px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-mono font-bold text-brand-yellow border border-brand-yellow/40">
                                 #${String(item.id).padStart(2, '0')}
                             </div>
                         </div>
 
                         <!-- Card Info -->
-                        <div class="space-y-3 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2 sm:space-y-3 flex-1 flex flex-col justify-between">
                             <div>
-                                <div class="flex items-center gap-2 mb-2">
-                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-yellow/10 text-brand-yellow border border-brand-yellow/30">
-                                        <i class="fa-solid ${item.icon} text-[10px]"></i>
+                                <div class="flex items-center gap-2 mb-1.5 sm:mb-2">
+                                    <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-brand-yellow/10 text-brand-yellow border border-brand-yellow/30">
+                                        <i class="fa-solid ${item.icon} text-[9px] sm:text-[10px]"></i>
                                         <span>${item.tag}</span>
                                     </span>
                                 </div>
-                                <h3 class="font-display text-lg font-bold text-white group-hover:text-brand-yellow transition-colors leading-snug cursor-pointer" onclick="openLightbox(${item.id})">
+                                <h3 class="font-display text-sm sm:text-lg font-bold text-white group-hover:text-brand-yellow transition-colors leading-snug cursor-pointer" onclick="openLightbox(${item.id})">
                                     ${item.title}
                                 </h3>
-                                <p class="text-gray-300 text-xs sm:text-sm mt-2 leading-relaxed font-light line-clamp-3">
+                                <p class="text-gray-300 text-xs sm:text-sm mt-1 sm:mt-2 leading-relaxed font-light line-clamp-2 sm:line-clamp-3">
                                     ${item.description}
                                 </p>
                             </div>
 
                             <!-- Tags -->
-                            <div class="flex flex-wrap gap-1.5 pt-2">
-                                ${item.tags.map(t => `<span class="px-2 py-0.5 rounded-md text-[10px] font-medium bg-white/5 text-gray-400 border border-white/5">${t}</span>`).join('')}
+                            <div class="flex flex-wrap gap-1 sm:gap-1.5 pt-1 sm:pt-2">
+                                ${item.tags.map(t => `<span class="px-1.5 py-0.5 sm:px-2 rounded-md text-[9px] sm:text-[10px] font-medium bg-white/5 text-gray-400 border border-white/5">${t}</span>`).join('')}
                             </div>
 
                             <!-- Card Bottom Action -->
-                            <div class="pt-4 border-t border-white/10 flex items-center justify-between gap-3 mt-4">
-                                <button onclick="openLightbox(${item.id})" class="text-xs font-semibold text-gray-300 hover:text-brand-yellow transition-colors flex items-center gap-1.5 py-1.5">
-                                    <i class="fa-solid fa-eye text-[11px]"></i> Preview Full
+                            <div class="pt-3 sm:pt-4 border-t border-white/10 flex items-center justify-between gap-2 mt-2 sm:mt-4">
+                                <button onclick="openLightbox(${item.id})" class="text-[11px] sm:text-xs font-semibold text-gray-300 hover:text-brand-yellow transition-colors flex items-center gap-1 sm:gap-1.5 py-1">
+                                    <i class="fa-solid fa-eye text-[10px] sm:text-[11px]"></i> Preview
                                 </button>
-                                <a href="https://wa.me/918056107314?text=${waText}" target="_blank" rel="noopener noreferrer" class="glass-button px-4 py-2 rounded-xl text-xs font-bold inline-flex items-center gap-1.5 hover:scale-105 active:scale-95 transition-all">
-                                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                                <a href="https://wa.me/918056107314?text=${waText}" target="_blank" rel="noopener noreferrer" class="glass-button px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold inline-flex items-center gap-1.5 hover:scale-105 active:scale-95 transition-all">
+                                    <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
                                     <span>Get Similar</span>
                                 </a>
                             </div>
